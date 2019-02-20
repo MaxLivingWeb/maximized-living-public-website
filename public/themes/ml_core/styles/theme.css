@@ -922,21 +922,9 @@ label {
     margin: 0 0 0 0;
   }
 
-  .wpcf7-form span.newsletter {
-    float: left;
-    margin-right: 20px;
-  }
-
-  .wpcf7-form span.newsletter input[type=checkbox] {
-    margin: 0;
-  }
-
-  .wpcf7-form span.newsletter input[type=checkbox] {
-    width: 20px;
-    height: 14px;
-    margin: 0;
-    margin-bottom: 20px;
-  }
+.wpcf7-list-item input[type="checkbox"] {
+width: 20px;
+}
 
 .inputField {
   position: relative;
