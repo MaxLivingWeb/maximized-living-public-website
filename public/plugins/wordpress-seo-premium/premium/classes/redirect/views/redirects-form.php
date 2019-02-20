@@ -19,8 +19,10 @@
 		<?php
 		// Loop through the redirect types.
 		if ( count( $redirect_types ) > 0 ) {
-			foreach ( $redirect_types as $type => $desc ) {
-				echo '<option value="' . esc_attr( $type ) . '"' . sprintf( $values['type'], $type ) . '>' . esc_html( $desc ) . '</option>' . "\n";
+			foreach ( $redirect_types as $yoast_premium_redirect_type => $yoast_premium_redirect_desc ) {
+				echo '<option value="' . esc_attr( $yoast_premium_redirect_type ) . '"'
+					. sprintf( $values['type'], $yoast_premium_redirect_type ) . '>'
+					. esc_html( $yoast_premium_redirect_desc ) . '</option>' . "\n";
 			}
 		}
 		?>

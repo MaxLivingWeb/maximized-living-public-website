@@ -160,6 +160,7 @@ class WPSEO_Premium_Link_Suggestions_Service {
 	 */
 	private function retrieve_posts( $prominent_word_id ) {
 		$query_args  = array(
+			// phpcs:ignore WordPress.DB.SlowDBQuery -- Unavoidable.
 			'tax_query'    => $this->get_tax_query( $prominent_word_id ),
 			'post_status'  => 'publish',
 		);

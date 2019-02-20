@@ -33,11 +33,13 @@ class WPSEO_Redirect_Redirection_Loader extends WPSEO_Redirect_Abstract_Loader {
 	 */
 	public function load() {
 		// Get redirects.
+		// phpcs:disable WordPress.DB.PreparedSQL -- Prefix variable comes from wpdb, query is fine without preparing.
 		$items = $this->wpdb->get_results(
 			"SELECT `url`, `action_data`, `regex`, `action_code`
 				FROM {$this->wpdb->prefix}redirection_items
 				WHERE `status` = 'enabled' AND `action_type` = 'url'"
 		);
+		// phpcs:enable
 
 		$redirects = array();
 

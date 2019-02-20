@@ -64,6 +64,7 @@ class WPSEO_Export_Keywords_Post_Presenter implements WPSEO_Export_Keywords_Pres
 	protected function prepare_column_result( array $result, $column ) {
 		switch ( $column ) {
 			case 'title':
+				// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals -- Using WP native filter.
 				$result['title'] = apply_filters( 'the_title', $result['post_title'], $result['ID'] );
 				unset( $result['post_title'] );
 				break;

@@ -160,11 +160,11 @@ class WPSEO_Premium_Orphaned_Post_Filter extends WPSEO_Abstract_Post_Filter {
 			$count    = $wpdb->get_var(
 				$wpdb->prepare(
 					"SELECT COUNT(ID)
-					FROM `{$wpdb->posts}`
-					WHERE ID IN ( $subquery )
-					AND post_status = 'publish'
-					AND post_password = ''
-					AND post_type = %s",
+						FROM `{$wpdb->posts}`
+						WHERE ID IN ( $subquery )
+							AND post_status = 'publish'
+							AND post_password = ''
+							AND post_type = %s",
 					$this->get_current_post_type()
 				)
 			);

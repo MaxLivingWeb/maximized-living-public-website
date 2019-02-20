@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "52cca1cbaca4d1fb439336278a99cc2c",
+    "content-hash": "76e4962f3848e4d88d078248e6f05316",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -1418,16 +1418,16 @@
             "homepage": "https://wordpress.org/plugins/contact-form-7/"
         },
         {
-            "name": "wpackagist-plugin/stream",
-            "version": "3.2.3",
+            "name": "wpackagist-plugin/contact-form-7-mailchimp-extension",
+            "version": "0.4.51",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/stream/",
-                "reference": "tags/3.2.3"
+                "url": "https://plugins.svn.wordpress.org/contact-form-7-mailchimp-extension/",
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/stream.3.2.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7-mailchimp-extension.zip?timestamp=1549282657",
                 "reference": null,
                 "shasum": null
             },
@@ -1435,7 +1435,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/stream/"
+            "homepage": "https://wordpress.org/plugins/contact-form-7-mailchimp-extension/"
         },
         {
             "name": "wpackagist-plugin/wordfence",

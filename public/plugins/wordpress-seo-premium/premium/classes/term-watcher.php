@@ -94,6 +94,7 @@ class WPSEO_Term_Watcher extends WPSEO_Watcher implements WPSEO_WordPress_Integr
 	public function old_url_field( $tag, $taxonomy ) {
 		$url = $this->get_target_url( $tag, $taxonomy );
 
+		// phpcs:ignore WordPress.Security.EscapeOutput -- Correctly escaped in parse_url_field() method.
 		echo $this->parse_url_field( $url, 'term' );
 	}
 
@@ -231,9 +232,9 @@ class WPSEO_Term_Watcher extends WPSEO_Watcher implements WPSEO_WordPress_Integr
 	 * @return string
 	 */
 	protected function get_undo_slug_notification() {
-		/* translators: %1$s: Yoast SEO Premium, %2$s and %3$s expand to a link to the admin page, %4$s: Old slug of the term, %5$s: New slug of the term, the text surrounded by %6$s and %7$s is placed in a button that can undo the created redirect */
+		/* translators: %1$s: Yoast SEO Premium, %2$s and %3$s expand to a link to the admin page. */
 		return __(
-			'%1$s created a %2$sredirect%3$s from the old term URL to the new term URL. %6$sClick here to undo this%7$s  <br> Old URL: %4$s <br> New URL: %5$s',
+			'%1$s created a %2$sredirect%3$s from the old term URL to the new term URL.',
 			'wordpress-seo-premium'
 		);
 	}

@@ -206,11 +206,24 @@ abstract class WPSEO_Watcher {
 			$this->get_undo_slug_notification(),
 			'Yoast SEO Premium',
 			'<a target="_blank" href="' . $this->admin_redirect_url( $redirect->get_origin() ) . '">',
-			'</a>',
-			$this->create_hyperlink_from_url( $old_url ),
-			$this->create_hyperlink_from_url( $new_url ),
-			'<button type="button" class="button" onclick=\'' . $this->javascript_undo_redirect( $redirect, $id ) . '\'>',
-			'</button>'
+			'</a>'
+		);
+
+		$message .= '<br>';
+		$message .= esc_html__( 'Old URL:', 'wordpress-seo-premium' ) . ' ' . $this->create_hyperlink_from_url( $old_url );
+		$message .= '<br>';
+		$message .= esc_html__( 'New URL:', 'wordpress-seo-premium' ) . ' ' . $this->create_hyperlink_from_url( $new_url );
+		$message .= '<br><br>';
+
+		$message .= sprintf(
+			'<button type="button" class="button-primary" onclick="wpseoRemoveNotification( this );">%s</button>',
+			esc_html__( 'Ok', 'wordpress-seo-premium' )
+		);
+
+		$message .= sprintf(
+			'<span id="delete-link"><a class="delete" href="" onclick=\'%1$s\'>%2$s</a></span>',
+			$this->javascript_undo_redirect( $redirect, $id ),
+			esc_html__( 'Undo', 'wordpress-seo-premium' )
 		);
 
 		// Only set notification when the slug change was not saved through quick edit.

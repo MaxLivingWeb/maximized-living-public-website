@@ -444,9 +444,9 @@ class WPSEO_Post_Watcher extends WPSEO_Watcher implements WPSEO_WordPress_Integr
 	 * @return string
 	 */
 	protected function get_undo_slug_notification() {
-		/* translators: %1$s: Yoast SEO Premium, %2$s and %3$s expand to a link to the admin page, %4$s: Old slug of the post, %5$s: New slug of the post, the text surrounded by %6$s and %7$s is placed in a button that can undo the created redirect */
+		/* translators: %1$s: Yoast SEO Premium, %2$s and %3$s expand to a link to the admin page. */
 		return __(
-			'%1$s created a %2$sredirect%3$s from the old post URL to the new post URL. %6$sClick here to undo this%7$s <br> Old URL: %4$s <br> New URL: %5$s',
+			'%1$s created a %2$sredirect%3$s from the old post URL to the new post URL.',
 			'wordpress-seo-premium'
 		);
 	}

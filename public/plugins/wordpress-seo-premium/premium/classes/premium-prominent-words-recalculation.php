@@ -83,10 +83,12 @@ class WPSEO_Premium_Prominent_Words_Recalculation implements WPSEO_WordPress_Int
 		echo '<strong>' . esc_html__( 'Internal linking', 'wordpress-seo-premium' ) . '</strong><br/>';
 
 		if ( count( $total_items ) === 0 ) {
+			// phpcs:ignore WordPress.Security.EscapeOutput -- Correctly escaped in message_already_indexed() method.
 			echo $this->message_already_indexed();
 		}
 
 		if ( count( $total_items ) > 0 ) {
+			// phpcs:ignore WordPress.Security.EscapeOutput -- Correctly escaped in generate_internal_link_calculation_interface() method.
 			echo $this->generate_internal_link_calculation_interface();
 		}
 
@@ -105,11 +107,13 @@ class WPSEO_Premium_Prominent_Words_Recalculation implements WPSEO_WordPress_Int
 		echo '<p>' . esc_html__( 'Want to use our internal linking tool? Analyze all the published posts, pages and custom post types to generate internal linking suggestions.', 'wordpress-seo-premium' ) . '</p>';
 
 		if ( count( $total_items ) === 0 ) {
+			// phpcs:ignore WordPress.Security.EscapeOutput -- Correctly escaped in message_already_indexed() method.
 			printf( '<p>%s</p><br>', $this->message_already_indexed() );
 
 			return;
 		}
 
+		// phpcs:ignore WordPress.Security.EscapeOutput -- Correctly escaped in generate_internal_link_calculation_interface() method.
 		echo $this->generate_internal_link_calculation_interface();
 	}
 
@@ -196,7 +200,7 @@ class WPSEO_Premium_Prominent_Words_Recalculation implements WPSEO_WordPress_Int
 				</p>
 				<?php if ( $total_items > 0 ) : ?>
 					<div id="wpseo_internal_links_unindexed_progressbar" class="wpseo-progressbar"></div>
-					<p><?php echo $progress; ?></p>
+					<p><?php echo $progress; // phpcs:ignore WordPress.Security.EscapeOutput -- See above. ?></p>
 				<?php else : ?>
 					<p><?php esc_html_e( 'Everything is already indexed. There is no need to recalculate anything.', 'wordpress-seo-premium' ); ?></p>
 				<?php endif; ?>

@@ -234,6 +234,7 @@ class WPSEO_Redirect_Handler {
 
 		// Suppress warning: a faulty redirect will give a warning and not an exception. So we can't catch it.
 		// See issue: https://github.com/Yoast/wordpress-seo-premium/issues/662.
+		// phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
 		if ( 1 === @preg_match( "`{$regex}`", $this->request_url, $this->url_matches ) ) {
 
 			// Replace the $regex vars with URL matches.

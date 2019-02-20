@@ -47,6 +47,7 @@ class WPSEO_Redirect_Upgrade {
 	 * @since 2.3
 	 */
 	public static function import_redirects_2_3() {
+		// phpcs:ignore WordPress.DB.SlowDBQuery -- Upgrade routine, so rarely used, therefore not an issue.
 		$wp_query = new WP_Query( 'post_type=any&meta_key=_yoast_wpseo_redirect&order=ASC' );
 
 		if ( ! empty( $wp_query->posts ) ) {

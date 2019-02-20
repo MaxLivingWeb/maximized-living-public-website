@@ -212,6 +212,7 @@ class WPSEO_Premium_Prominent_Words_Unindexed_Post_Query {
 	public function get_query_args( $post_type ) {
 		_deprecated_function( __METHOD__, 'WPSEO 4.6.0' );
 
+		// phpcs:disable WordPress.DB.SlowDBQuery -- This method is deprecated, so not an issue.
 		return array(
 			'post_type'   => $post_type,
 			'post_status' => array( 'future', 'draft', 'pending', 'private', 'publish' ),
@@ -228,6 +229,7 @@ class WPSEO_Premium_Prominent_Words_Unindexed_Post_Query {
 				),
 			),
 		);
+		// phpcs:enable
 	}
 
 	/**

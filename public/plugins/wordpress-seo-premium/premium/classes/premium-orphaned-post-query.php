@@ -24,14 +24,14 @@ class WPSEO_Premium_Orphaned_Post_Query {
 		$subquery         = self::get_orphaned_content_query();
 
 		$results = $wpdb->get_results(
-			$wpdb->prepare( // WPCS: PreparedSQLPlaceholders replacement count OK.
+			$wpdb->prepare(
 				"SELECT COUNT( ID ) as total_orphaned, post_type
-						FROM {$wpdb->posts}
-						WHERE
-							ID IN ( " . $subquery . " )
-							AND post_status = 'publish'
-							AND post_type IN ( " . implode( ',', array_fill( 0, count( $post_types ), '%s' ) ) . ' )
-						GROUP BY post_type',
+					FROM {$wpdb->posts}
+					WHERE
+						ID IN ( " . $subquery . " )
+						AND post_status = 'publish'
+						AND post_type IN ( " . implode( ',', array_fill( 0, count( $post_types ), '%s' ) ) . ' )
+					GROUP BY post_type',
 				$post_types
 			)
 		);
@@ -78,6 +78,7 @@ class WPSEO_Premium_Orphaned_Post_Query {
 		$storage = new WPSEO_Meta_Storage();
 		$query   = 'SELECT object_id FROM ' . $storage->get_table_name() . ' WHERE incoming_link_count = 0';
 
+		// phpcs:ignore WordPress.DB.PreparedSQL -- See above, query is fine without preparing.
 		$object_ids = $wpdb->get_col( $query );
 		$object_ids = self::remove_frontpage_id( $object_ids );
 
