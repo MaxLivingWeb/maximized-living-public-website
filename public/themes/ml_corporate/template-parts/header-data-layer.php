@@ -1,0 +1,3 @@
+dataLayer = [{
+'locale': 'Public'
+}];

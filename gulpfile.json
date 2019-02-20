@@ -1,0 +1,16 @@
+{
+    "themeName": [
+        "ml_core",
+        "ml_corporate",
+        "ml_clinic",
+        "ml_whitelabel"
+    ],
+    "src": {
+        "styles": "scss",
+        "scripts": "js",
+        "images": "images"
+    },
+    "dest": {
+        "theme": "public/themes/"
+    }
+}

@@ -1,0 +1,71 @@
+{
+    "name": "Max Living",
+    "description": "Max Living Multisite",
+    "keywords": [
+        "wordpress"
+    ],
+    "type": "project",
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "Jamieson Roberts",
+            "email": "hello@jamiesonroberts.ca"
+        }
+    ],
+    "minimum-stability": "stable",
+    "repositories": {
+        "0": {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        }
+    },
+    "require": {
+        "php": ">=7.1.0",
+        "guzzlehttp/guzzle": "^6.3.3",
+        "guzzlehttp/oauth-subscriber": "^0.3.0",
+        "johnpbloch/wordpress": "^5.0.3",
+        "respect/validation": "^1.1.29",
+        "spomky-labs/jose": "^7.1.0",
+        "thepixeldeveloper/sitemap": "^5.1.3",
+        "vlucas/phpdotenv": "^2.5.1",
+        "wpackagist-plugin/acf-content-analysis-for-yoast-seo": "^2.2.0",
+        "wpackagist-plugin/shortpixel-image-optimiser": "^4.12.6",
+        "wpackagist-plugin/stream": "^3.2.3",
+        "wpackagist-plugin/wordfence": "^7.1.20",
+        "wpackagist-plugin/wp-external-links": "^2.2.0"
+
+
+    },
+    "autoload": {
+        "files": [
+            "bootstrap/app.php"
+        ],
+        "psr-4": {
+            "MaxLiving\\PeriodicContent\\": "public/plugins/periodic-content",
+            "MaxLiving\\ContactForm\\": "public/plugins/contact-form",
+            "MaxLiving\\Location\\": "public/plugins/locations-admin",
+            "MaxLiving\\AuthPortal\\": "public/plugins/auth-portal",
+            "MaxLiving\\PlagiarismTool\\": "public/plugins/plagiarism-tool",
+            "MaxLiving\\Sitemaps\\": "public/plugins/sitemaps"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "extra": {
+        "wordpress-install-dir": "public/app",
+        "installer-paths": {
+            "public/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ],
+            "public/themes/{$name}/": [
+                "type:wordpress-theme"
+            ],
+            "public/plugins/required/{$name}/": [
+                "type:wordpress-muplugin"
+            ]
+        }
+    }
+}

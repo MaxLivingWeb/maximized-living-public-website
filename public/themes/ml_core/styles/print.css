@@ -1,0 +1,94 @@
+/* Content Size */
+html, body, #content, #container {
+  width: 100%;
+  margin: 0;
+  float: none;
+  background: #fff url(none); }
+
+/* Content Appearance */
+body {
+  font: 16pt Georgia, "Times New Roman", Times, serif;
+  color: #000;
+  overflow-x: visible;
+  overflow-y: visible;
+  display: table; }
+  body .singlePostPreviousNext, body .singlePostRelated, body .socialSidebar {
+    display: none; }
+  body .recipeSingle .singlePostContainer .singlePostContent > p {
+    visibility: hidden; }
+  body .recipeSingle .singlePostContainer .singlePostContent .printTitle {
+    display: block;
+    font-size: 16pt;
+    padding-bottom: 5mm;
+    border-bottom: 1px solid #000;
+    margin-bottom: 10mm; }
+  body .recipeSingle .singlePostContainer .singlePostContent .printContent {
+    padding-top: 5mm;
+    display: block; }
+  body .recipeSingle .fullImage {
+    height: 25mm;
+    width: 25%;
+    float: left;
+    margin-top: 10mm;
+    margin-right: 10mm;
+    padding-top: 0;
+    padding-bottom: 0; }
+  body .recipeSingle .recipeInfo {
+    width: 75%;
+    margin-left: 25%;
+    padding-left: 10mm;
+    margin-top: -32.5mm; }
+    body .recipeSingle .recipeInfo .ingredients li {
+      padding-bottom: 1.5mm; }
+  body .recipeSingle ol {
+    clear: none; }
+  body .recipeSingle .articleTable {
+    width: 25%;
+    float: left; }
+  body .recipeSingle footer {
+    display: none; }
+
+h1, h2, h3, h4, h5, h6, p, div, span, li {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #000; }
+
+h1 {
+  font-size: 200%; }
+
+h2 {
+  font-size: 150%; }
+
+h3 {
+  font-size: 125%; }
+
+h4, h5, h6 {
+  font-size: 100%; }
+
+/* Show Links */
+a:link, a:visited {
+  background: transparent;
+  color: #333;
+  text-decoration: none; }
+
+a:link[href^="http://"]:after {
+  content: " (" attr(href) ") "; }
+
+a[href^="http://"] {
+  color: #000; }
+  a[href^="http://"]:visited:after {
+    content: " (" attr(href) ") "; }
+
+/* Borders */
+img {
+  border: none;
+  page-break-inside: avoid;
+  page-break-after: avoid; }
+  img a {
+    border: none; }
+
+.more-link a {
+  border: none; }
+
+/* Remove Elements */
+header, footer, #topnav, #navbar, #nav, #sidebar, .ad, .noprint {
+  display: none; }

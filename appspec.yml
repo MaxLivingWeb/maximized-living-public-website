@@ -1,0 +1,32 @@
+version: 0.0
+os: linux
+files:
+  - source: /bootstrap
+    destination: /var/www/html/bootstrap
+  - source: /config
+    destination: /var/www/html/config
+  - source: /log
+    destination: /var/www/html/log
+  - source: /public
+    destination: /var/www/html/public    
+  - source: /composer.json
+    destination: /var/www/html
+  - source: /composer.lock
+    destination: /var/www/html
+  - source: /deploy/CreateEnvFile.py
+    destination: /var/www/html
+  - source: /deploy/EnvironmentSetting.sh
+    destination: /var/www/html/public
+hooks:
+  ApplicationStop:
+    - location: deploy/ApplicationStop.sh
+      runas: root
+  BeforeInstall:
+    - location: deploy/BeforeInstall.sh
+      runas: root
+  AfterInstall:
+    - location: deploy/AfterInstall.sh
+      runas: root
+  ApplicationStart:
+    - location: deploy/ApplicationStart.sh
+      runas: root
