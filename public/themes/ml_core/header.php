@@ -67,7 +67,7 @@ global $affiliate_id;
 <body <?php body_class(); ?>>
 <!-- Google Tag Manager (noscript) -->
 <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-<?php echo env("GTM_KEY"); ?>" height="0" width="0"
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BPQSKF" height="0" width="0"
             style="display:none;visibility:hidden"></iframe>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->

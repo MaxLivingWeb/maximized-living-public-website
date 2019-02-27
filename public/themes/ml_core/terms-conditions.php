@@ -541,14 +541,14 @@ $smoothScrollScripts = true;
             </ol>
 
             <p>
-                The Maximized Living Agent for notice of claims of copyright or other intellectual
+                The MaxLiving Agent for notice of claims of copyright or other intellectual
                 property infringement can be contacted as follows:<br><br>
                 Mailing Address:<br>
-                Maximized Living<br>
+                MaxLiving<br>
                 Attn: Copyright Agent<br>
-                1170 Celebration Blvd. Suite 100B<br>
-                Celebration, FL, Florida 34747<br>
-                Telephone: <a href="tel:3219393060" data-phone class="phoneNumberAW">321-939- 3060</a><br>
+                4700 Millenia Blvd. Suite 220<br>
+                Orlando, FL 34787<br>
+                Telephone: <a href="tel:3219393060" data-phone class="phoneNumberAW">321-939-3060</a><br>
                 Email: <a href="mailto:discover@maxliving.com">discover@maxliving.com</a>
             </p>
 
@@ -606,15 +606,15 @@ $smoothScrollScripts = true;
 
             <h2 id="s25" class="smoothScroll">VIOLATIONS</h2>
             <p>
-                Please report any and all violations of this TOS to Maximized Living as follows:
+                Please report any and all violations of this TOS to MaxLiving as follows:
                 <br><br>
                 Mailing Address:<br>
-                Maximized Living<br>
+                MaxLiving<br>
                 Attn: Copyright Agent<br>
-                1170 Celebration Blvd. Suite 100B<br>
-                Celebration, FL, Florida 34747<br>
-                Telephone: 321-939- 3060<br>
-                Email: discover@maxliving.com<br>
+                4700 Millenia Blvd. Suite 220<br>
+                Orlando, FL 34787<br>
+                Telephone: <a href="tel:3219393060" data-phone class="phoneNumberAW">321-939-3060</a><br>
+                Email: <a href="mailto:discover@maxliving.com">discover@maxliving.com</a>
             </p>
         </section>
     </div>
