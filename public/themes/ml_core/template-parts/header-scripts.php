@@ -15,7 +15,7 @@
         j.src =
             'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
         f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-5BPQSKF');
+      })(window, document, 'script', 'dataLayer', 'GTM-<?php echo env("GTM_KEY");?>');
 </script>
 <!-- End Google Tag Manager -->
 
