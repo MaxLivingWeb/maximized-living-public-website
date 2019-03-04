@@ -38,10 +38,10 @@ restore_current_blog();
             <div class="link">
                 <?php
                 $text = "Shop Now";
-                $link = "https://maxliving.com/store";
+                $link = "https://store.maxliving.com/";
                 if ($childsite_id != 1) {
                     $text = "Shop Now";
-                    $link = "https://maxliving.com/store";
+                    $link = "https://store.maxliving.com/";
                 }
                 ?>
                 <a class="button button-tertiary button-large" href="<?php echo $link; ?>"><?php echo $text; ?></a>

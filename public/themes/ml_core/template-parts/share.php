@@ -15,12 +15,6 @@ $shareExcerpt = get_the_excerpt();
     title="Share on Twitter">
     <span class="socialIcon icon-twitter"></span>
 </a>
-<a  href="https://plus.google.com/share?url=<?php echo $shareURL; ?>"
-    data-share-link
-    target="_blank"
-    title="Share on Google+">
-    <span class="socialIcon icon-googleplus"></span>
-</a>
 <a  href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo $shareURL; ?>&title=<?php echo rawurlencode($shareTitle); ?>&source=<?php echo get_home_url(); ?>&summary=<?php echo rawurlencode($shareExcerpt); ?>"
     data-share-link
     target="_blank"

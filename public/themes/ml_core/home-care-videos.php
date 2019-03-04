@@ -41,7 +41,7 @@ $youtubeScripts = true;
         <section class="flexible-videoCardList flexibleContentItem container">
             <div class="videoList cardContainer cardContainer-leftAlign">
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="8lKG7pAZzbM" data-name="Home Rehabilitation Program Intro"></div>
+                    <div class="videoPlayer" data-id="Lzdch7Cc8xg" data-name="Home Rehabilitation Program Intro"></div>
                     <div class="videoContent">
                         <h3>Home Rehabilitation Program Intro</h3>
                         <p>
@@ -50,7 +50,7 @@ $youtubeScripts = true;
                     </div>
                 </div>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="EB09TxBiu88" data-name="Psoas Lift"></div>
+                    <div class="videoPlayer" data-id="9h1achZEb4A" data-name="Psoas Lift"></div>
                     <div class="videoContent">
                         <h3>Psoas Lift</h3>
                         <p>
@@ -59,7 +59,7 @@ $youtubeScripts = true;
                     </div>
                 </div>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="4W5q3t-dOoU" data-name="Upper Shoulder Weight"></div>
+                    <div class="videoPlayer" data-id="D_aF0mMNwnc" data-name="Upper Shoulder Weight"></div>
                     <div class="videoContent">
                         <h3>Upper Shoulder Weight</h3>
                         <p>
@@ -68,7 +68,7 @@ $youtubeScripts = true;
                     </div>
                 </div>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="AAPiqxxoJSQ" data-name="Alar Ligament Excercise"></div>
+                    <div class="videoPlayer" data-id="TmkF_vUqTiU" data-name="Alar Ligament Excercise"></div>
                     <div class="videoContent">
                         <h3>Alar Ligament Excercise</h3>
                         <p>
@@ -77,7 +77,7 @@ $youtubeScripts = true;
                     </div>
                 </div>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="1sQt49qVR_s" data-name="Posterior T12"></div>
+                    <div class="videoPlayer" data-id="gOARJ7xhTDU" data-name="Posterior T12"></div>
                     <div class="videoContent">
                         <h3>Posterior T12</h3>
                         <p>
@@ -86,7 +86,7 @@ $youtubeScripts = true;
                     </div>
                 </div>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="x-hwp0w8xJU" data-name="Decreased Sacral Base Blocking"></div>
+                    <div class="videoPlayer" data-id="pSrHWvxlRcI" data-name="Decreased Sacral Base Blocking"></div>
                     <div class="videoContent">
                         <h3>Decreased Sacral Base Blocking</h3>
                         <p>
@@ -95,7 +95,7 @@ $youtubeScripts = true;
                     </div>
                 </div>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="k8PK9UoA3YU" data-name="Cervical Flexion Exercise"></div>
+                    <div class="videoPlayer" data-id="qti3EMPdmMU" data-name="Cervical Flexion Exercise"></div>
                     <div class="videoContent">
                         <h3>Cervical Flexion Exercise</h3>
                         <p>
@@ -104,7 +104,7 @@ $youtubeScripts = true;
                     </div>
                 </div>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="JXntLOOYvC4" data-name="Unpacking Your Head Weights"></div>
+                    <div class="videoPlayer" data-id="_eZqrdJU0H8" data-name="Unpacking Your Head Weights"></div>
                     <div class="videoContent">
                         <h3>Unpacking Your Head Weights</h3>
                         <p>
@@ -113,7 +113,7 @@ $youtubeScripts = true;
                     </div>
                 </div>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="aVZf3Uf1Jio" data-name="Cervical Dorsal Exercise"></div>
+                    <div class="videoPlayer" data-id="OrKyzYxpRE0" data-name="Cervical Dorsal Exercise"></div>
                     <div class="videoContent">
                         <h3>Cervical Dorsal Exercise</h3>
                         <p>
@@ -122,7 +122,7 @@ $youtubeScripts = true;
                     </div>
                 </div>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="KaLuaaCAdTM" data-name="Chest Expander Exercise"></div>
+                    <div class="videoPlayer" data-id="BuQtjwWv8aA" data-name="Chest Expander Exercise"></div>
                     <div class="videoContent">
                         <h3>Chest Expander Exercise</h3>
                         <p>
@@ -131,7 +131,7 @@ $youtubeScripts = true;
                     </div>
                 </div>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="4aWyIiSp954" data-name="Praying Mantis Exercise"></div>
+                    <div class="videoPlayer" data-id="vfZq3qKkAnc" data-name="Praying Mantis Exercise"></div>
                     <div class="videoContent">
                         <h3>Praying Mantis Exercise</h3>
                         <p>
@@ -140,7 +140,7 @@ $youtubeScripts = true;
                     </div>
                 </div>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="94ea-uTSGt4" data-name="Traction Unit"></div>
+                    <div class="videoPlayer" data-id="XmuvY3nEdUI" data-name="Traction Unit"></div>
                     <div class="videoContent">
                         <h3>Traction Unit</h3>
                         <p>
@@ -149,7 +149,7 @@ $youtubeScripts = true;
                     </div>
                 </div>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="L3WRj5Sv67g" data-name="Putting On the Head Weight"></div>
+                    <div class="videoPlayer" data-id="YcmWw7sq_8Y" data-name="Putting On the Head Weight"></div>
                     <div class="videoContent">
                         <h3>Putting On the Head Weight</h3>
                         <p>
@@ -158,7 +158,7 @@ $youtubeScripts = true;
                     </div>
                 </div>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="Sv5KY_B9BUc" data-name="Psoas Stretch"></div>
+                    <div class="videoPlayer" data-id="eoviYmqEj7U" data-name="Psoas Stretch"></div>
                     <div class="videoContent">
                         <h3>Psoas Stretch</h3>
                         <p>
@@ -167,7 +167,7 @@ $youtubeScripts = true;
                     </div>
                 </div>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="bwQGtcrVFig" data-name="Increased Sacral Base Blocking"></div>
+                    <div class="videoPlayer" data-id="Xcb5eEcu1I0" data-name="Increased Sacral Base Blocking"></div>
                     <div class="videoContent">
                         <h3>Increased Sacral Base Blocking</h3>
                         <p>
@@ -176,7 +176,7 @@ $youtubeScripts = true;
                     </div>
                 </div>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="jrqvIKz5ymw" data-name="Cervical and Lumbar Rolls or Sleep Aids"></div>
+                    <div class="videoPlayer" data-id="p1zkeFxLlVA" data-name="Cervical and Lumbar Rolls or Sleep Aids"></div>
                     <div class="videoContent">
                         <h3>Cervical and Lumbar Rolls or Sleep Aids</h3>
                         <p>
@@ -185,7 +185,7 @@ $youtubeScripts = true;
                     </div>
                 </div>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="B7krH_J6tOc" data-name="Wobble Cushion – Posterior T12"></div>
+                    <div class="videoPlayer" data-id="NToN4Anhw-E" data-name="Wobble Cushion – Posterior T12"></div>
                     <div class="videoContent">
                         <h3>Wobble Cushion – Posterior T12</h3>
                         <p>
@@ -194,7 +194,7 @@ $youtubeScripts = true;
                     </div>
                 </div>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="QTyYCbDrrYQ" data-name="Wobble Cushion – LD Focus"></div>
+                    <div class="videoPlayer" data-id="agOjylxNCVM" data-name="Wobble Cushion – LD Focus"></div>
                     <div class="videoContent">
                         <h3>Wobble Cushion – LD Focus</h3>
                         <p>
@@ -203,7 +203,7 @@ $youtubeScripts = true;
                     </div>
                 </div>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="uDznQTru_gk" data-name="Wobble Cushion – General"></div>
+                    <div class="videoPlayer" data-id="03sP2WMNNSQ" data-name="Wobble Cushion – General"></div>
                     <div class="videoContent">
                         <h3>Wobble Cushion – General</h3>
                         <p>
@@ -212,7 +212,7 @@ $youtubeScripts = true;
                     </div>
                 </div>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="2BwEHFHVvjc" data-name="Wobble Cushion – Anterior T12"></div>
+                    <div class="videoPlayer" data-id="0fNgxsZQIa8" data-name="Wobble Cushion – Anterior T12"></div>
                     <div class="videoContent">
                         <h3>Wobble Cushion – Anterior T12</h3>
                         <p>
@@ -221,7 +221,7 @@ $youtubeScripts = true;
                     </div>
                 </div>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="ibFhY-Q206g" data-name="Lumbar Extension"></div>
+                    <div class="videoPlayer" data-id="kaznDyK06W8" data-name="Lumbar Extension"></div>
                     <div class="videoContent">
                         <h3>Lumbar Extension</h3>
                         <p>
@@ -230,7 +230,7 @@ $youtubeScripts = true;
                     </div>
                 </div>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="x_MebEJvJh4" data-name="CTU Pull"></div>
+                    <div class="videoPlayer" data-id="tHAOYAnBKSM" data-name="CTU Pull"></div>
                     <div class="videoContent">
                         <h3>CTU Pull</h3>
                         <p>
@@ -239,7 +239,7 @@ $youtubeScripts = true;
                     </div>
                 </div>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="ds8a8JuJSNw" data-name="L-5 Spondylo Lower Exercise"></div>
+                    <div class="videoPlayer" data-id="hwJ6A0UVHTU" data-name="L-5 Spondylo Lower Exercise"></div>
                     <div class="videoContent">
                         <h3>L-5 Spondylo Lower Exercise</h3>
                         <p>
@@ -248,7 +248,7 @@ $youtubeScripts = true;
                     </div>
                 </div>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="kPNakkTb4x4" data-name="Cervical Extension"></div>
+                    <div class="videoPlayer" data-id="PXCqr4o-K4M" data-name="Cervical Extension"></div>
                     <div class="videoContent">
                         <h3>Cervical Extension</h3>
                         <p>
@@ -257,7 +257,7 @@ $youtubeScripts = true;
                     </div>
                 </div>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
-                    <div class="videoPlayer" data-id="C7pOhnvpn-o" data-name="Pelvic Rotation Blocking"></div>
+                    <div class="videoPlayer" data-id="7XCBUaxN9RA" data-name="Pelvic Rotation Blocking"></div>
                     <div class="videoContent">
                         <h3>Pelvic Rotation Blocking</h3>
                         <p>
