@@ -26,11 +26,8 @@ abstract class WPSEO_Redirect_Abstract_Loader implements WPSEO_Redirect_Loader {
 		}
 
 		$status_codes = new WPSEO_Redirect_Types();
-		if ( ! in_array( $status_code, array_keys( $status_codes->get() ), true ) ) {
-			return false;
-		}
 
-		return true;
+		return $status_codes->has( $status_code );
 	}
 
 	/**
@@ -41,11 +38,8 @@ abstract class WPSEO_Redirect_Abstract_Loader implements WPSEO_Redirect_Loader {
 	 * @return bool Whether or not the format is valid.
 	 */
 	protected function validate_format( $format ) {
-		$permitted_formats = array( WPSEO_Redirect_Formats::PLAIN, WPSEO_Redirect_Formats::REGEX );
-		if ( ! in_array( $format, $permitted_formats, true ) ) {
-			return false;
-		}
+		$redirect_formats = new WPSEO_Redirect_Formats();
 
-		return true;
+		return $redirect_formats->has( $format );
 	}
 }

@@ -63,10 +63,7 @@ class WPSEO_Redirect_Page_Presenter implements WPSEO_Redirect_Presenter {
 	 * }
 	 */
 	private function navigation_tabs( $current_tab ) {
-		$tabs = array(
-			WPSEO_Redirect_Formats::PLAIN => __( 'Redirects', 'wordpress-seo-premium' ),
-			WPSEO_Redirect_Formats::REGEX => __( 'Regex Redirects', 'wordpress-seo-premium' ),
-		);
+		$tabs = $this->get_redirect_formats();
 
 		if ( current_user_can( 'wpseo_manage_options' ) ) {
 			$tabs['settings'] = __( 'Settings', 'wordpress-seo-premium' );
@@ -77,5 +74,16 @@ class WPSEO_Redirect_Page_Presenter implements WPSEO_Redirect_Presenter {
 			'current_tab' => $current_tab,
 			'page_url'    => admin_url( 'admin.php?page=wpseo_redirects&tab=' ),
 		);
+	}
+
+	/**
+	 * Gets the available redirect formats.
+	 *
+	 * @return array Redirect formats as $slug => $label pairs.
+	 */
+	protected function get_redirect_formats() {
+		$redirect_formats = new WPSEO_Redirect_Formats();
+
+		return $redirect_formats->get();
 	}
 }

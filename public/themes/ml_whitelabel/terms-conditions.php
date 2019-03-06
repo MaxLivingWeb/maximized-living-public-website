@@ -67,8 +67,7 @@ $smoothScrollScripts = true;
             <p>
                 The following Terms of Service Agreement (the “TOS”) is a legally binding
                 agreement that shall govern the relationship with our users and others which may
-                interact or interface with Maximized Living, also known as , located at 1170
-                Celebration Blvd. Suite 100B, Celebration, FL, Florida 34747, and our
+                interact or interface with MaxLiving, also known as , located at 4700 Millenia Blvd. Suite 220, Orlando, FL 32839, and our
                 subsidiaries and affiliates, in association with the use of the website, which
                 includes www.maxliving.com (the “Site”) and its Services, which shall be
                 defined below.

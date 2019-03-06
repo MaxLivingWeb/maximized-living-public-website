@@ -35,7 +35,7 @@ class WPSEO_Premium {
 	 *
 	 * @var string
 	 */
-	const PLUGIN_VERSION_NAME = '9.6.1';
+	const PLUGIN_VERSION_NAME = '9.7';
 
 	/**
 	 * Machine readable version for determining whether an upgrade is needed.
@@ -356,7 +356,7 @@ class WPSEO_Premium {
 			$redirect_url = home_url( $redirect_url );
 		}
 
-		wp_redirect( $redirect_url, $redirect->get_type() );
+		wp_redirect( $redirect_url, $redirect->get_type(), 'Yoast SEO Premium' );
 		exit;
 	}
 

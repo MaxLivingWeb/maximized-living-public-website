@@ -118,11 +118,11 @@ class WPSEO_Social_Previews implements WPSEO_WordPress_Integration {
 	 * @return array
 	 */
 	private function localize() {
-		if ( empty( WPSEO_Social_Admin::$meta_fields['social']['opengraph-title']['description'] ) ) {
+		if ( empty( WPSEO_Meta::$meta_fields['social']['opengraph-title']['description'] ) ) {
 			WPSEO_Social_Admin::translate_meta_boxes();
 		}
 
-		$social = WPSEO_Social_Admin::$meta_fields['social'];
+		$social = WPSEO_Meta::$meta_fields['social'];
 
 		return array(
 			'website'               => $this->get_website(),

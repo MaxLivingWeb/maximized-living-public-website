@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit4a944d30ee96156de6efb2f0057cba9d
+class ComposerStaticInit2d607b2a35a44bef84bb6ac123f9296f
 {
     public static $files = array (
         '23846a2512770688e91c6220c735f257' => __DIR__ . '/..' . '/yoast/wp-helpscout/src/functions.php',
@@ -355,6 +355,7 @@ class ComposerStaticInit4a944d30ee96156de6efb2f0057cba9d
         'WPSEO_Endpoint_Statistics' => __DIR__ . '/../..' . '/admin/endpoints/class-endpoint-statistics.php',
         'WPSEO_Endpoint_Storable' => __DIR__ . '/../..' . '/admin/endpoints/interface-endpoint-storable.php',
         'WPSEO_Endpoint_Validator' => __DIR__ . '/../..' . '/inc/indexables/validators/class-endpoint-validator.php',
+        'WPSEO_Executable_Redirect' => __DIR__ . '/../..' . '/premium/classes/redirect/executable-redirect.php',
         'WPSEO_Export' => __DIR__ . '/../..' . '/admin/class-export.php',
         'WPSEO_Export_Keywords_CSV' => __DIR__ . '/../..' . '/premium/classes/export/export-keywords-csv.php',
         'WPSEO_Export_Keywords_Post_Presenter' => __DIR__ . '/../..' . '/premium/classes/export/export-keywords-post-presenter.php',
@@ -478,6 +479,7 @@ class ComposerStaticInit4a944d30ee96156de6efb2f0057cba9d
         'WPSEO_Metabox_Tab_Section' => __DIR__ . '/../..' . '/admin/metabox/class-metabox-tab-section.php',
         'WPSEO_Multi_Keyword' => __DIR__ . '/../..' . '/premium/classes/multi-keyword.php',
         'WPSEO_Multiple_Keywords_Modal' => __DIR__ . '/../..' . '/admin/class-multiple-keywords-modal.php',
+        'WPSEO_MyYoast_Proxy' => __DIR__ . '/../..' . '/admin/class-my-yoast-proxy.php',
         'WPSEO_Network_Admin_Menu' => __DIR__ . '/../..' . '/admin/menu/class-network-admin-menu.php',
         'WPSEO_Notification_Handler' => __DIR__ . '/../..' . '/admin/notifiers/interface-notification-handler.php',
         'WPSEO_Object_Type' => __DIR__ . '/../..' . '/inc/indexables/class-object-type.php',
@@ -582,6 +584,7 @@ class ComposerStaticInit4a944d30ee96156de6efb2f0057cba9d
         'WPSEO_Redirect_File_Util' => __DIR__ . '/../..' . '/premium/classes/redirect/redirect-file-util.php',
         'WPSEO_Redirect_Form_Presenter' => __DIR__ . '/../..' . '/premium/classes/redirect/presenters/redirect-form-presenter.php',
         'WPSEO_Redirect_Formats' => __DIR__ . '/../..' . '/premium/classes/redirect/redirect-formats.php',
+        'WPSEO_Redirect_Formatter' => __DIR__ . '/../..' . '/premium/classes/redirect/redirect-formatter.php',
         'WPSEO_Redirect_HTAccess_Loader' => __DIR__ . '/../..' . '/premium/classes/redirect/loaders/redirect-htaccess-loader.php',
         'WPSEO_Redirect_Handler' => __DIR__ . '/../..' . '/premium/classes/redirect/redirect-handler.php',
         'WPSEO_Redirect_Htaccess_Exporter' => __DIR__ . '/../..' . '/premium/classes/redirect/exporters/redirect-htaccess-exporter.php',
@@ -797,10 +800,10 @@ class ComposerStaticInit4a944d30ee96156de6efb2f0057cba9d
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit4a944d30ee96156de6efb2f0057cba9d::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit4a944d30ee96156de6efb2f0057cba9d::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit4a944d30ee96156de6efb2f0057cba9d::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit4a944d30ee96156de6efb2f0057cba9d::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit2d607b2a35a44bef84bb6ac123f9296f::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit2d607b2a35a44bef84bb6ac123f9296f::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit2d607b2a35a44bef84bb6ac123f9296f::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit2d607b2a35a44bef84bb6ac123f9296f::$classMap;
 
         }, null, ClassLoader::class);
     }

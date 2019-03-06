@@ -668,7 +668,7 @@ class WPSEO_Redirect_Handler {
 			require_once ABSPATH . 'wp-includes/pluggable.php';
 		}
 
-		wp_redirect( $location, $status );
+		wp_redirect( $location, $status, 'Yoast SEO Premium' );
 		exit;
 	}
 
