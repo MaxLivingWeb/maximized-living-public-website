@@ -102,13 +102,13 @@ get_header(); ?>
     <section class="clinicHomeHeader wave wave-faintGrey" id="content">
         <div class="hero wave wave-multi" style="background-image:url('<?php echo get_template_directory_uri() . '/images/clinic-header.jpg';?>');">
             <div class="heroContent centerAlign">
-                <?php if ($locationName) : ?>
-                    <div class="heroLeading"><?php echo $locationName; ?></div>
-                <?php endif; ?>
-                <span class="heroHeadline-large">
+                <span>
                     <span class="invisible">Transform Your Health</span>
                     Transform Your Health
                 </span>
+                <?php if ($locationName) : ?>
+                    <div class="heroHeadline-large"><?php echo $locationName; ?></div>
+                <?php endif; ?>
                 <p class="heroDescription">We want to educate people about the power of chiropractic and empower them to live longer, healthier lives.</p>
                 <a href="#requestAppointment">
                     <button class="button button-tertiary button-large"
@@ -122,15 +122,12 @@ get_header(); ?>
         <div class="locationDetailsContainer container" id="contact">
             <div class="locationDetailsCard card card-noBorder card-shadow card-underline card-underline-brandGrey">
                 <div class="locationDetailsLocation">
-                    <?php if ($locationName) : ?>
-                        <h1><?php echo $locationName; ?></h1>
-                    <?php endif; ?>
+                <h1><?php echo $locationAddress1; ?><?php if ($locationAddress2):echo ', ' . $locationAddress2;endif; ?>
+                    <br><?php echo $locationCity.', '; echo $locationState.', '; echo $locationZipPostalCode.' '; echo $locationCountry; ?></h1>
                 </div>
                 <div class="locationDetailsContent">
                     <div class="locationDetailsContentLeft">
                         <div class="locationDetailsContact">
-                            <p class="address"><?php echo $locationAddress1; ?><?php if ($locationAddress2):echo ', ' . $locationAddress2;endif; ?>
-                                <br><?php echo $locationCity.', '; echo $locationState.', '; echo $locationZipPostalCode.' '; echo $locationCountry; ?></p>
                             <?php if ($locationTelephone) : ?>
                                 <p class="iconContact icon-phone">Tel: <a href="tel:<?php echo $phone; ?>"
                                                                           class="phoneNumberAW"
