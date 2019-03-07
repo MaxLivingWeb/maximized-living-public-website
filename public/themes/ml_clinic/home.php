@@ -122,7 +122,7 @@ get_header(); ?>
         <div class="locationDetailsContainer container" id="contact">
             <div class="locationDetailsCard card card-noBorder card-shadow card-underline card-underline-brandGrey">
                 <div class="locationDetailsLocation">
-                <h1><?php echo $locationAddress1; ?><?php if ($locationAddress2):echo ', ' . $locationAddress2;endif; ?>
+                <h1 style="text-align: center;"><?php echo $locationAddress1; ?><?php if ($locationAddress2):echo ', ' . $locationAddress2;endif; ?>
                     <br><?php echo $locationCity.', '; echo $locationState.', '; echo $locationZipPostalCode.' '; echo $locationCountry; ?></h1>
                 </div>
                 <div class="locationDetailsContent">
