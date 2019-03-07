@@ -56,7 +56,7 @@ class CoreFunctions
         // Create clinic home page
         $home_page = array(
             'post_type' => 'page',
-            'post_title' => 'Home '.get_bloginfo( 'name' ). ' | MaxLiving',
+            'post_title' => ''.get_bloginfo( 'name' ). ' | MaxLiving',
             'post_status' => 'publish',
             'post_author' => 1,
             'post_name' => '',
@@ -421,7 +421,7 @@ class CoreFunctions
         update_post_meta($post_id, 'below_header_body', 'New to our clinic? We offer our patient forms online so you can complete them in the convenience of your own home. Feel free to download, print, and complete the forms before your visit. Make sure all of your paperwork is filled out as thoroughly as possible — this helps us provide you with the best possible care. If you have any questions, don’t hesitate to contact our clinic for help.');
         update_post_meta($post_id, 'flexible_content', 'a:1:{i:0;s:13:"pdf_downloads";}');
         update_post_meta($post_id, '_flexible_content', 'field_5a00aa11259da');
-        
+
         switch_to_blog(1);
         //  image
         $imagePostId = get_post_meta(get_page_by_path('patient-paperwork-clinic-site-template-protected-page')->ID)['_thumbnail_id'][0];

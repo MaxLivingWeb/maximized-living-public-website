@@ -19,6 +19,9 @@ get_template_part('template-parts/nav-item-permissions');
                     </a>
                 </li>
                 <li>
+                    <a class="navLink" href="<?php echo get_home_url(); ?>" title="Home">Home</a>
+                </li>
+                <li>
                     <a class="navLink" href="#" title="About Us">About Us</a>
                     <div class="navDropdown">
                         <ul>
