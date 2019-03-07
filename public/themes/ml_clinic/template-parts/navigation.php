@@ -22,7 +22,7 @@ get_template_part('template-parts/nav-item-permissions');
                     <a class="navLink" href="<?php echo get_home_url(); ?>" title="Home">Home</a>
                 </li>
                 <li>
-                    <a class="navLink" href="#" title="About Us">About Us</a>
+                    <a class="navLink" href="<?php echo get_home_url() . '/our-team'; ?>" title="About Us">About Us</a>
                     <div class="navDropdown">
                         <ul>
 	                        <?php if ($_SESSION['clinicHasDoctors'] || is_user_logged_in()): ?>
@@ -49,7 +49,7 @@ get_template_part('template-parts/nav-item-permissions');
                                 class="invisible">Toggle Submenu</span></button>
                 </li>
                 <li>
-                    <a class="navLink" href="#" title="Our Approach">Our Approach</a>
+                    <a class="navLink" href="<?php echo get_home_url() . '/five-essentials'; ?>" title="Our Approach">Our Approach</a>
                     <div class="navDropdown">
                         <ul>
                             <li><a href="<?php echo get_home_url() . '/five-essentials'; ?>"
@@ -74,7 +74,7 @@ get_template_part('template-parts/nav-item-permissions');
                                 class="invisible">Toggle Submenu</span></button>
                 </li>
                 <li>
-                    <a class="navLink" href="#" title="Articles and Recipes">Articles &amp; Recipes</a>
+                    <a class="navLink" href="<?php echo get_home_url() . '/healthy-articles'; ?>" title="Articles and Recipes">Articles &amp; Recipes</a>
                     <div class="navDropdown">
                         <ul>
                             <li><a href="<?php echo get_home_url() . '/healthy-articles'; ?>"
@@ -94,7 +94,7 @@ get_template_part('template-parts/nav-item-permissions');
                                 class="invisible">Toggle Submenu</span></button>
                 </li>
                 <li>
-                    <a class="navLink" href="#" title="Patient Resources">Patient Resources</a>
+                    <a class="navLink" href="<?php echo get_home_url() . '/patient-paperwork'; ?>" title="Patient Resources">Patient Resources</a>
                     <div class="navDropdown">
                         <ul>
                             <li><a href="<?php echo get_home_url() . '/patient-paperwork'; ?>"
