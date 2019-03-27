@@ -10,6 +10,7 @@
  * Copyright 2017
  *
  */
+
 @import url("//hello.myfonts.net/count/34b446");
 *, *::before, *::after {
   margin: 0;
@@ -9472,3 +9473,135 @@ html {
 
 .thankYou-Application-button {
   border: 0; }
+
+#homeCert {
+    width: 40px;
+    vertical-align: top;
+}
+
+#homeCert:hover {
+    width: 40px;
+    vertical-align: top;
+}
+
+/* ML Clinic Certifications Tooltips */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 0px;
+}
+
+.tooltip-middle {
+  position: relative;
+  display: inline-block;
+  border-bottom: 0px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.tooltip-end {
+  position: relative;
+  display: inline-block;
+  border-bottom: 0px;
+  padding-left: 10px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 360px;
+  background-color: #fff;
+  color: #333D45;
+  text-align: center;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 14px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 115%;
+  left: 50%;
+  margin-left: -180px;
+}
+
+.tooltip-middle .tooltiptext {
+  visibility: hidden;
+  width: 360px;
+  background-color: #fff;
+  color: #333D45;
+  text-align: center;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 14px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 115%;
+  left: 50%;
+  margin-left: -180px;
+}
+
+.tooltip-end .tooltiptext {
+  visibility: hidden;
+  width: 360px;
+  background-color: #fff;
+  color: #333D45;
+  text-align: center;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 14px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 115%;
+  left: 50%;
+  margin-left: -180px;
+}
+
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
+}
+
+.tooltip-middle .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
+}
+
+.tooltip-end .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip-middle:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip-end:hover .tooltiptext {
+  visibility: visible;
+}

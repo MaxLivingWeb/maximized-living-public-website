@@ -55,7 +55,7 @@ $locationWebsite = get_home_url();
 $locationWebsite = preg_replace('#^https?://#', '', rtrim($locationWebsite, '/'));
 
 //Directions Link
-$locationDirections = 'https://www.google.com/maps?daddr='.str_replace(' ', '+', $locationAddress1) . '+' . str_replace(' ', '+', $locationCity) . '+' . str_replace(' ', '+', $locationState) . '+' . str_replace(' ', '+', $locationZipPostalCode) . '+' . str_replace(' ', '+', $locationCountry);
+$locationDirections = 'https://www.google.com/maps?daddr='.str_replace(' ', '+', $locationAddress1) . '+' . str_replace(' ', '+', $locationCity) . '+' . str_replace(' ', '+', $locationState) . '+' . str_replace(' ', '+', $locationZipPostalCode);
 
 if (get_field('google_maps_direction','clinic_home_options')) {
     $locationDirections = get_field('google_maps_direction','clinic_home_options');
@@ -110,12 +110,110 @@ get_header(); ?>
                     <div class="heroHeadline-large"><?php echo $locationName; ?></div>
                 <?php endif; ?>
                 <p class="heroDescription">We want to educate people about the power of chiropractic and empower them to live longer, healthier lives.</p>
-                <a href="#requestAppointment">
-                    <button class="button button-tertiary button-large"
-                            title="Request Appointment <?php if ($locationName): echo 'at ' . $locationName; endif; ?>">
-                        Request Appointment
-                    </button>
-                </a>
+
+                <?php if ( get_field( 'homecare_cert', 'clinic_options' ) ): ?>
+
+                <p class="tooltip">
+
+                  <img id="homeCert" src="https://d23i5jq6adgv5h.cloudfront.net/production/uploads/2019/03/13162552/Core_1_white2.png"
+                      onmouseover="this.src='https://d23i5jq6adgv5h.cloudfront.net/production/uploads/2019/03/13165113/Core_11.png'"
+                      onmouseout="this.src='https://d23i5jq6adgv5h.cloudfront.net/production/uploads/2019/03/13162552/Core_1_white2.png'"
+                      border="0" alt="Spinal Corrective Process Homecare Certification" title="Spinal Corrective Process Homecare Certification"/>
+
+                  <span class="tooltiptext"><strong>Spinal Corrective Process Homecare Certification</strong><br>Certifies completion of the MaxLiving Spinal Corrective Process for Homecare protocols; qualified in examining and prescribing homecare treatment, including traction, isometrics, body weighting for safe and effective spinal molding practices.</span>
+
+                </p>
+
+                <?php else: ?>
+
+                <?php endif; ?>
+
+                <?php if ( get_field( 'homecare_cert_lvl1', 'clinic_options' ) ): ?>
+
+                <p class="tooltip-middle">
+
+                  <img id="homeCert" src="https://d23i5jq6adgv5h.cloudfront.net/production/uploads/2019/03/13162559/Core_2_white2.png"
+                      onmouseover="this.src='https://d23i5jq6adgv5h.cloudfront.net/production/uploads/2019/03/13165120/Core_21.png'"
+                      onmouseout="this.src='https://d23i5jq6adgv5h.cloudfront.net/production/uploads/2019/03/13162559/Core_2_white2.png'"
+                      border="0" alt="Spinal Corrective Process Level 1 Certification" title="Spinal Corrective Process Level 1 Certification"/>
+
+                  <span class="tooltiptext"><strong>Spinal Corrective Process Level 1 Certification</strong><br>Certifies completion of Level 1 training in the MaxLiving Spinal Corrective Process; qualified to use enhanced office procedures, including, pre-adjusting therapy, specific chiropractic adjusting protocols, and post adjusting exercises to improve patient outcomes.</span>
+
+                </p>
+
+                <?php else: ?>
+
+                <?php endif; ?>
+
+                <?php if ( get_field( 'homecare_cert_lvl2', 'clinic_options' ) ): ?>
+
+                <p class="tooltip-middle">
+
+                  <img id="homeCert" src="https://d23i5jq6adgv5h.cloudfront.net/production/uploads/2019/03/13162606/Core_3_white2.png"
+                      onmouseover="this.src='https://d23i5jq6adgv5h.cloudfront.net/production/uploads/2019/03/13165127/Core_31.png'"
+                      onmouseout="this.src='https://d23i5jq6adgv5h.cloudfront.net/production/uploads/2019/03/13162606/Core_3_white2.png'"
+                      border="0" alt="Spinal Corrective Process Level 2 Certification" title="Spinal Corrective Process Level 2 Certification"/>
+
+                  <span class="tooltiptext"><strong>Spinal Corrective Process Level 2 Certification</strong><br>Certifies completion of Level 2 advanced training in the MaxLiving Spinal Corrective Process, including strong competencies in spinal correction and protocols; qualified in using diverse arrangements of enhanced in-office and homecare procedures and activities to improve patient outcomes.</span>
+
+                </p>
+
+                <?php else: ?>
+
+                <?php endif; ?>
+
+                <?php if ( get_field( 'nutrition_cert', 'clinic_options' ) ): ?>
+
+                <p class="tooltip-middle">
+
+                  <img id="homeCert" src="https://d23i5jq6adgv5h.cloudfront.net/production/uploads/2019/03/13162613/Nutrition_1_white2.png"
+                      onmouseover="this.src='https://d23i5jq6adgv5h.cloudfront.net/production/uploads/2019/03/13165135/Nutrition_11.png'"
+                      onmouseout="this.src='https://d23i5jq6adgv5h.cloudfront.net/production/uploads/2019/03/13162613/Nutrition_1_white2.png'"
+                      border="0" alt="Nutrition Certification" title="Nutrition Certification"/>
+
+                  <span class="tooltiptext"><strong>Nutrition Certification</strong><br>Certifies completion of training on the MaxLiving Nutrition Plan; qualified to counsel patients on dietary and nutrient intake and provide other nutritional strategies to maintaining and improving their health.</span>
+
+
+                </p>
+
+                <?php else: ?>
+
+                <?php endif; ?>
+
+                <?php if ( get_field( 'nutrition_cert_lvl1', 'clinic_options' ) ): ?>
+
+                <p class="tooltip-middle">
+
+                  <img id="homeCert" src="https://d23i5jq6adgv5h.cloudfront.net/production/uploads/2019/03/13162620/Nutrition_2_white2.png"
+                      onmouseover="this.src='https://d23i5jq6adgv5h.cloudfront.net/production/uploads/2019/03/13165106/Nutrition_21.png'"
+                      onmouseout="this.src='https://d23i5jq6adgv5h.cloudfront.net/production/uploads/2019/03/13162620/Nutrition_2_white2.png'"
+                      border="0" alt="Nutrition Certification Level 1"/>
+
+                  <span class="tooltiptext"></span>
+
+                </p>
+
+                <?php else: ?>
+
+                <?php endif; ?>
+
+                <?php if ( get_field( 'nutrition_cert_lvl2', 'clinic_options' ) ): ?>
+
+                <p class="tooltip-end">
+
+                  <img id="homeCert" src="https://d23i5jq6adgv5h.cloudfront.net/production/uploads/2019/03/13162625/Nutrition_3_white2.png"
+                      onmouseover="this.src='https://d23i5jq6adgv5h.cloudfront.net/production/uploads/2019/03/13165142/Nutrition_31.png'"
+                      onmouseout="this.src='https://d23i5jq6adgv5h.cloudfront.net/production/uploads/2019/03/13162625/Nutrition_3_white2.png'"
+                      border="0" alt="Nutrition Certification Level 2"/>
+
+                  <span class="tooltiptext"></span>
+
+                </p>
+
+                <?php else: ?>
+
+                <?php endif; ?>
+
             </div>
         </div>
 

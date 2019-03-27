@@ -75,8 +75,6 @@ foreach ($location->locations as $locations) {
                         <p class="locationText"><span>Tel: </span><a class="phoneNumberAW"
                                     href="tel:<?php echo $local->location_telephone_href; ?>" data-phone><?php echo $local->location_telephone; ?></a>
                         </p>
-                        <p class="locationText">
-                            <span>Today's Hours: </span><?php echo $local->location_business_hours['Today']; ?></p>
                         <a class="locationLink link link-leftDash"
                            href="<?php echo home_url(); ?>/locations/<?php echo $local->country_code; ?>/<?php echo $local->region_code; ?>/<?php echo $local->city_slug; ?>/<?php echo $local->location_slug; ?>">View
                             Details</a>
@@ -98,9 +96,7 @@ foreach ($location->locations as $locations) {
                     </a>
                     <p class="locationText">{{address_1}}, {{address_2}}</p>
                     <p class="locationText">{{city_name}}, {{region_name}} {{zip_postal_code}}, {{toUpperCase country_code}}</p>
-                    <p class="locationText"><span>Tel: </span><a href="tel:{{location_telephone_href}}" data-phone class="phoneNumberAW">{{location_telephone}}</a>
-                    </p>
-                    <p class="locationText"><span>Hours: </span>{{location_business_hours.[Today]}}</p>
+                    <p class="locationText"><span>Tel: </span><a href="tel:{{location_telephone_href}}" data-phone class="phoneNumberAW">{{location_telephone}}</a></p>
                     <a class="locationLink link link-leftDash"
                        href="<?php echo home_url(); ?>/locations/{{country_code}}/{{region_code}}/{{city_slug}}/{{location_slug}}">View
                         Details</a>

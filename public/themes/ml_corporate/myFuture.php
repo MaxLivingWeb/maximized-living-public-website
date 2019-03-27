@@ -28,7 +28,7 @@ get_header();
             <div class="myFutureHeroFormIntro">
                 <h2>Get more info.</h2>
                 <p style="padding-bottom: 20px;">
-                    Interested in MaxLiving? Let us know! You’ll automatically be entered to win a three-night stay at the Hyatt Regency in Denver, CO for the <a href="https://maxliving.com/events/mlx-transform-chiropractic-continuing-education-conference" target="_blank"><strong>MLX&nbsp;Transform</strong></a> conference June 6 - 8, 2019.
+                  Interested in MaxLiving? Let us know! We’re dedicated to building shared success in the natural health field through a wealth of resources designed for education, engagement, and advocacy.
                 </p>
             </div>
 

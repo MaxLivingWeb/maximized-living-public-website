@@ -132,10 +132,10 @@ class LocationForm
                     <input type="hidden" name="location_id" value="<?php echo $location_id; ?>">
                 <?php endif; ?>
                 <div class="location-dashboard">
-                    <div class="location-dashboard-item-full">
+                    <!-- <div class="location-dashboard-item-full">
                         <h2>General Information</h2>
                         <hr>
-                    </div>
+                    </div> -->
                     <div class="location-dashboard-item">
 
                         <table class="form-table">
@@ -175,7 +175,7 @@ class LocationForm
 
                         </table>
                     </div>
-                    <div class="location-dashboard-item">
+                    <!-- <div class="location-dashboard-item">
                         <table class="form-table">
 
                             <tr valign="top">
@@ -203,7 +203,7 @@ class LocationForm
                                            <?php if ($location['pre_open_display_date']){ ?>checked<?php } ?> /></td>
                             </tr>
                         </table>
-                    </div>
+                    </div> -->
 
                     <div class="location-dashboard-item-full">
                         <h2>Location Information</h2>
