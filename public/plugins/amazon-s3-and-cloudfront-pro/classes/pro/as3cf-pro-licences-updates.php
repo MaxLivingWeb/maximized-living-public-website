@@ -87,7 +87,7 @@ class AS3CF_Pro_Licences_Updates extends Delicious_Brains_API_Licences {
 		add_action( 'as3cfpro_ajax_check_licence_response', array( $this, 'refresh_licence_notice' ) );
 		add_filter( 'as3cfpro_licence_status_message', array( $this, 'licence_status_message' ), 10, 2 );
 		add_filter( 'as3cfpro_pre_plugin_row_update_notice', array( $this, 'suppress_plugin_row_update_notices' ), 10, 2 );
-		add_action( 'check_admin_referer', array( $this, 'block_updates_with_invalid_license' ) );
+		add_action( 'check_admin_referer', array( $this, 'block_updates_with_invalid_licence' ) );
 	}
 
 	/**
@@ -158,12 +158,12 @@ class AS3CF_Pro_Licences_Updates extends Delicious_Brains_API_Licences {
 	 */
 	function add_licence_strings( $strings ) {
 		$licence_strings = array(
-			'license_check_problem'          => __( 'A problem occurred when trying to check the license, please try again.', 'amazon-s3-and-cloudfront' ),
+			'licence_check_problem'          => __( 'A problem occurred when trying to check the license, please try again.', 'amazon-s3-and-cloudfront' ),
 			'has_licence'                    => esc_html( $this->get_licence_key() == '' ? '0' : '1' ),
-			'enter_license_key'              => __( 'Please enter your license key.', 'amazon-s3-and-cloudfront' ),
-			'register_license_problem'       => __( 'A problem occurred when trying to register the license, please try again.', 'amazon-s3-and-cloudfront' ),
-			'license_registered'             => __( 'Your license has been activated. You will now receive automatic updates and access to email support.', 'amazon-s3-and-cloudfront' ),
-			'fetching_license'               => __( 'Fetching license details, please wait&hellip;', 'amazon-s3-and-cloudfront' ),
+			'enter_licence_key'              => __( 'Please enter your license key.', 'amazon-s3-and-cloudfront' ),
+			'register_licence_problem'       => __( 'A problem occurred when trying to register the license, please try again.', 'amazon-s3-and-cloudfront' ),
+			'licence_registered'             => __( 'Your license has been activated. You will now receive automatic updates and access to email support.', 'amazon-s3-and-cloudfront' ),
+			'fetching_licence'               => __( 'Fetching license details, please wait&hellip;', 'amazon-s3-and-cloudfront' ),
 			'activate_licence_problem'       => __( 'An error occurred when trying to reactivate your license. Please contact support.', 'amazon-s3-and-cloudfront' ),
 			'attempting_to_activate_licence' => __( 'Attempting to activate your license, please wait&hellip;', 'amazon-s3-and-cloudfront' ),
 			'status'                         => _x( 'Status', 'Current request status', 'amazon-s3-and-cloudfront' ),
@@ -291,10 +291,10 @@ class AS3CF_Pro_Licences_Updates extends Delicious_Brains_API_Licences {
 			return;
 		}
 
-		$license_check = $this->is_licence_expired();
+		$licence_check = $this->is_licence_expired();
 		$args          = compact( 'dashboard' );
 
-		if ( ! empty( $license_check['errors']['no_licence'] ) ) {
+		if ( ! empty( $licence_check['errors']['no_licence'] ) ) {
 			$this->display_no_licence_notice( $args );
 
 			return;
@@ -304,11 +304,11 @@ class AS3CF_Pro_Licences_Updates extends Delicious_Brains_API_Licences {
 
 		if ( self::MEDIA_USAGE_REACHED <= $media_limit_check['status']['code'] ) {
 			$this->display_over_limit_licence_notice( $args );
-		} else if ( ! empty( $license_check['errors']['subscription_expired'] ) ) {
+		} else if ( ! empty( $licence_check['errors']['subscription_expired'] ) ) {
 			$this->display_expired_licence_notice( $args );
 		} else if ( self::MEDIA_USAGE_APPROACHING === $media_limit_check['status']['code'] ) {
 			$this->display_near_limit_licence_notice( $args );
-		} else if ( ! isset( $license_check['errors'] ) ) {
+		} else if ( ! isset( $licence_check['errors'] ) ) {
 			$this->clear_licence_issue();
 		}
 	}
@@ -323,11 +323,11 @@ class AS3CF_Pro_Licences_Updates extends Delicious_Brains_API_Licences {
 			return;
 		}
 
-		$license_check = $this->is_licence_expired();
+		$licence_check = $this->is_licence_expired();
 
 		$this->render_licence_notice( array_merge( $args, array(
 			'title'   => __( 'Activate Your License', 'amazon-s3-and-cloudfront' ),
-			'message' => $license_check['errors']['no_licence'],
+			'message' => $licence_check['errors']['no_licence'],
 			'type'    => 'no_licence',
 			'links'   => array( 'check_again' ),
 		) ) );
@@ -669,7 +669,7 @@ class AS3CF_Pro_Licences_Updates extends Delicious_Brains_API_Licences {
 	 *
 	 * @return bool
 	 */
-	function block_updates_with_invalid_license( $action, $result = false ) {
+	function block_updates_with_invalid_licence( $action, $result = false ) {
 		if ( 'bulk-update-plugins' !== $action ) {
 			return $result;
 		}

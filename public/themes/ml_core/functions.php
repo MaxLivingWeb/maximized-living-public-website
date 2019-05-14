@@ -219,3 +219,5 @@ if ($stylesheet !== 'ml_whitelabel') {
 }
 
 //flush_rewrite_rules();
+
+add_filter( 'wpseo_json_ld_output', '__return_false' );

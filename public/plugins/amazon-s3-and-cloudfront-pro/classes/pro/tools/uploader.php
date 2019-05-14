@@ -338,12 +338,12 @@ class Uploader extends Modal_Tool {
 
 		ob_start();
 		$this->as3cf->render_licence_issue_notice();
-		$license_issue_notice_html = ob_get_contents();
+		$licence_issue_notice_html = ob_get_contents();
 		ob_end_clean();
 
 		$notices[] = array(
-			'id'   => 'as3cf-pro-license-notice',
-			'html' => $license_issue_notice_html,
+			'id'   => 'as3cf-pro-licence-notice',
+			'html' => $licence_issue_notice_html,
 		);
 
 		return $notices;

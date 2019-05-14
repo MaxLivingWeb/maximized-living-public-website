@@ -1543,7 +1543,7 @@ class Amazon_S3_And_CloudFront_Pro extends Amazon_S3_And_CloudFront {
 			$table_prefixes = $this->get_all_blog_table_prefixes();
 
 			foreach ( $table_prefixes as $blog_id => $table_prefix ) {
-				$total         = $this->count_attachments( $table_prefix, true );
+				$total         = $this->count_attachments( $table_prefix, true, $skip_transient );
 				$library_total += $total;
 			}
 
