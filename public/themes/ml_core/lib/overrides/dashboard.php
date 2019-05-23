@@ -12,7 +12,7 @@ function remove_menu_entries()
         remove_menu_page('edit-comments.php');
         remove_menu_page('edit.php');
         remove_menu_page('index.php'); // remove default dashboard
-        if (get_current_user_id() != 1) {// Disable Tools page if user is not Arcane Admin
+        if (get_current_user_id() != 439) {// Disable Tools page if user is not Arcane Admin
             remove_menu_page('tools.php');
         }
     }
