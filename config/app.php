@@ -149,7 +149,7 @@ switch (WPENV) {
         define('SCRIPT_DEBUG', true);
         break;
     default:
-        define('DISALLOW_FILE_MODS', true);
+        define('DISALLOW_FILE_MODS', false);
         break;
 }
 
