@@ -32,19 +32,19 @@ define( 'WPMS_MAIL_FROM', 'info@maxliving.com' );
 define( 'WPMS_MAIL_FROM_FORCE', true ); // True turns it on, false turns it off.
 define( 'WPMS_MAIL_FROM_NAME', 'MaxLiving' );
 define( 'WPMS_MAIL_FROM_NAME_FORCE', true ); // True turns it on, false turns it off.
-define( 'WPMS_MAILER', 'gmail' ); // Possible values: 'mail', 'gmail', 'mailgun', 'sendgrid', 'smtp'.
+define( 'WPMS_MAILER', 'smtp' ); // Possible values: 'mail', 'gmail', 'mailgun', 'sendgrid', 'smtp'.
 define( 'WPMS_SET_RETURN_PATH', true ); // Sets $phpmailer->Sender if true.
 
-// define( 'WPMS_SMTP_HOST', 'localhost' ); // The SMTP mail host.
-// define( 'WPMS_SMTP_PORT', 25 ); // The SMTP server port number.
-// define( 'WPMS_SSL', '' ); // Possible values '', 'ssl', 'tls' - note TLS is not STARTTLS.
-// define( 'WPMS_SMTP_AUTH', true ); // True turns it on, false turns it off.
-// define( 'WPMS_SMTP_USER', 'username' ); // SMTP authentication username, only used if WPMS_SMTP_AUTH is true.
-// define( 'WPMS_SMTP_PASS', 'password' ); // SMTP authentication password, only used if WPMS_SMTP_AUTH is true.
-// define( 'WPMS_SMTP_AUTOTLS', true ); // True turns it on, false turns it off.
+define( 'WPMS_SMTP_HOST', 'smtp-relay.gmail.com' ); // The SMTP mail host.
+define( 'WPMS_SMTP_PORT', 465 ); // The SMTP server port number.
+define( 'WPMS_SSL', 'ssl' ); // Possible values '', 'ssl', 'tls' - note TLS is not STARTTLS.
+define( 'WPMS_SMTP_AUTH', true ); // True turns it on, false turns it off.
+define( 'WPMS_SMTP_USER', 'info@maxliving.com' ); // SMTP authentication username, only used if WPMS_SMTP_AUTH is true.
+define( 'WPMS_SMTP_PASS', '%KmX8bj2' ); // SMTP authentication password, only used if WPMS_SMTP_AUTH is true.
+define( 'WPMS_SMTP_AUTOTLS', true ); // True turns it on, false turns it off.
 
-define( 'WPMS_GMAIL_CLIENT_ID', '630229635349-qt0mmj19flcjdjarkqosgi6n0qgvoan4.apps.googleusercontent.com' );
-define( 'WPMS_GMAIL_CLIENT_SECRET', '2MUdIPa1vqK51IiBsf5MVEQQ' );
+// define( 'WPMS_GMAIL_CLIENT_ID', '630229635349-qt0mmj19flcjdjarkqosgi6n0qgvoan4.apps.googleusercontent.com' );
+// define( 'WPMS_GMAIL_CLIENT_SECRET', '2MUdIPa1vqK51IiBsf5MVEQQ' );
 
 // define( 'WPMS_MAILGUN_API_KEY', '' );
 // define( 'WPMS_MAILGUN_DOMAIN', '' );
