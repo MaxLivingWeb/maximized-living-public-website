@@ -24,6 +24,36 @@ define('GTM_KEY', env('GTM_KEY', 'XXXX'));
 define('SHORTPIXEL_API_KEY', '8GlOCQEDOcWnwPZO7aSh');
 
 /**
+  * WordPress Mail SMTP Plugin Options
+  */
+define( 'WPMS_ON', true ); // True turns on the whole constants support and usage, false turns it off.
+
+define( 'WPMS_MAIL_FROM', 'info@maxliving.com' );
+define( 'WPMS_MAIL_FROM_FORCE', true ); // True turns it on, false turns it off.
+define( 'WPMS_MAIL_FROM_NAME', 'MaxLiving' );
+define( 'WPMS_MAIL_FROM_NAME_FORCE', true ); // True turns it on, false turns it off.
+define( 'WPMS_MAILER', 'gmail' ); // Possible values: 'mail', 'gmail', 'mailgun', 'sendgrid', 'smtp'.
+define( 'WPMS_SET_RETURN_PATH', true ); // Sets $phpmailer->Sender if true.
+
+// define( 'WPMS_SMTP_HOST', 'localhost' ); // The SMTP mail host.
+// define( 'WPMS_SMTP_PORT', 25 ); // The SMTP server port number.
+// define( 'WPMS_SSL', '' ); // Possible values '', 'ssl', 'tls' - note TLS is not STARTTLS.
+// define( 'WPMS_SMTP_AUTH', true ); // True turns it on, false turns it off.
+// define( 'WPMS_SMTP_USER', 'username' ); // SMTP authentication username, only used if WPMS_SMTP_AUTH is true.
+// define( 'WPMS_SMTP_PASS', 'password' ); // SMTP authentication password, only used if WPMS_SMTP_AUTH is true.
+// define( 'WPMS_SMTP_AUTOTLS', true ); // True turns it on, false turns it off.
+
+define( 'WPMS_GMAIL_CLIENT_ID', '630229635349-qt0mmj19flcjdjarkqosgi6n0qgvoan4.apps.googleusercontent.com' );
+define( 'WPMS_GMAIL_CLIENT_SECRET', '2MUdIPa1vqK51IiBsf5MVEQQ' );
+
+// define( 'WPMS_MAILGUN_API_KEY', '' );
+// define( 'WPMS_MAILGUN_DOMAIN', '' );
+// define( 'WPMS_MAILGUN_REGION', 'US' ); // or 'EU' for Europe.
+//
+// define( 'WPMS_SENDGRID_API_KEY', '' );
+
+
+/**
  * Define WP Home and Site URL based on the requesting URL.
  * This allows for easier moving between local, staging, and production
  * environments without having to worry about adjusting the database.
