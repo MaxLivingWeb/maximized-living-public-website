@@ -316,6 +316,7 @@ class Shortcode
                 </div>
                 <form id="requestAppointmentForm" action="" method="post">
                     <input type="hidden" name="delivery_email" value="'.$delivery_email.'"/>
+                    '.wp_nonce_field( 'csrf' ).'
                     <div class="websiteIDField">
                         <input title="websiteID" type="text" name="websiteID" value=""/>
                     </div>
