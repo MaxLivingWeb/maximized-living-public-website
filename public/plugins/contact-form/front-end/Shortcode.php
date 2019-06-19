@@ -315,14 +315,7 @@ class Shortcode
                   '.$error_message.'
                 </div>
                 <form id="requestAppointmentForm" action="" method="post">
-                    <input type="hidden" name="utm_campaign" value="'.$utm_campaign.'"/>
-                    <input type="hidden" name="utm_term" value="'.$utm_term.'"/>
-                    <input type="hidden" name="utm_source" value="'.$utm_source.'"/>
-                    <input type="hidden" name="utm_medium" value="'.$utm_medium.'"/>
-                    <input type="hidden" name="utm_content" value="'.$utm_content.'"/>
                     <input type="hidden" name="delivery_email" value="'.$delivery_email.'"/>
-                    '.$affiliate_id.'
-                    '.wp_nonce_field( 'csrf' ).'
                     <div class="websiteIDField">
                         <input title="websiteID" type="text" name="websiteID" value=""/>
                     </div>
@@ -651,7 +644,7 @@ class Shortcode
                     <input type="hidden" name="utm_content" value="'.$utm_content.'"/>
                     <input type="hidden" name="form_name" value="'.get_the_title().' - My Future Contact Form">
                     <input type="hidden" name="site_id" value="'.$site_id.'" />
-                    <input type="hidden" name="delivery_email" value="ashleyjobrewer@gmail.com"/>
+                    <input type="hidden" name="delivery_email" value="'.$delivery_email.'"/>
 
                     '.wp_nonce_field( 'csrf' ).'
                     <div class="websiteIDField">

@@ -275,7 +275,7 @@ get_header(); ?>
                     </div>
                     <div id="requestAppointment" class="locationDetailsContentRight smoothScroll">
                         <p class="appointmentTitle">Request an Appointment</p>
-                        <?= do_shortcode('[generic_form show_affiliate_id=false delivery_email="'.$clinicEmail.'"]'); ?>
+                        <?= do_shortcode('[generic_form delivery_email="'.$clinicEmail.'"]'); ?>
                     </div>
                 </div>
             </div>
