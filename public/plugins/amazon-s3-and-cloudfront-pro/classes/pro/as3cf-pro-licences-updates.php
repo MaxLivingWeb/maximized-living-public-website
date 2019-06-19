@@ -237,7 +237,6 @@ class AS3CF_Pro_Licences_Updates extends Delicious_Brains_API_Licences {
 	 * Remove media related transients
 	 */
 	function remove_media_transients() {
-		delete_site_transient( $this->plugin->prefix . '_media_library_total' );
 		delete_site_transient( $this->plugin->prefix . '_licence_media_check' );
 	}
 
@@ -544,11 +543,12 @@ class AS3CF_Pro_Licences_Updates extends Delicious_Brains_API_Licences {
 	/**
 	 * Check the license is not over its limit for media library items
 	 *
-	 * @param bool $skip_transient
+	 * @param bool $skip_transient Whether to force database query and skip transient, default false
+	 * @param bool $force          Whether to force database query and skip static cache, implies $skip_transient, default false
 	 *
 	 * @return bool|array
 	 */
-	public function check_licence_media_limit( $skip_transient = false ) {
+	public function check_licence_media_limit( $skip_transient = false, $force = false ) {
 		$media_limit_check = get_site_transient( $this->plugin->prefix . '_licence_media_check' );
 
 		if ( $skip_transient || false === $media_limit_check || isset( $media_limit_check['errors'] ) ) {
@@ -557,10 +557,12 @@ class AS3CF_Pro_Licences_Updates extends Delicious_Brains_API_Licences {
 				return false;
 			}
 
+			$media_counts = $this->as3cf->media_counts( $skip_transient, $force );
+
 			$args = array(
 				'licence_key'   => $licence_key,
 				'site_url'      => $this->home_url,
-				'library_total' => $this->as3cf->get_media_library_provider_total( $skip_transient ),
+				'library_total' => $media_counts['offloaded'],
 			);
 
 			$response = $this->api_request( 'check_licence_media_limit', $args );

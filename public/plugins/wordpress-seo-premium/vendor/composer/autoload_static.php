@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit407e48dcd8b8fe75cee098e8df273059
+class ComposerStaticInite03eced165bf950c449b6073f7f6991a
 {
     public static $files = array (
         '23846a2512770688e91c6220c735f257' => __DIR__ . '/..' . '/yoast/wp-helpscout/src/functions.php',
@@ -46,6 +46,7 @@ class ComposerStaticInit407e48dcd8b8fe75cee098e8df273059
         'Composer\\Installers\\BonefishInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/BonefishInstaller.php',
         'Composer\\Installers\\CakePHPInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/CakePHPInstaller.php',
         'Composer\\Installers\\ChefInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/ChefInstaller.php',
+        'Composer\\Installers\\CiviCrmInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/CiviCrmInstaller.php',
         'Composer\\Installers\\ClanCatsFrameworkInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/ClanCatsFrameworkInstaller.php',
         'Composer\\Installers\\CockpitInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/CockpitInstaller.php',
         'Composer\\Installers\\CodeIgniterInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/CodeIgniterInstaller.php',
@@ -270,7 +271,6 @@ class ComposerStaticInit407e48dcd8b8fe75cee098e8df273059
         'WPSEO_Extension' => __DIR__ . '/../..' . '/admin/class-extension.php',
         'WPSEO_Extension_Manager' => __DIR__ . '/../..' . '/admin/class-extension-manager.php',
         'WPSEO_Extensions' => __DIR__ . '/../..' . '/admin/class-extensions.php',
-        'WPSEO_FAQ_Block' => __DIR__ . '/../..' . '/inc/structured-data-blocks/class-faq-block.php',
         'WPSEO_Facebook_Profile' => __DIR__ . '/../..' . '/premium/classes/facebook-profile.php',
         'WPSEO_Features' => __DIR__ . '/../..' . '/inc/class-wpseo-features.php',
         'WPSEO_File_Size_Exception' => __DIR__ . '/../..' . '/admin/exceptions/class-file-size-exception.php',
@@ -444,6 +444,8 @@ class ComposerStaticInit407e48dcd8b8fe75cee098e8df273059
         'WPSEO_Premium_Orphaned_Post_Notifier' => __DIR__ . '/../..' . '/premium/classes/premium-orphaned-post-notifier.php',
         'WPSEO_Premium_Orphaned_Post_Query' => __DIR__ . '/../..' . '/premium/classes/premium-orphaned-post-query.php',
         'WPSEO_Premium_Popup' => __DIR__ . '/../..' . '/admin/class-premium-popup.php',
+        'WPSEO_Premium_Post_Data_Endpoint' => __DIR__ . '/../..' . '/premium/classes/premium-post-data-endpoint.php',
+        'WPSEO_Premium_Post_Data_Service' => __DIR__ . '/../..' . '/premium/classes/premium-post-data-service.php',
         'WPSEO_Premium_Prominent_Words_Endpoint' => __DIR__ . '/../..' . '/premium/classes/premium-prominent-words-endpoint.php',
         'WPSEO_Premium_Prominent_Words_Language_Support' => __DIR__ . '/../..' . '/premium/classes/premium-prominent-words-language-support.php',
         'WPSEO_Premium_Prominent_Words_Link_Endpoint' => __DIR__ . '/../..' . '/premium/classes/premium-prominent-words-link-endpoint.php',
@@ -546,6 +548,9 @@ class ComposerStaticInit407e48dcd8b8fe75cee098e8df273059
         'WPSEO_Schema_Author' => __DIR__ . '/../..' . '/frontend/schema/class-schema-author.php',
         'WPSEO_Schema_Breadcrumb' => __DIR__ . '/../..' . '/frontend/schema/class-schema-breadcrumb.php',
         'WPSEO_Schema_Context' => __DIR__ . '/../..' . '/frontend/schema/class-schema-context.php',
+        'WPSEO_Schema_FAQ' => __DIR__ . '/../..' . '/frontend/schema/class-schema-faq.php',
+        'WPSEO_Schema_FAQ_Question_List' => __DIR__ . '/../..' . '/frontend/schema/class-schema-faq-question-list.php',
+        'WPSEO_Schema_FAQ_Questions' => __DIR__ . '/../..' . '/frontend/schema/class-schema-faq-questions.php',
         'WPSEO_Schema_IDs' => __DIR__ . '/../..' . '/frontend/schema/class-schema-ids.php',
         'WPSEO_Schema_Image' => __DIR__ . '/../..' . '/frontend/schema/class-schema-image.php',
         'WPSEO_Schema_Organization' => __DIR__ . '/../..' . '/frontend/schema/class-schema-organization.php',
@@ -740,6 +745,7 @@ class ComposerStaticInit407e48dcd8b8fe75cee098e8df273059
         'YoastSEO_Vendor\\Psr\\Log\\NullLogger' => __DIR__ . '/../..' . '/vendor_prefixed/psr/log/Psr/Log/NullLogger.php',
         'YoastSEO_Vendor\\Psr\\Log\\Test\\DummyTest' => __DIR__ . '/../..' . '/vendor_prefixed/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
         'YoastSEO_Vendor\\Psr\\Log\\Test\\LoggerInterfaceTest' => __DIR__ . '/../..' . '/vendor_prefixed/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
+        'YoastSEO_Vendor\\Psr\\Log\\Test\\TestLogger' => __DIR__ . '/../..' . '/vendor_prefixed/psr/log/Psr/Log/Test/TestLogger.php',
         'YoastSEO_Vendor\\Ruckusing_Adapter_Base' => __DIR__ . '/../..' . '/vendor_prefixed/ruckusing/lib/Ruckusing/Adapter/Base.php',
         'YoastSEO_Vendor\\Ruckusing_Adapter_ColumnDefinition' => __DIR__ . '/../..' . '/vendor_prefixed/ruckusing/lib/Ruckusing/Adapter/ColumnDefinition.php',
         'YoastSEO_Vendor\\Ruckusing_Adapter_Interface' => __DIR__ . '/../..' . '/vendor_prefixed/ruckusing/lib/Ruckusing/Adapter/Interface.php',
@@ -809,8 +815,8 @@ class ComposerStaticInit407e48dcd8b8fe75cee098e8df273059
         'Yoast_HelpScout_Beacon' => __DIR__ . '/..' . '/yoast/wp-helpscout/src/class-helpscout-beacon.php',
         'Yoast_HelpScout_Beacon_Identifier' => __DIR__ . '/..' . '/yoast/wp-helpscout/src/class-helpscout-beacon-identifier.php',
         'Yoast_HelpScout_Beacon_Setting' => __DIR__ . '/..' . '/yoast/wp-helpscout/src/interface-helpscout-beacon-setting.php',
-        'Yoast_I18n_WordPressOrg_v3' => __DIR__ . '/..' . '/yoast/i18n-module/src/i18n-module-wordpressorg.php',
-        'Yoast_I18n_v3' => __DIR__ . '/..' . '/yoast/i18n-module/src/i18n-module.php',
+        'Yoast_I18n_WordPressOrg_v3' => __DIR__ . '/..' . '/yoast/i18n-module/src/i18n-wordpressorg-v3.php',
+        'Yoast_I18n_v3' => __DIR__ . '/..' . '/yoast/i18n-module/src/i18n-v3.php',
         'Yoast_Input_Select' => __DIR__ . '/../..' . '/admin/views/class-yoast-input-select.php',
         'Yoast_License_Manager' => __DIR__ . '/..' . '/yoast/license-manager/class-license-manager.php',
         'Yoast_Modal' => __DIR__ . '/../..' . '/deprecated/class-yoast-modal.php',
@@ -836,10 +842,10 @@ class ComposerStaticInit407e48dcd8b8fe75cee098e8df273059
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit407e48dcd8b8fe75cee098e8df273059::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit407e48dcd8b8fe75cee098e8df273059::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit407e48dcd8b8fe75cee098e8df273059::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit407e48dcd8b8fe75cee098e8df273059::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInite03eced165bf950c449b6073f7f6991a::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInite03eced165bf950c449b6073f7f6991a::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInite03eced165bf950c449b6073f7f6991a::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInite03eced165bf950c449b6073f7f6991a::$classMap;
 
         }, null, ClassLoader::class);
     }
