@@ -20,10 +20,7 @@ $locationTelephone = $location_info->telephone;
 $locationTelephoneExt = $location_info->telephone_ext;
 $locationFax = $location_info->fax;
 $locationEmail = $location_info->email;
-$clinicEmail='';
-if(WPENV === 'production'){
-    $clinicEmail = $location_info->email;
-}
+$clinicEmail = $location_info->email;;
 
 //Location Address Info
 $locationAddress1 = $location_info->addresses[0]->address_1;
@@ -278,7 +275,7 @@ get_header(); ?>
                     </div>
                     <div id="requestAppointment" class="locationDetailsContentRight smoothScroll">
                         <p class="appointmentTitle">Request an Appointment</p>
-                        <?= do_shortcode('[generic_form show_affiliate_id=true delivery_email="'.$clinicEmail.'"]'); ?>
+                        <?= do_shortcode('[generic_form show_affiliate_id=false delivery_email="'.$clinicEmail.'"]'); ?>
                     </div>
                 </div>
             </div>

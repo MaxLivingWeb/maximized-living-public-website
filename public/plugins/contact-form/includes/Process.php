@@ -648,18 +648,14 @@ class Process
             'to_name' => "MaxLiving $form_name Submission",
             "to_email" => $to_email,
             "from_name" => $from_name,
-            "from_email" => "noreply@maxliving.com",
-            // "bcc_records" => array([
-            //     "name" => "Arcane Leads",
-            //     "email" => "leads@arcane.ws"
-            // ]),
+            "from_email" => "info@maxliving.com",
             "reply_to" => $reply_to,
             "email_subject" => "MaxLiving $form_name Submission",
             "form_name" => $form_name,
             "content_type" => "text/html",
             "content" => $formatted_form_data,
             "vanity_website_id" => $vanity_website_id,
-            "template_id" => 'b0794865-c42f-41c9-8bba-d5c4f9e32771',
+            "template_id" => 'd-077fdd8bcaba46c2bcff83bd47112941',
             "affiliate_id" => $affiliate_id
         ];
 
