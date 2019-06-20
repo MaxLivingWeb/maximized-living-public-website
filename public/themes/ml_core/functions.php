@@ -221,8 +221,3 @@ if ($stylesheet !== 'ml_whitelabel') {
 //flush_rewrite_rules();
 
 add_filter( 'wpseo_json_ld_output', '__return_false' );
-
-function sender_email( $original_email_address ) {
-	return 'info@maxliving.com';
-}
-add_filter( 'wp_mail_from', 'sender_email' );

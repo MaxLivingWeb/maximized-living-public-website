@@ -24,18 +24,6 @@ define('GTM_KEY', env('GTM_KEY', 'XXXX'));
 define('SHORTPIXEL_API_KEY', '8GlOCQEDOcWnwPZO7aSh');
 
 /**
- * WP SES
- */
-define( 'WPOSES_AWS_ACCESS_KEY_ID', 'AKIAZHRF345QHZ77NPHK' );
-define( 'WPOSES_AWS_SECRET_ACCESS_KEY', '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' );
-define( 'WPOSES_AWS_USE_EC2_IAM_ROLE', true );
-
-/**
- * SendGrid API key
- */
-define('SENDGRID_API_KEY', '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');
-
-/**
  * Define WP Home and Site URL based on the requesting URL.
  * This allows for easier moving between local, staging, and production
  * environments without having to worry about adjusting the database.
