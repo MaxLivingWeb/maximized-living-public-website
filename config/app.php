@@ -24,6 +24,15 @@ define('GTM_KEY', env('GTM_KEY', 'XXXX'));
 define('SHORTPIXEL_API_KEY', '8GlOCQEDOcWnwPZO7aSh');
 
 /**
+ * WP SES
+ */
+ define( 'WPOSES_SETTINGS', serialize( array(
+     'access-key-id' => 'AKIAZHRF345QHZ77NPHK',
+     'secret-access-key' => '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',
+ ) ) );
+define( 'WPOSES_AWS_USE_EC2_IAM_ROLE', true );
+
+/**
  * SendGrid API key
  */
 define('SENDGRID_API_KEY', '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');
