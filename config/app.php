@@ -26,10 +26,8 @@ define('SHORTPIXEL_API_KEY', '8GlOCQEDOcWnwPZO7aSh');
 /**
  * WP SES
  */
- define( 'WPOSES_SETTINGS', serialize( array(
-     'access-key-id' => 'AKIAZHRF345QHZ77NPHK',
-     'secret-access-key' => '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',
- ) ) );
+define( 'WPOSES_AWS_ACCESS_KEY_ID', 'AKIAZHRF345QHZ77NPHK' );
+define( 'WPOSES_AWS_SECRET_ACCESS_KEY', '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' );
 define( 'WPOSES_AWS_USE_EC2_IAM_ROLE', true );
 
 /**
