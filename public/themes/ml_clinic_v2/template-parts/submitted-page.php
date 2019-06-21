@@ -1,0 +1,14 @@
+<?php
+$createRecipe = admin_url('post-new.php?post_type=recipe');
+$createArticle = admin_url('post-new.php?post_type=article');
+
+?>
+
+<h1>Content Submitted for Review</h1>
+<hr>
+
+<a href="<?php echo $createRecipe; ?>" class="button-primary">Create Another Recipe</a>
+<a href="<?php echo $createArticle; ?>" class="button-primary">Create Another Article</a>
+
+
+
