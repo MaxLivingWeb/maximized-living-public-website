@@ -28,7 +28,7 @@ if ($sectionOptions['smoothscroll_id']) {
                     </div>
                     <?php
                     if(get_sub_field('form') == 1):
-                    echo do_shortcode('[contact-form-7 id="908" title="Student"]');
+                    echo do_shortcode('[contact-form-7 id="10315" title="Student"]');
                     endif;
                     ?>
     </div>
