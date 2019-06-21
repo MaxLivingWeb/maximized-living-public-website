@@ -32,7 +32,7 @@ $mapScripts = true;
     </div>
 </section>
 
-<section class="contactHeader wave wave-faintGrey" id="content">
+<section class="contactHeader wave wave-white" id="content">
     <div class="contactHeaderWrapper">
         <div id="map"></div>
         <div class="contactHeaderDetails container">
@@ -83,71 +83,15 @@ $mapScripts = true;
         </div>
     </div>
 </section>
+<section>
+<div class="contactFormContainer container">
+  <div class="contactFormIntro centerAlign">
+                    <h2>Send us a Message</h2>
+                    <p></p><p>Are you ready to transform your life and take charge of your health? Contact MaxLiving today to get started.</p>
 
-<section class="contactBody bg-faintGrey wave wave-white">
-    <div class="departmentsReachUs container">
-            <div class="reachUs">
-                <h3>How to Reach Us</h3>
-                <?php if (get_field('how_to_reach_us_description', 'contact_options')) { the_field('how_to_reach_us_description', 'contact_options'); } ?>
-            </div>
-
-        <?php if (have_rows('departments', 'contact_options')) : ?>
-            <div class="departments card card-noBorder card-shadow">
-
-                <h4>Departments</h4>
-                <?php while (have_rows('departments', 'contact_options')):
-                    the_row(); ?>
-
-                    <span class="departmentName">
-                    <?php the_sub_field('department_name', 'contact_options'); ?>
-                </span>
-
-
-                    <?php
-                    $phone = get_sub_field('phone', 'contact_options');
-                    $phone = preg_replace('/\D+/', '', $phone);
-                    $phoneFormatted = '(' . substr($phone, 0, 3) . ') ' . substr($phone, 3, 3) . '-' . substr($phone, 6);
-                    ?>
-
-                    <div class="departmentItems">
-                        <?php if (get_sub_field('phone', 'contact_options')) : ?>
-                            <p class="icon-phone iconContact iconContact-small">
-                    <span>Tel: <a data-phone
-                                  class="phoneNumberAW"
-                                href="tel:<?php the_sub_field('phone', 'contact_options'); ?><?php if (get_sub_field('phone_ext', 'contact_options')) {
-                                    echo ";";
-                                    the_sub_field('phone_ext', 'contact_options');
-                                } ?>"
-                                class="link-underlineOnHover"
-                                title="Call us at <?php echo $phoneFormatted;
-                                if (get_sub_field('phone_ext', 'contact_options')) {
-                                    echo " x";
-                                    the_sub_field('phone_ext', 'contact_options');
-                                } ?>"><?php echo $phoneFormatted;
-                            if (get_sub_field('phone_ext', 'contact_options')) {
-                                echo " x";
-                                the_sub_field('phone_ext', 'contact_options');
-                            } ?></a>
-                    </span>
-                            </p>
-
-                        <?php endif;
-                        if (get_sub_field('email', 'contact_options')) : ?>
-                            <p class="icon-email iconContact iconContact-small">
-                    <span>Email: <a href="mailto:<?php the_sub_field('email', 'contact_options'); ?>"
-                                    class="link-underlineOnHover"
-                                    title="Email us at <?php the_sub_field('email', 'contact_options'); ?>"><?php the_sub_field('email', 'contact_options'); ?></a>
-               </span>
-                            </p>
-                        <?php endif; ?>
-                    </div>
-                <?php endwhile; ?>
-            </div>
-        <?php endif; ?>
-    </div>
+                </div>
+<?php echo do_shortcode('[contact-form-7 id="10310" title="Contact Us"]'); ?>
+</div>
 </section>
-
-<?php echo do_shortcode('[contact_form]'); ?>
-
 <?php
 get_footer();
