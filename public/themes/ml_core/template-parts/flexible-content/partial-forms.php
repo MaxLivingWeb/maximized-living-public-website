@@ -16,19 +16,20 @@ if ($sectionOptions['smoothscroll_id']) {
 }
 ?>
 
-<section class="<?php if(get_sub_field('form') == 1 || get_sub_field('form') == 2): ?>wholesalerAffiliateForm<?php endif; ?> flexible-fullWidth flexibleContentItem smoothScroll <?php if(get_sub_field('form') != 1 && get_sub_field('form') != 2){ echo $sectionBackground." "; echo $bottomWave;} ?>" id="<?php echo $smoothScrollID; ?>">
-    <?php
-    if(get_sub_field('form') == 1):
-    echo do_shortcode('[affiliate_form]');
-    endif;
-    if(get_sub_field('form') == 2):
-    echo do_shortcode('[wholesale_form]');
-    endif;
-    if(get_sub_field('form') == 3):
-    echo do_shortcode('[generic_form show_affiliate_id=true delivery_email="'.get_sub_field('email').'"][/generic_form]');
-    endif;
-    if(get_sub_field('form') == 4):
-    echo do_shortcode('[corporate_wellness_form delivery_email="'.get_sub_field('email').'"][/corporate_wellness_form]');
-    endif;
-    ?>
+<section class="">
+
+    <div class="contactFormContainer container" style="margin-bottom: 0px;">
+      <div class="contactFormIntro centerAlign">
+                        <h2>Get Started Today</h2>
+                        <p></p><p>Give yourself a competitive edge in the field with MaxU. Fill out the form below to learn more about the exciting opportunities at MaxLiving that await you after graduation. We’ll get back to you soon with more information.
+
+</p>
+
+                    </div>
+                    <?php
+                    if(get_sub_field('form') == 1):
+                    echo do_shortcode('[contact-form-7 id="908" title="Student"]');
+                    endif;
+                    ?>
+    </div>
 </section>

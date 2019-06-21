@@ -1768,10 +1768,10 @@ if( function_exists('acf_add_local_field_group') ):
                                     'id' => '',
                                 ),
                                 'choices' => array(
-                                    1 => 'Affiliate Form',
-                                    2 => 'Wholesale Form',
-                                    3 => 'Generic Lead Form',
-                                    4 => 'Corporate Wellness Form',
+                                    1 => 'Student Form',
+                                    // 2 => 'Wholesale Form',
+                                    // 3 => 'Generic Lead Form',
+                                    // 4 => 'Corporate Wellness Form',
                                 ),
                                 'default_value' => array(
                                 ),
