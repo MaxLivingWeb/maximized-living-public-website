@@ -358,7 +358,7 @@ get_header(); ?>
                                     $clinicImageAlt = "";
                                     if (get_sub_field('image')) {
                                         $clinicImage = get_sub_field('image');
-                                        $clinicImageUrl = wp_get_attachment_image_src($clinicImage['ID'], 'flex-box')[0];
+                                        $clinicImageUrl = wp_get_attachment_image_src($clinicImage['ID'], '')[0];
                                         $clinicImageAlt = $clinicImage['alt'];
                                     }
 
