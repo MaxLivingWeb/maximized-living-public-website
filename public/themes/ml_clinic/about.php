@@ -44,8 +44,8 @@ endif;
                     <div class="doctor">
                         <div class="teamPhoto">
                             <?php $doctorImage = get_sub_field('doctor_image'); ?>
-                            <div class="image bg-image" style="background-image: url('<?php echo wp_get_attachment_image_src($doctorImage['ID'], 'clinic-doctor')[0]; ?>')">
-                                <img src="<?php echo wp_get_attachment_image_src($doctorImage['ID'], 'clinic-doctor')[0]; ?>" alt="<?php echo $doctorImage['alt']; ?>">
+                            <div class="image bg-image" style="background-image: url('<?php echo wp_get_attachment_image_src($doctorImage['ID'], '')[0]; ?>')">
+                                <img src="<?php echo wp_get_attachment_image_src($doctorImage['ID'], '')[0]; ?>" alt="<?php echo $doctorImage['alt']; ?>">
                             </div>
                         </div>
                         <div class="teamDesc">
@@ -71,7 +71,7 @@ endif;
                 <div class="teamCard card card-shadow">
                     <?php $staffImage = get_sub_field('staff_image'); ?>
                     <div class="teamPhoto bg-image"
-                         style="background-image:url('<?php echo wp_get_attachment_image_src($staffImage['ID'], 'clinic-staff')[0]; ?>')">
+                         style="background-image:url('<?php echo wp_get_attachment_image_src($staffImage['ID'], '')[0]; ?>')">
                     </div>
                     <div class="teamDesc">
                         <h3><?php the_sub_field('staff_name'); ?></h3>
