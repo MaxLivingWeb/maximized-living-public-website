@@ -62,6 +62,10 @@ global $affiliate_id;
     get_template_part('template-parts/header-scripts');
     ?>
 
+    <?php the_field('fb_pixel', 'clinic_options'); ?>
+
+    <?php the_field('gtm_head', 'clinic_options'); ?>
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -71,6 +75,8 @@ global $affiliate_id;
           style="display:none;visibility:hidden"></iframe>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
+
+  <?php the_field('gtm_body', 'clinic_options'); ?>
 
 <a class="invisible skip-link screen-reader-text"
    href="#main-content"><?php esc_html_e('Skip to content', 'maxliving'); ?></a>

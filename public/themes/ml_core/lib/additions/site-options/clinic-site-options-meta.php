@@ -3,16 +3,16 @@
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
-	'key' => 'group_5c48ca9769174',
+	'key' => 'group_5d2769b58eaed',
 	'title' => 'Site Options',
 	'fields' => array(
 		array(
-			'key' => 'field_5c48caa1b2b72',
+			'key' => 'field_5d2769c9e21e8',
 			'label' => 'Site Region Selection',
 			'name' => 'site_option_region_selection',
 			'type' => 'checkbox',
 			'instructions' => 'Select the country and region this site belongs to.',
-			'required' => 1,
+			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
@@ -30,7 +30,64 @@ acf_add_local_field_group(array(
 			'save_custom' => 0,
 		),
 		array(
-			'key' => 'field_5c48cb057ab9f',
+			'key' => 'field_5d276b8600847',
+			'label' => 'Facebook Pixel',
+			'name' => 'fb_pixel',
+			'type' => 'textarea',
+			'instructions' => 'Entering your own Facebook Pixel will overwrite the default MaxLiving pixel.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'maxlength' => '',
+			'rows' => '',
+			'new_lines' => '',
+		),
+		array(
+			'key' => 'field_5d276c0e00849',
+			'label' => 'Google Tag Manager (head)',
+			'name' => 'gtm_head',
+			'type' => 'textarea',
+			'instructions' => 'This code will be inserted in between the head tags.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'maxlength' => '',
+			'rows' => '',
+			'new_lines' => '',
+		),
+		array(
+			'key' => 'field_5d276c250084a',
+			'label' => 'Google Tag Manager (body)',
+			'name' => 'gtm_body',
+			'type' => 'textarea',
+			'instructions' => 'This code will be inserted in between the body tags.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'maxlength' => '',
+			'rows' => '',
+			'new_lines' => '',
+		),
+		array(
+			'key' => 'field_5d276a0f9b0a2',
 			'label' => 'Shopify Affiliate ID',
 			'name' => 'affiliate_id',
 			'type' => 'text',
@@ -49,7 +106,7 @@ acf_add_local_field_group(array(
 			'maxlength' => '',
 		),
 		array(
-			'key' => 'field_5c8924b975bdf',
+			'key' => 'field_5d276a839b0a3',
 			'label' => 'Homecare Certification',
 			'name' => 'homecare_cert',
 			'type' => 'true_false',
@@ -68,7 +125,7 @@ acf_add_local_field_group(array(
 			'ui_off_text' => '',
 		),
 		array(
-			'key' => 'field_5c89484d85592',
+			'key' => 'field_5d276aa19b0a4',
 			'label' => 'Homecare Certification Level 1',
 			'name' => 'homecare_cert_lvl1',
 			'type' => 'true_false',
@@ -77,7 +134,7 @@ acf_add_local_field_group(array(
 			'conditional_logic' => array(
 				array(
 					array(
-						'field' => 'field_5c8924b975bdf',
+						'field' => 'field_5d276a839b0a3',
 						'operator' => '==',
 						'value' => '1',
 					),
@@ -95,7 +152,7 @@ acf_add_local_field_group(array(
 			'ui_off_text' => '',
 		),
 		array(
-			'key' => 'field_5c89486e85593',
+			'key' => 'field_5d276afa9b0a5',
 			'label' => 'Homecare Certification Level 2',
 			'name' => 'homecare_cert_lvl2',
 			'type' => 'true_false',
@@ -104,7 +161,7 @@ acf_add_local_field_group(array(
 			'conditional_logic' => array(
 				array(
 					array(
-						'field' => 'field_5c89484d85592',
+						'field' => 'field_5d276aa19b0a4',
 						'operator' => '==',
 						'value' => '1',
 					),
@@ -122,7 +179,7 @@ acf_add_local_field_group(array(
 			'ui_off_text' => '',
 		),
 		array(
-			'key' => 'field_5c8948ab85594',
+			'key' => 'field_5d276b0f9b0a6',
 			'label' => 'Nutrition Certification',
 			'name' => 'nutrition_cert',
 			'type' => 'true_false',
@@ -141,7 +198,7 @@ acf_add_local_field_group(array(
 			'ui_off_text' => '',
 		),
 		array(
-			'key' => 'field_5c8948e085596',
+			'key' => 'field_5d276b319b0a7',
 			'label' => 'Nutrition Certification Level 1',
 			'name' => 'nutrition_cert_lvl1',
 			'type' => 'true_false',
@@ -150,7 +207,7 @@ acf_add_local_field_group(array(
 			'conditional_logic' => array(
 				array(
 					array(
-						'field' => 'field_5c8948ab85594',
+						'field' => 'field_5d276b0f9b0a6',
 						'operator' => '==',
 						'value' => '1',
 					),
@@ -168,7 +225,7 @@ acf_add_local_field_group(array(
 			'ui_off_text' => '',
 		),
 		array(
-			'key' => 'field_5c8948ee85597',
+			'key' => 'field_5d276b479b0a8',
 			'label' => 'Nutrition Certification Level 2',
 			'name' => 'nutrition_cert_lvl2',
 			'type' => 'true_false',
@@ -177,7 +234,7 @@ acf_add_local_field_group(array(
 			'conditional_logic' => array(
 				array(
 					array(
-						'field' => 'field_5c8948e085596',
+						'field' => 'field_5d276b319b0a7',
 						'operator' => '==',
 						'value' => '1',
 					),
@@ -225,7 +282,7 @@ acf_add_local_field_group(array(
 		12 => 'tags',
 		13 => 'send-trackbacks',
 	),
-	'active' => 1,
+	'active' => true,
 	'description' => '',
 ));
 
