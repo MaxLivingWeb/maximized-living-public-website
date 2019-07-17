@@ -46,6 +46,7 @@ class WPSEO_Premium_Post_Data_Service {
 		// Retrieve the posts and their meta data from the database.
 		$post_data = $this->retrieve_post_data( $post_ids, $meta_keys );
 		$posts     = $this->group_results_on_post_id( $post_data, $this->get_meta_to_retrieve() );
+		$posts     = $this->process_shortcodes( $posts );
 
 		// Return the enriched posts.
 		return new WP_REST_Response( $posts );
@@ -208,6 +209,26 @@ class WPSEO_Premium_Post_Data_Service {
 		$posts[] = $current_post;
 
 		return $posts;
+	}
+
+	/**
+	 * Returns an array of posts in which all shortcodes in the content of each respective post have
+	 * been processed.
+	 *
+	 * @param array $posts An array of post objects.
+	 *
+	 * @return array An array of posts objects where all shortcodes in the post content have been processed.
+	 */
+	public function process_shortcodes( $posts ) {
+		$posts_modified = $posts;
+
+		foreach ( $posts_modified as &$post ) {
+			if ( array_key_exists( 'post_content', $post ) ) {
+				$post['post_content'] = do_shortcode( $post['post_content'] );
+			}
+		}
+
+		return $posts_modified;
 	}
 
 	/**

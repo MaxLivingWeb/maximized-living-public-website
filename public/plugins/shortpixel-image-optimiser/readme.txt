@@ -4,7 +4,7 @@ Tags: compressor, image, compression, optimize, image optimizer, image optimiser
 Requires at least: 3.2.0
 Tested up to: 5.2
 Requires PHP: 5.3
-Stable tag: 4.14.1
+Stable tag: 4.14.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -242,6 +242,11 @@ The ShortPixel Image Optimiser plugin calls the following actions and filters:
 9. Check other optimized images status - themes or other plugins' images. (Media>Other Media)
 
 == Changelog ==
+
+== 4.14.2 ==
+
+Release date: 1st July 2019
+* Add the possibility to define custom thumb infixes like for example -uat to also select thumbs like image-uat-100x100.jpg 
 
 == 4.14.1 ==
 

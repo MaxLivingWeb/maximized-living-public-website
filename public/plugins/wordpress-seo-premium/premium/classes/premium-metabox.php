@@ -228,7 +228,8 @@ class WPSEO_Premium_Metabox implements WPSEO_WordPress_Integration {
 			return WPSEO_Post_Type::has_metabox_enabled( $this->get_current_post_type() );
 		}
 
-		return false;
+		// Make sure ajax integrations are loaded.
+		return wp_doing_ajax();
 	}
 
 	/**
