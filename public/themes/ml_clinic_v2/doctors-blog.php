@@ -40,7 +40,7 @@ endif;
 
         $args = array(
             'posts_per_page' => 5,
-            'post_type' => 'recipe',
+            'post_type' => 'article',
             'paged' => $paged
         );
 

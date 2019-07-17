@@ -46,7 +46,7 @@ class Posts
             if(isset($_GET['post_type'])) {
                 $type = $_GET['post_type'];
             }
-            $email = getenv('REVISION_EMAIL',"revisions@maxliving.com");
+            $email = getenv('REVISION_EMAIL',"marketing@maxliving.com");
             $mailto = "?subject=Requested Revision for a $type&body=Revisions (Please make a list of requested changes): Post Information: $post->post_title here: ".get_permalink()."";
 
 
@@ -132,9 +132,9 @@ class Posts
 
                         declinedHeading.setAttribute("id", "decline-heading");
                         declinedHeading.setAttribute("style", "color:red;");
-        
+
                         parent.insertBefore(declinedHeading, post);
-        
+
                         document.getElementById("decline-heading").innerHTML = "DECLINED";
                     </script>
                 ';
