@@ -24,7 +24,6 @@
         "guzzlehttp/guzzle": "^6.3.3",
         "guzzlehttp/oauth-subscriber": "^0.3.0",
         "johnpbloch/wordpress": "5.2.2",
-        "phpmailer/phpmailer": "~6.0",
         "respect/validation": "^1.1.29",
         "spomky-labs/jose": "^7.1.0",
         "thepixeldeveloper/sitemap": "^5.1.3",
