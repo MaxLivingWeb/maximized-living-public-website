@@ -12,7 +12,7 @@ acf_add_local_field_group(array(
 			'name' => 'site_option_region_selection',
 			'type' => 'checkbox',
 			'instructions' => 'Select the country and region this site belongs to.',
-			'required' => 0,
+			'required' => 1,
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
@@ -282,7 +282,7 @@ acf_add_local_field_group(array(
 		12 => 'tags',
 		13 => 'send-trackbacks',
 	),
-	'active' => true,
+	'active' => 1,
 	'description' => '',
 ));
 

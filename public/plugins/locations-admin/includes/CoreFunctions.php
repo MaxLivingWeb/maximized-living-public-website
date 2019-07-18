@@ -35,7 +35,7 @@ class CoreFunctions
 
         //Change default theme to ml_clinic
 	    add_option('initial_theme',true);//initial theme
-        switch_theme('ml_clinic', 'ml_clinic');
+        switch_theme('ml_clinic_v2', 'ml_clinic');
 
         // Set permalink structure
         global $wp_rewrite;
@@ -270,7 +270,7 @@ class CoreFunctions
                 update_post_meta($inserted_post_id, $key, $value[0]);
             }
         }
-        update_post_meta($inserted_post_id, '_yoast_wpseo_canonical', get_home_url(1) . '/power-of-chiropractic');
+        update_post_meta($inserted_post_id, '_yoast_wpseo_canonical', get_home_url(1) . '/the-power-of-chiropractic');
         update_post_meta($inserted_post_id, '_yoast_wpseo_title', 'The Power Of Chiropractic');
 
         switch_to_blog(1);
@@ -321,7 +321,7 @@ class CoreFunctions
 		    $image    = getenv( 'AWS_CLOUDFRONT_URL' ) . get_post_meta( $image_id, 'amazonS3_info' )[0]['key'];
 		    restore_current_blog();
 		    // Setting variables
-		    $page_id = get_page_by_path( 'power-of-chiropractic' )->ID;
+		    $page_id = get_page_by_path( 'the-power-of-chiropractic' )->ID;
 		    $upload     = wp_upload_dir();
 		    $image_data = file_get_contents( $image );
 		    $filename   = basename( $image );
