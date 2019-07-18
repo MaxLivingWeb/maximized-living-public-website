@@ -35,7 +35,7 @@ class CoreFunctions
 
         //Change default theme to ml_clinic
 	    add_option('initial_theme',true);//initial theme
-        switch_theme('ml_clinic_v2', 'ml_clinic');
+        switch_theme('ml_clinic', 'ml_clinic');
 
         // Set permalink structure
         global $wp_rewrite;
