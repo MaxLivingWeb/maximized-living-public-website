@@ -48,10 +48,10 @@ define('NONCE_SALT', env('NONCE_SALT'));
  * Database settings. Collate is set to Wordpress default, and charset is
  * set to best support enhanced unicode.
  */
-define('DB_NAME', env('DB_NAME', 'wordpressium'));
-define('DB_USER', env('DB_USER', 'root'));
-define('DB_PASSWORD', env('DB_PASSWORD', 'root'));
-define('DB_HOST', env('DB_HOST', 'localhost'));
+define('DB_NAME', 'arcane');
+define('DB_USER', 'arcane');
+define('DB_PASSWORD', 'peunei2Aer');
+define('DB_HOST', 'mysql.production');
 define('DB_CHARSET', 'utf8mb4');
 define('DB_COLLATE', '');
 
