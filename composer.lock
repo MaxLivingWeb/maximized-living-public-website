@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f32230acea81a0c2196e4df0bbc17b56",
+    "content-hash": "143df0fdd41f7f49ded35b81cf024939",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -1463,15 +1463,15 @@
         },
         {
             "name": "wpackagist-plugin/shortpixel-image-optimiser",
-            "version": "4.14.2",
+            "version": "4.14.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/shortpixel-image-optimiser/",
-                "reference": "tags/4.14.2"
+                "reference": "tags/4.14.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/shortpixel-image-optimiser.4.14.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/shortpixel-image-optimiser.4.14.3.zip",
                 "reference": null,
                 "shasum": null
             },
