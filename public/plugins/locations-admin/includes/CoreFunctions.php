@@ -35,7 +35,7 @@ class CoreFunctions
 
         //Change default theme to ml_clinic
 	    add_option('initial_theme',true);//initial theme
-        switch_theme('ml_clinic_v2', 'ml_clinic');
+        switch_theme('ml_clinic', 'ml_clinic_v2');
 
         // Set permalink structure
         global $wp_rewrite;
@@ -88,6 +88,17 @@ class CoreFunctions
             'page_template' => 'doctors-blog.php'
         );
         wp_insert_post($doctorsBlog_page);
+
+        // Create store redirect page
+        $storeRedirect_page = array(
+            'post_type' => 'page',
+            'post_title' => 'Store',
+            'post_status' => 'publish',
+            'post_author' => 1,
+            'post_name' => 'store',
+            'page_template' => 'store-redirect.php'
+        );
+        wp_insert_post($storeRedirect_page);
 
         // Create Request Appointment page
         $signup_page = array(

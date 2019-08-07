@@ -110,7 +110,7 @@ get_template_part('template-parts/nav-item-permissions');
                 <li>
                     <span class="divider"></span>
                     <a class="navLinkWithIcon"
-                       href="https://store.maxliving.com/?srrf=<?php the_field('affiliate_id', 'clinic_options'); ?>"
+                       href="<?php echo get_home_url() . '/store'; ?>"
                        rel="nofollow"
                        title="Store">
                         <span class="icon-cart"></span>
