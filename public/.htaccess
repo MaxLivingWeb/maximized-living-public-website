@@ -123,10 +123,6 @@ RewriteRule ^wp-json$ / [L,R=301,NC]
 
 # END Migration Redirects
 
-# Store Redirect
-Redirect 302 /Store https://store.maxliving.com/
-Redirect 302 /store https://store.maxliving.com/
-
 Redirect 302 /admin https://maxliving.com/wp-admin
 
 # MLX Redirect
