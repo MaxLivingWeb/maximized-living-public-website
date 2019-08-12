@@ -64,6 +64,12 @@ RewriteRule ^request-an-appointment /sign-up/ [L,R=301,NC]
 RewriteCond !%{HTTP_HOST} maxliving.com
 RewriteRule ^sports-performance /sports-council/ [L,R=301,NC]
 
+# Store Redirect
+Redirect 302 /Store https://store.maxliving.com/
+Redirect 302 /store https://store.maxliving.com/
+
+
+
 RewriteRule ^terms-of-service /security-privacy/ [L,R=301,NC]
 RewriteRule ^student-programs /doctors-students/student-info/ [L,R=301,NC]
 RewriteRule ^stories-of-success /success-stories/ [L,R=301,NC]
