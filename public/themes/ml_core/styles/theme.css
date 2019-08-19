@@ -9634,3 +9634,7 @@ html {
 }
 
 /*--- 2 Column Form Styles End ---*/
+
+.grecaptcha-badge{
+	visibility: collapse !important;
+}
