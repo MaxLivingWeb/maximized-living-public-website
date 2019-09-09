@@ -1,8 +1,4 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly
-}
-
 if ( ! class_exists( 'PostmanZendMailEngine' ) ) {
 
 	require_once 'Zend-1.12.10/Loader.php';

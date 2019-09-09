@@ -1,10 +1,4 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly
-}
-
-require_once dirname(__DIR__ ) . '/PostmanLogFields.php';
-
 if ( ! class_exists( 'PostmanEmailLog' ) ) {
 	class PostmanEmailLog {
 		public $sender;
@@ -155,32 +149,32 @@ if ( ! class_exists( 'PostmanEmailLogService' ) ) {
 			$this->logger->trace( $log );
 
 			// Write the meta data related to the email
-			PostmanLogFields::get_instance()->update( $post_id, 'success', $log->success );
-			PostmanLogFields::get_instance()->update( $post_id, 'from_header', $log->sender );
+			update_post_meta( $post_id, 'success', $log->success );
+			update_post_meta( $post_id, 'from_header', $log->sender );
 			if ( ! empty( $log->toRecipients ) ) {
-                PostmanLogFields::get_instance()->update( $post_id, 'to_header', $log->toRecipients );
+				update_post_meta( $post_id, 'to_header', $log->toRecipients );
 			}
 			if ( ! empty( $log->ccRecipients ) ) {
-                PostmanLogFields::get_instance()->update( $post_id, 'cc_header', $log->ccRecipients );
+				update_post_meta( $post_id, 'cc_header', $log->ccRecipients );
 			}
 			if ( ! empty( $log->bccRecipients ) ) {
-                PostmanLogFields::get_instance()->update( $post_id, 'bcc_header', $log->bccRecipients );
+				update_post_meta( $post_id, 'bcc_header', $log->bccRecipients );
 			}
 			if ( ! empty( $log->replyTo ) ) {
-                PostmanLogFields::get_instance()->update( $post_id, 'reply_to_header', $log->replyTo );
+				update_post_meta( $post_id, 'reply_to_header', $log->replyTo );
 			}
-            PostmanLogFields::get_instance()->update( $post_id, 'transport_uri', $log->transportUri );
+			update_post_meta( $post_id, 'transport_uri', $log->transportUri );
 
 			if ( ! $log->success || true ) {
 				// alwas add the meta data so we can re-send it
-                PostmanLogFields::get_instance()->update( $post_id, 'original_to', $log->originalTo );
-                PostmanLogFields::get_instance()->update( $post_id, 'original_subject', $log->originalSubject );
-                PostmanLogFields::get_instance()->update( $post_id, 'original_message', $log->originalMessage );
-                PostmanLogFields::get_instance()->update( $post_id, 'original_headers', $log->originalHeaders );
+				update_post_meta( $post_id, 'original_to', $log->originalTo );
+				update_post_meta( $post_id, 'original_subject', $log->originalSubject );
+				update_post_meta( $post_id, 'original_message', $log->originalMessage );
+				update_post_meta( $post_id, 'original_headers', $log->originalHeaders );
 			}
 
 			// we do not sanitize the session transcript - let the reader decide how to handle the data
-            PostmanLogFields::get_instance()->update( $post_id, 'session_transcript', $log->sessionTranscript );
+			update_post_meta( $post_id, 'session_transcript', $log->sessionTranscript );
 
 			// truncate the log (remove older entries)
 			$purger = new PostmanEmailLogPurger();

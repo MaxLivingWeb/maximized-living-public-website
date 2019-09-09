@@ -1,8 +1,4 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly
-}
-
 require_once ("registered-domain-libs-master/PHP/effectiveTLDs.inc.php");
 require_once ("registered-domain-libs-master/PHP/regDomain.inc.php");
 

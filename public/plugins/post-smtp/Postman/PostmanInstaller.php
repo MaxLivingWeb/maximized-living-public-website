@@ -1,8 +1,4 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly
-}
-
 require_once( 'PostmanOAuthToken.php' );
 require_once( 'PostmanOptions.php' );
 

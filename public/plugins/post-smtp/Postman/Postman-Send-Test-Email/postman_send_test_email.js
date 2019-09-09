@@ -107,8 +107,7 @@ function postHandleStepChange(event, currentIndex, priorIndex, myself) {
 		jQuery('li').addClass('disabled');
 		var data = {
 			'action' : 'postman_send_test_email',
-			'email' : jQuery(postman_email_test.recipient).val(),
-			'security' : jQuery('#security').val()
+			'email' : jQuery(postman_email_test.recipient).val()
 		};
 		jQuery('#postman_test_message_status').html(postman_email_test.sending);
 		jQuery('#postman_test_message_status').css('color', 'blue');

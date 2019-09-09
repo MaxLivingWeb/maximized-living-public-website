@@ -1,8 +1,4 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly
-}
-
 require_once( 'PostmanRegisterConfigurationSettings.php' );
 class PostmanConfigurationController {
 	const CONFIGURATION_SLUG = 'postman/configuration';
@@ -211,9 +207,6 @@ class PostmanConfigurationController {
 		print '</ul>';
 
 		print '<form method="post" action="options.php">';
-
-		wp_nonce_field('post-smtp', 'security');
-
 		// This prints out all hidden setting fields
 		settings_fields( PostmanAdminController::SETTINGS_GROUP_NAME );
 
@@ -242,9 +235,6 @@ class PostmanConfigurationController {
 		print '<div id="mailgun_settings" class="authentication_setting non-basic non-oauth2">';
 		do_settings_sections( PostmanMailgunTransport::MAILGUN_AUTH_OPTIONS );
 		print '</div>';
-
-		do_action( 'post_smtp_settings_sections' );
-
 		print '</section>';
         // end account config
 		?>
@@ -448,8 +438,6 @@ class PostmanConfigurationController {
 		printf( '<input type="hidden" id="input_%2$s" name="%1$s[%2$s]" value="%3$s" />', PostmanOptions::POSTMAN_OPTIONS, PostmanOptions::STEALTH_MODE, $this->options->isStealthModeEnabled() );
 		printf( '<input type="hidden" id="input_%2$s" name="%1$s[%2$s]" value="%3$s" />', PostmanOptions::POSTMAN_OPTIONS, PostmanOptions::TEMPORARY_DIRECTORY, $this->options->getTempDirectory() );
 
-		wp_nonce_field('post-smtp', 'security' );
-
 		// display the setting text
 		settings_fields( PostmanAdminController::SETTINGS_GROUP_NAME );
 
@@ -631,9 +619,6 @@ class PostmanGetHostnameByEmailAjaxController extends PostmanAbstractAjaxHandler
 	 * This Ajax function retrieves the smtp hostname for a give e-mail address
 	 */
 	function getAjaxHostnameByEmail() {
-
-	    check_admin_referer('post-smtp', 'security');
-
 		$goDaddyHostDetected = $this->getBooleanRequestParameter( 'go_daddy' );
 		$email = $this->getRequestParameter( 'email' );
 		$d = new PostmanSmtpDiscovery( $email );
@@ -668,9 +653,6 @@ class PostmanManageConfigurationAjaxHandler extends PostmanAbstractAjaxHandler {
 	 * @throws Exception
 	 */
 	function getManualConfigurationViaAjax() {
-
-	    check_admin_referer('post-smtp', 'security');
-
 		$queryTransportType = $this->getTransportTypeFromRequest();
 		$queryAuthType = $this->getAuthenticationTypeFromRequest();
 		$queryHostname = $this->getHostnameFromRequest();
@@ -701,9 +683,6 @@ class PostmanManageConfigurationAjaxHandler extends PostmanAbstractAjaxHandler {
 	 * The UI response is built so the user may choose a different socket with different options.
 	 */
 	function getWizardConfigurationViaAjax() {
-
-	    check_admin_referer('post-smtp', 'security');
-
 		$this->logger->debug( 'in getWizardConfiguration' );
 		$originalSmtpServer = $this->getRequestParameter( 'original_smtp_server' );
 		$queryHostData = $this->getHostDataFromRequest();
@@ -913,9 +892,6 @@ class PostmanImportConfigurationAjaxController extends PostmanAbstractAjaxHandle
 	 * and pushes them into the Postman configuration screen.
 	 */
 	function getConfigurationFromExternalPluginViaAjax() {
-
-        check_admin_referer('post-smtp', 'security');
-
 		$importableConfiguration = new PostmanImportableConfiguration();
 		$plugin = $this->getRequestParameter( 'plugin' );
 		$this->logger->debug( 'Looking for config=' . $plugin );

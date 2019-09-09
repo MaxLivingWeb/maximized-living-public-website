@@ -1,8 +1,4 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly
-}
-
 if (! interface_exists ( "PostmanMailEngine" )) {
 
 	interface PostmanMailEngine {

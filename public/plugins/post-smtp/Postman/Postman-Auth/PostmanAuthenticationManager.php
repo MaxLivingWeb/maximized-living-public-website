@@ -1,7 +1,4 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly
-}
 if (! interface_exists ( "PostmanAuthenticationManager" )) {
 	interface PostmanAuthenticationManager {
 		const POSTMAN_AUTHORIZATION_IN_PROGRESS = 'request_oauth_permission';

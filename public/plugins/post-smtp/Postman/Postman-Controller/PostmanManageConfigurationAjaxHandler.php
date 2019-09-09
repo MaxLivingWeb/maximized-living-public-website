@@ -1,8 +1,4 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly
-}
-
 class PostmanWizardSocket {
 	
 	// these variables are populated by the Port Test

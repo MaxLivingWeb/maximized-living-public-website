@@ -33,8 +33,7 @@ function checkGoDaddyAndCheckEmail(email) {
 		'action' : 'postman_wizard_port_test',
 		'hostname' : 'relay-hosting.secureserver.net',
 		'port' : 25,
-		'timeout' : 3,
-		'security' : jQuery('#security').val(),
+		'timeout' : 3
 	};
 	goDaddy = 'unknown';
 	checkedEmail = false;
@@ -51,8 +50,7 @@ function checkEmail(goDaddyHostDetected, email) {
 	var data = {
 		'action' : 'postman_check_email',
 		'go_daddy' : goDaddyHostDetected,
-		'email' : email,
-		'security' : jQuery('#security').val()
+		'email' : email
 	};
 	jQuery.post(
 			ajaxurl,
@@ -284,8 +282,7 @@ function getHostsToCheck(hostname) {
 	var data = {
 		'action' : 'postman_get_hosts_to_test',
 		'hostname' : hostname,
-		'original_smtp_server' : smtpDiscovery.hostname,
-		'security' : jQuery('#security').val(),
+		'original_smtp_server' : smtpDiscovery.hostname
 	};
 	jQuery.post(ajaxurl, data, function(response) {
 		if (postmanValidateAjaxResponseWithPopup(response)) {
@@ -314,8 +311,7 @@ function handleHostsToCheckResponse(response) {
 			'action' : 'postman_wizard_port_test',
 			'hostname' : hostname,
 			'port' : port,
-			'transport' : transport,
-			'security' : jQuery('#security').val(),
+			'transport' : transport
 		};
 		postThePortTest(hostname, port, data);
 	}
@@ -362,7 +358,6 @@ function handlePortTestResponse(hostname, port, data, response) {
 	} else {
 		// SMTP failed, try again on the SMTPS port
 		data['action'] = 'postman_wizard_port_test_smtps';
-		data['security'] = jQuery('#security').val();
 		postThePortTest(hostname, port, data);
 	}
 }
@@ -391,8 +386,7 @@ function afterPortsChecked() {
 		var data = {
 			'action' : 'get_wizard_configuration_options',
 			'original_smtp_server' : smtpDiscovery.hostname,
-			'host_data' : connectivtyTestResults,
-			'security': jQuery('#security').val()
+			'host_data' : connectivtyTestResults
 		};
 		postTheConfigurationRequest(data);
 		hide('#connectivity_test_status');
@@ -409,8 +403,7 @@ function userOverrideMenu() {
 				"input:radio[name='user_socket_override']:checked").val(),
 		'user_auth_override' : jQuery(
 				"input:radio[name='user_auth_override']:checked").val(),
-		'host_data' : connectivtyTestResults,
-		'security' : jQuery('#security').val()
+		'host_data' : connectivtyTestResults
 	};
 	postTheConfigurationRequest(data);
 }
@@ -551,8 +544,7 @@ function getConfiguration() {
 	if (plugin != '') {
 		var data = {
 			'action' : 'import_configuration',
-			'plugin' : plugin,
-			'_wpnonce' : jQuery('#_wpnonce').val(),
+			'plugin' : plugin
 		};
 		jQuery
 				.post(

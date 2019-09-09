@@ -1,8 +1,4 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly
-}
-
 class PostmanSettingsRegistry {
 
 	private $options;
@@ -15,7 +11,7 @@ class PostmanSettingsRegistry {
 	 * Fires on the admin_init method
 	 */
 	public function on_admin_init() {
-        $this->registerSettings();
+				$this->registerSettings();
 	}
 
 	/**
