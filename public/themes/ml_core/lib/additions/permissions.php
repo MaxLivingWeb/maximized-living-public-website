@@ -7,7 +7,8 @@ add_role(
     [
         'edit_posts'    => true,
         'delete_posts'  => true,
-        'read'          => true
+        'read'          => true,
+        'upload_fles'   => true
     ]
 );
 
@@ -57,6 +58,7 @@ function add_article_perms() {
         'read',
         'edit',
         'read_article',
+        'upload_files',
         'read_private_articles',
         'edit_articles',
         'edit_private_articles',
@@ -86,6 +88,7 @@ function add_event_perms() {
     $caps = array(
         'read',
         'read_event',
+        'upload_files',
         'read_private_events',
         'edit_events',
         'edit_private_events',
@@ -117,6 +120,7 @@ function add_press_perms() {
     $caps = array(
         'read',
         'read_press',
+        'upload_files',
         'read_private_presss',
         'edit_presss',
         'edit_private_presss',
