@@ -62,7 +62,7 @@ class mainNav extends Walker_Nav_Menu
 {
     function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
     {
-        if ($item->title !== 'Store' && $item->menu_item_parent == 0) {
+        if ($item->title !== 'Online Store' && $item->menu_item_parent == 0) {
             $output .= "<li><a class='navLink' href='{$item->url}' title='{$item->title}'>{$item->title}</a>";
         } else if ($item->title == 'Online Store') {
             $url = $item->url . utmURL();
