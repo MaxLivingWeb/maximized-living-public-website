@@ -8,7 +8,7 @@ add_role(
         'edit_posts'    => true,
         'delete_posts'  => true,
         'read'          => true,
-        'upload_fles'   => true
+        'upload_files'   => true
     ]
 );
 
