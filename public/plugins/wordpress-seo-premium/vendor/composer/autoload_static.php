@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit63cfb868d549bb2717d8db2b488592ac
+class ComposerStaticInit6110e916ec00d109e219d6a87317d769
 {
     public static $files = array (
         '23846a2512770688e91c6220c735f257' => __DIR__ . '/..' . '/yoast/wp-helpscout/src/functions.php',
@@ -243,7 +243,6 @@ class ComposerStaticInit63cfb868d549bb2717d8db2b488592ac
         'WPSEO_Content_Images' => __DIR__ . '/../..' . '/inc/class-wpseo-content-images.php',
         'WPSEO_Cornerstone' => __DIR__ . '/../..' . '/deprecated/class-cornerstone.php',
         'WPSEO_Cornerstone_Filter' => __DIR__ . '/../..' . '/admin/filters/class-cornerstone-filter.php',
-        'WPSEO_Courses_Overview' => __DIR__ . '/../..' . '/admin/courses-overview.php',
         'WPSEO_Custom_Fields' => __DIR__ . '/../..' . '/inc/class-wpseo-custom-fields.php',
         'WPSEO_Custom_Fields_Plugin' => __DIR__ . '/../..' . '/premium/classes/custom-fields-plugin.php',
         'WPSEO_Custom_Taxonomies' => __DIR__ . '/../..' . '/inc/class-wpseo-custom-taxonomies.php',
@@ -773,6 +772,7 @@ class ComposerStaticInit63cfb868d549bb2717d8db2b488592ac
         'YoastSEO_Vendor\\Symfony\\Component\\DependencyInjection\\Exception\\ServiceNotFoundException' => __DIR__ . '/../..' . '/vendor_prefixed/symfony/dependency-injection/Exception/ServiceNotFoundException.php',
         'YoastSEO_Vendor\\Symfony\\Component\\DependencyInjection\\ParameterBag\\EnvPlaceholderParameterBag' => __DIR__ . '/../..' . '/vendor_prefixed/symfony/dependency-injection/ParameterBag/EnvPlaceholderParameterBag.php',
         'YoastSEO_Vendor\\Symfony\\Component\\DependencyInjection\\ParameterBag\\FrozenParameterBag' => __DIR__ . '/../..' . '/vendor_prefixed/symfony/dependency-injection/ParameterBag/FrozenParameterBag.php',
+        'YoastSEO_Vendor\\Symfony\\Component\\DependencyInjection\\ParameterBag\\ParameterBag' => __DIR__ . '/../..' . '/vendor_prefixed/symfony/dependency-injection/ParameterBag/ParameterBag.php',
         'YoastSEO_Vendor\\Symfony\\Component\\DependencyInjection\\ParameterBag\\ParameterBagInterface' => __DIR__ . '/../..' . '/vendor_prefixed/symfony/dependency-injection/ParameterBag/ParameterBagInterface.php',
         'YoastSEO_Vendor\\Symfony\\Component\\DependencyInjection\\ResettableContainerInterface' => __DIR__ . '/../..' . '/vendor_prefixed/symfony/dependency-injection/ResettableContainerInterface.php',
         'YoastSEO_Vendor\\Task_Db_Generate' => __DIR__ . '/../..' . '/vendor_prefixed/ruckusing/lib/Task/Db/Generate.php',
@@ -859,10 +859,10 @@ class ComposerStaticInit63cfb868d549bb2717d8db2b488592ac
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit63cfb868d549bb2717d8db2b488592ac::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit63cfb868d549bb2717d8db2b488592ac::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit63cfb868d549bb2717d8db2b488592ac::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit63cfb868d549bb2717d8db2b488592ac::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit6110e916ec00d109e219d6a87317d769::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit6110e916ec00d109e219d6a87317d769::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit6110e916ec00d109e219d6a87317d769::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit6110e916ec00d109e219d6a87317d769::$classMap;
 
         }, null, ClassLoader::class);
     }

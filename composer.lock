@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8bcfad10ae842db277bdfc6ee46a2135",
+    "content-hash": "6c94a5d22ad4dad971b6d40585367c8e",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -1405,7 +1405,7 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7-mailchimp-extension",
-            "version": "0.4.51",
+            "version": "0.4.61",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7-mailchimp-extension/",
@@ -1413,7 +1413,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7-mailchimp-extension.zip?timestamp=1549282657",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7-mailchimp-extension.zip?timestamp=1569515032",
                 "reference": null,
                 "shasum": null
             },
@@ -1505,15 +1505,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-external-links",
-            "version": "2.32",
+            "version": "2.35",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-external-links/",
-                "reference": "tags/2.32"
+                "reference": "tags/2.35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-external-links.2.32.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-external-links.2.35.zip",
                 "reference": null,
                 "shasum": null
             },

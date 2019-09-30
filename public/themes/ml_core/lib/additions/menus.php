@@ -64,7 +64,7 @@ class mainNav extends Walker_Nav_Menu
     {
         if ($item->title !== 'Store' && $item->menu_item_parent == 0) {
             $output .= "<li><a class='navLink' href='{$item->url}' title='{$item->title}'>{$item->title}</a>";
-        } else if ($item->title == 'Store') {
+        } else if ($item->title == 'Online Store') {
             $url = $item->url . utmURL();
             $output .= "<li><span class='divider'></span>
                 <a class='navLinkWithIcon' href='{$url}' title='{$item->title}'>
@@ -104,8 +104,8 @@ class secondaryNav extends Walker_Nav_Menu
                 <span class='icon-solidPin'></span><span class='navLinkText'>Find A Clinic</span></span></a>";
                 break;
             case 'login':
-                $output .= "<li><a class='navLinkWithIcon' href='" . get_home_url() . "/login' title='{$item->title}'>
-                <span class='icon-account'></span><span class='navLinkText'>Login</span></span></a>";
+                $output .= "<li><a class='navLinkWithIcon' href='https://clientstore.maxliving.com/' title='{$item->title}'>
+                <span class='icon-account'></span><span class='navLinkText'>Client Login</span></span></a>";
                 break;
         }
     }
@@ -133,8 +133,8 @@ class secondaryMobileNav extends Walker_Nav_Menu
                 <span class='navLinkText'>{$item->title}</span></a>";
                 break;
             case 'login':
-                $output .= "<li><a class='navLinkWithIcon' href='" . get_home_url() . "/login' title='{$item->title}'>
-                <span class='icon-account'></span><span class='navLinkText'>Login</span></span></a>";
+                $output .= "<li><a class='navLinkWithIcon' href='https://clientstore.maxliving.com/' title='{$item->title}'>
+                <span class='icon-account'></span><span class='navLinkText'>Client Login</span></span></a>";
                 break;
         }
     }
