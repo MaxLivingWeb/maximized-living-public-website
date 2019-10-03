@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aacb92f33ee9f8da47c4dc7169a9f18a",
+    "content-hash": "ca5a792605ed2f03ba66700cd40a7681",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -1445,15 +1445,15 @@
         },
         {
             "name": "wpackagist-plugin/post-smtp",
-            "version": "2.0.5",
+            "version": "2.0.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/post-smtp/",
-                "reference": "tags/2.0.5"
+                "reference": "tags/2.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/post-smtp.2.0.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/post-smtp.2.0.2.zip",
                 "reference": null,
                 "shasum": null
             },
