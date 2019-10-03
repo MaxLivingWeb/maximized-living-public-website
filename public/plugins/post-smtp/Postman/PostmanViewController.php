@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
 if ( ! class_exists( 'PostmanViewController' ) ) {
 	class PostmanViewController {
 		private $logger;
@@ -46,19 +49,19 @@ if ( ! class_exists( 'PostmanViewController' ) ) {
 
 
 		function dismiss_version_notify() {
-			check_ajax_referer( 'postsmtp', 'security' );
+            check_admin_referer( 'postsmtp', 'security' );
 
 			$result = update_option('postman_release_version', true );
 		}
 
         function dismiss_donation_notify() {
-            check_ajax_referer( 'postsmtp', 'security' );
+            check_admin_referer( 'postsmtp', 'security' );
 
             $result = update_option('postman_dismiss_donation', true );
         }
 
 		function delete_lock_file() {
-			check_ajax_referer( 'postman', 'security' );
+            check_admin_referer( 'postman', 'security' );
 
 			if ( ! PostmanUtils::lockFileExists() ) {
 				echo __('No lock file found.', 'post-smtp' );
@@ -118,7 +121,7 @@ if ( ! class_exists( 'PostmanViewController' ) ) {
 		}
 		function enqueueHomeScreenStylesheet() {
 			wp_enqueue_style( PostmanViewController::POSTMAN_STYLE );
-			wp_enqueue_script( 'postman_script' );
+			wp_enqueue_script( PostmanViewController::POSTMAN_SCRIPT );
 		}
 
 		/**
@@ -295,7 +298,7 @@ if ( ! class_exists( 'PostmanViewController' ) ) {
 			print '</section>';
 			print '<section id="delete_settings">';
 			printf( '<h3><span>%s<span></h3>', $resetTitle );
-			print '<form method="POST" action="' . get_admin_url() . 'admin-post.php">';
+			print '<form class="post-smtp-reset-options" method="POST" action="' . get_admin_url() . 'admin-post.php">';
 			wp_nonce_field( PostmanAdminController::PURGE_DATA_SLUG );
 			printf( '<input type="hidden" name="action" value="%s" />', PostmanAdminController::PURGE_DATA_SLUG );
 			printf( '<p><span>%s</span></p><p><span>%s</span></p>', __( 'This will purge all of Postman\'s settings, including account credentials and the email log.', 'post-smtp' ), __( 'Are you sure?', 'post-smtp' ) );
@@ -316,11 +319,11 @@ if ( ! class_exists( 'PostmanViewController' ) ) {
 			$show = get_option('postman_release_version' );
 			printf( '<h2>%s</h2>', sprintf( __( '%s Setup', 'post-smtp' ), __( 'Post SMTP', 'post-smtp' ) ) );
 
-			if ( ! $show ) {
+			if ( ! $show && POST_SMTP_SHOW_RELEASE_MESSAGE ) {
 				echo '
 				<div class="updated settings-error notice is-dismissible"> 
 					<p>
-					<strong>Version ' . $version . ' Sendgrid code fix and default delivery changes:</strong> <a target="_blank" href="https://postmansmtp.com/post-smtp-2-0-2-sendgrid-code-revert/">Read Here</a>
+					<strong>Version ' . $version . ' ' . POST_SMTP_RELEASE_MESSAGE . ':</strong> <a target="_blank" href="' . POST_SMTP_RELEASE_URL . '">Read Here</a>
 					</p>
 					<button style="z-index: 100;" data-version="'. $version . '" data-security="' . wp_create_nonce('postsmtp') .'" type="button" class="notice-dismiss postman-release-message">
 						<span class="screen-reader-text">Dismiss this notice.</span>
@@ -328,7 +331,7 @@ if ( ! class_exists( 'PostmanViewController' ) ) {
 				</div>';
 			}
 
-            include_once POST_PATH . '/Postman/extra/donation.php';
+            include_once POST_SMTP_PATH . '/Postman/extra/donation.php';
 
             echo '<div class="twitter-wrap">';
 			    print '<div id="postman-main-menu" class="welcome-panel">';
@@ -344,7 +347,11 @@ if ( ! class_exists( 'PostmanViewController' ) ) {
                 print '<ul>';
 
                 // Grant permission with Google
+                ob_start();
                 PostmanTransportRegistry::getInstance()->getSelectedTransport()->printActionMenuItem();
+                $oauth_link = ob_get_clean();
+
+                echo apply_filters( 'post_smtp_oauth_actions', $oauth_link );
 
                 if ( PostmanWpMailBinder::getInstance()->isBound() ) {
                     printf( '<li><a href="%s" class="welcome-icon send_test_email">%s</a></li>', $this->getPageUrl( PostmanSendTestEmailController::EMAIL_TEST_SLUG ), __( 'Send a Test Email', 'post-smtp' ) );
@@ -371,13 +378,10 @@ if ( ! class_exists( 'PostmanViewController' ) ) {
                 printf( '<li><a href="%s" class="welcome-icon run-port-test">%s</a></li>', $this->getPageUrl( PostmanConnectivityTestController::PORT_TEST_SLUG ), __( 'Connectivity Test', 'post-smtp' ) );
                 printf( '<li><a href="%s" class="welcome-icon run-port-test">%s</a></li>', $this->getPageUrl( PostmanDiagnosticTestController::DIAGNOSTICS_SLUG ), __( 'Diagnostic Test', 'post-smtp' ) );
                 printf( '<li><a href="%s" data-security="%s" class="welcome-icon release-lock-file">%s</a></li>', '#', wp_create_nonce( "postman" ), __( 'Release Lock File Error', 'post-smtp' ) );
-                printf( '<li><a href="https://postmansmtp.com/forums/" class="welcome-icon postman_support">%s</a></li>', __( 'Online Support', 'post-smtp' ) );
+                printf( '<li><a href="https://wordpress.org/support/plugin/post-smtp/" class="welcome-icon postman_support">%s</a></li>', __( 'Online Support', 'post-smtp' ) );
                 printf( '<li><img class="align-middle" src="' . plugins_url( 'style/images/new.gif', dirname( __DIR__ ) . '/postman-smtp.php' ) . '"><a target="blank" class="align-middle" href="https://postmansmtp.com/category/guides/" class="welcome-icon postman_guides">%s</a></li>', __( 'Guides', 'post-smtp' ) );
                 print '</ul></div></div></div></div>';
                 ?>
-                <div class="twitter-iframe-wrap" style="min-width: 300px;">
-                    <a class="twitter-timeline" data-height="304" href="https://twitter.com/PostSMTP?ref_src=twsrc%5Etfw">Tweets by PostSMTP</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </div>
             </div>
             <?php
 		}

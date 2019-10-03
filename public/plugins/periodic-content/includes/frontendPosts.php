@@ -53,7 +53,7 @@ class FrontendPosts
         }
 
         if ($template === 'doctors-blog.php') {
-            
+
             switch_to_blog(1);
 
             $query->set('post_type', array('article', 'recipe'));

@@ -16,6 +16,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
+
 function vc_utm() {
 
   global $wpdb;
@@ -23,7 +24,7 @@ function vc_utm() {
   $utms  = '?utm_source=MailChimp';
   $utms .= '&utm_campaign=w' . get_bloginfo( 'version' ) . '-' . mce_difer_dateact_date() . 'c' . WPCF7_VERSION . ( defined( 'WPLANG' ) && WPLANG ? WPLANG : 'en_US' ) . '';
   $utms .= '&utm_medium=cme-' . SPARTAN_MCE_VERSION . '';
-  $utms .= '&utm_term=F' . ini_get( 'allow_url_fopen' ) . 'C' . ( function_exists( 'curl_init' ) ? '1' : '0' ) . 'P' . PHP_VERSION . 'S' . $wpdb->db_version() . '';
+  $utms .= '&utm_term=P' . PHP_VERSION . 'Sq' . $wpdb->db_version() . '-';
   // $utms .= '&utm_content=';
   return $utms;
 }
@@ -45,15 +46,15 @@ function mce_panel_gen ($apivalid,$listdata,$cf7_mch,$listatags,$mce_txcomodin) 
 
     <div class="mce-custom-fields">
       <div class="mail-field md-half">
-        <label for="wpcf7-mailchimp-email"><?php echo esc_html( __( 'Subscriber Email: *|EMAIL|* ', 'wpcf7' ) ); ?></label><br />
+        <label for="wpcf7-mailchimp-email"><?php echo esc_html( __( 'Subscriber Email: *|EMAIL|* ', 'wpcf7' ) ); ?> <span class="mce-required" > Required</span></label><br />
          <?php mce_html_selected_tag ('email',$listatags,$cf7_mch,'email') ;  ?>
-        <small class="description">This field MUST be an email tags <a href="<?php echo MCE_URL ?>/mailchimp-contact-form<?php echo vc_utm() ?>MC-email" class="helping-field" target="_blank" title="get help with Subscriber Email:"> Get more help <span class="red-icon dashicons dashicons-admin-links"></span></a></small>
+        <small class="description">This field MUST be an email tag <a href="<?php echo MCE_URL ?>/mailchimp-contact-form<?php echo vc_utm() ?>MC-email" class="helping-field" target="_blank" title="get help with Subscriber Email:"> Get more help <span class="red-icon dashicons dashicons-admin-links"></span></a></small>
       </div>
 
       <div class="mail-field md-half">
         <label for="wpcf7-mailchimp-name"><?php echo esc_html( __( 'Subscriber Name - *|FNAME|* ', 'wpcf7' ) ); ?></label><br />
          <?php mce_html_selected_tag ('name',$listatags,$cf7_mch,'text') ; ?>
-        <small class="description"> Choose the field that will be mapped to as Name <a href="<?php echo MCE_URL ?>/mailchimp-contact-form<?php echo vc_utm() ?>MC-name" class="helping-field" target="_blank" title="get help with Subscriber name:"> Get more help <span class="red-icon dashicons dashicons-admin-links"></span></a></small>
+        <small class="description"> Choose the field that will be mapped as Name <a href="<?php echo MCE_URL ?>/mailchimp-contact-form<?php echo vc_utm() ?>MC-name" class="helping-field" target="_blank" title="get help with Subscriber name:"> Get more help <span class="red-icon dashicons dashicons-admin-links"></span></a></small>
       </div>
     </div>
 
@@ -68,19 +69,16 @@ function mce_panel_gen ($apivalid,$listdata,$cf7_mch,$listatags,$mce_txcomodin) 
 
 <div class="mce-main-fields">
 
+  <div id="mce_apivalid">
+    <h2>MailChimp Extension  <?php echo isset( $apivalid ) && '1' == $apivalid ? $chm_valid : $chm_invalid ; ?> <span class="mc-code"><?php global $wpdb; $mce_sents = get_option( 'mce_sent'); echo SPARTAN_MCE_VERSION . ':' . ini_get( 'allow_url_fopen' ) . ':' . ( function_exists( 'curl_init' ) ? '1' : '0' ) . ':' . WPCF7_VERSION . ':' . get_bloginfo( 'version' ) . ':' . PHP_VERSION . ':' . $wpdb->db_version() .' = ' . $mce_sents .  ' saved in ' .  mce_difer_dateact_date(); ?></span></h2>
+  </div>
 
-
-   <p class="mail-field">
-      <div id="mce_apivalid"><h2>MailChimp Extension  <span><?php echo isset( $apivalid ) && '1' == $apivalid ? $chm_valid : $chm_invalid ; ?></span><span class="mc-code"><?php global $wpdb; $mce_sents = get_option( 'mce_sent'); echo SPARTAN_MCE_VERSION . ':' . ini_get( 'allow_url_fopen' ) . ':' . ( function_exists( 'curl_init' ) ? '1' : '0' ) . ':' . WPCF7_VERSION . ':' . get_bloginfo( 'version' ) . ':' . PHP_VERSION . ':' . $wpdb->db_version() .' = ' . $mce_sents .  ' saved in ' .  mce_difer_dateact_date(); ?></span></h3></div>
-    </p>
   <div class="mce-custom-fields">
 
-      <label for="wpcf7-mailchimp-api"><?php echo esc_html( __( 'MailChimp API Key:', 'wpcf7' ) ); ?> </label><br />
-      <input type="text" id="wpcf7-mailchimp-api" name="wpcf7-mailchimp[api]" class="wide" size="50" placeholder=" " value="<?php echo (isset($cf7_mch['api']) ) ? esc_attr( $cf7_mch['api'] ) : ''; ?>" />
-      <span><input id="mce_activalist" type="button" value="Connect and fetch your mailing lists" class="button button-primary" style="width:35%;" /><span class="spinner"></span></span>
-      <small class="description">6283ef9bdef6755f8fe686ce53bdf75a-us9 <-- A number like this <a href="<?php echo MCE_URL ?>/mailchimp-api-key<?php echo vc_utm() ?>MC-api" class="helping-field" target="_blank" title="get help with MailChimp API Key:"> Get more help <span class="red-icon dashicons dashicons-admin-links"></span></a></small>
-
-
+    <label for="wpcf7-mailchimp-api"><?php echo esc_html( __( 'MailChimp API Key:', 'wpcf7' ) ); ?> </label><br />
+    <input type="text" id="wpcf7-mailchimp-api" name="wpcf7-mailchimp[api]" class="wide" size="50" placeholder=" " value="<?php echo (isset($cf7_mch['api']) ) ? esc_attr( $cf7_mch['api'] ) : ''; ?>" />
+    <span><input id="mce_activalist" type="button" value="Connect and Fetch Your Mailing Lists" class="button button-primary" style="width:35%;" /><span class="spinner"></span></span>
+    <small class="description">6283ef9bdef6755f8fe686ce53bdf75a-us9 <-- A number like this <a href="<?php echo MCE_URL ?>/mailchimp-api-key<?php echo vc_utm() ?>MC-api" class="helping-field" target="_blank" title="get help with MailChimp API Key:"> Get more help <span class="red-icon dashicons dashicons-admin-links"></span></a></small>
 
   </div>
 
@@ -134,6 +132,7 @@ function mce_panel_gen ($apivalid,$listdata,$cf7_mch,$listatags,$mce_txcomodin) 
 
     <script>
       jQuery(".cme-trigger-sys").click(function() {
+
         jQuery( "#toggle-sys" ).slideToggle(250);
 
       });
@@ -156,14 +155,10 @@ function mce_panel_gen ($apivalid,$listdata,$cf7_mch,$listatags,$mce_txcomodin) 
   <div class="dev-cta mce-cta welcome-panel" style="display: none;">
 
     <div class="welcome-panel-content">
-
-      <p class="about-description">Hello. My name is Renzo, I <span alt="f487" class="dashicons dashicons-heart red-icon"> </span> WordPress and I develop this tiny FREE plugin to help users like you. I drink copious amounts of coffee to keep me running longer <span alt="f487" class="dashicons dashicons-smiley red-icon"> </span>. If you've found this plugin useful, please consider making a donation.</p><br>
-      <p class="about-description">Would you like to <a class="button-primary" href="http://bit.ly/2HdTzmO" target="_blank">buy me a coffee?</a> or <a class="button-primary" href="http://bit.ly/2I7iZUA" target="_blank">Donate with Paypal</a></p>
-
+        <?php echo mce_set_welcomebanner() ; ?>
     </div>
 
   </div>
-
 
   <table class="form-table mt0 description">
     <tbody>

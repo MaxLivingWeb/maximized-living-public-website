@@ -21,7 +21,13 @@
 */
 
 
-
+.mce-new-green {
+    background: #00be28;
+    border-color: #00a523;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    flex-shrink: 0;
+}
 
 .donate {
   border: 1px solid #46b450 !important;
@@ -37,6 +43,13 @@
 
 
 }
+
+.mce-custom-fields .spinner {
+  float: none;
+  margin-top: 0;
+}
+
+
 
 .vc-notice {
   position: relative;
@@ -70,6 +83,11 @@
   content: '';
   display: table;
   clear: both;
+}
+
+.mce-required {
+  color: #dd3d36;
+  font-weight: 900;
 }
 
 .vc-notice:after {
@@ -152,10 +170,9 @@
 
 .mce-custom-fields {
   background-color: rgba(255,255,255,.95);
-  /* border: 1px solid rgba(0,0,0,.05); */
   border: 1px solid #e5e5e5;
   border-radius: 3px;
-  padding: 9px 20px;
+  padding: 12px 15px 15px;
   box-shadow: 0 1px 1px rgba(0,0,0,.04);
   margin-bottom: 10px;
 }
@@ -212,6 +229,13 @@
   .mcee-container select {
     margin-top: 3px;
     margin-bottom: 10px;
+  }
+
+
+  .mce-custom-fields .md-half {
+    display: inline-block;
+    width: 49%;
+    vertical-align:top;
   }
 
 

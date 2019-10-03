@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6c94a5d22ad4dad971b6d40585367c8e",
+    "content-hash": "aacb92f33ee9f8da47c4dc7169a9f18a",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -1405,7 +1405,7 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7-mailchimp-extension",
-            "version": "0.4.61",
+            "version": "0.5.01",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7-mailchimp-extension/",
@@ -1413,7 +1413,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7-mailchimp-extension.zip?timestamp=1569515032",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7-mailchimp-extension.zip?timestamp=1570126302",
                 "reference": null,
                 "shasum": null
             },
@@ -1445,15 +1445,15 @@
         },
         {
             "name": "wpackagist-plugin/post-smtp",
-            "version": "2.0.2",
+            "version": "2.0.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/post-smtp/",
-                "reference": "tags/2.0.2"
+                "reference": "tags/2.0.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/post-smtp.2.0.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/post-smtp.2.0.5.zip",
                 "reference": null,
                 "shasum": null
             },

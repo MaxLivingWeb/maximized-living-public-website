@@ -186,3 +186,7 @@ RewriteRule . index.php [L]
 </Files>
 
 # END Wordfence WAF
+
+# BEGIN ShortPixelWebp
+
+# END ShortPixelWebp

@@ -1,6 +1,8 @@
 <?php
-
-require_once dirname(__DIR__) . '/PostmanEmailLogs.php';
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
+require_once dirname(__DIR__) . '/PostmanLogFields.php';
 
 /**
  * See http://wpengineer.com/2426/wp_list_table-a-step-by-step-guide/
@@ -94,7 +96,7 @@ class PostmanEmailLogView extends WP_List_Table {
 		$transcriptUrl = admin_url( sprintf( $iframeUri, 'transcript', $item ['ID'] ) );
 		$resendUrl = admin_url( sprintf( $iframeUri, 'resend', $item ['ID'] ) );
 
-		$meta_values = PostmanEmailLogs::get_data( $item ['ID'] );
+		$meta_values = PostmanLogFields::get_instance()->get( $item ['ID'] );
 
 		$actions = array(
 				'delete' => sprintf( '<a href="%s">%s</a>', $deleteUrl, _x( 'Delete', 'Delete an item from the email log', 'post-smtp' ) ),
@@ -108,9 +110,10 @@ class PostmanEmailLogView extends WP_List_Table {
 		}
 		if ( ! (empty( $meta_values ['original_to'] [0] ) && empty( $meta_values ['originalHeaders'] [0] )) ) {
 			// $actions ['resend'] = sprintf ( '<a href="%s">%s</a>', $resendUrl, __ ( 'Resend', 'post-smtp' ) );
-			$emails = maybe_unserialize( $meta_values ['original_to'] [0] );
-			$to = is_array( $emails ) ? implode( ',', $emails ) : $emails;
-			$actions ['resend'] = sprintf( '<span id="%3$s"><a class="postman-open-resend" href="#">%2$s</a></span><div style="display:none;"><input type="hidden" name="security" value="%6$s"><input type="text" name="mail_to" class="regular-text ltr" data-id="%1$s" value="%4$s"><button class="postman-resend button button-primary">%2$s</button><i style="color: black;">%5$s</i></div>', $item ['ID'], __( 'Resend', 'post-smtp' ), 'resend-' . $item ['ID'], esc_attr( $to ), __( 'comma-separated for multiple emails', 'post-smtp' ), wp_create_nonce( 'resend' ) );
+			$emails = $meta_values ['original_to'] [0];
+            $to = is_array( $emails ) ? implode( ',', array_walk($emails, 'sanitize_email') ) : sanitize_email( $emails );
+
+            $actions ['resend'] = sprintf( '<span id="%3$s"><a class="postman-open-resend" href="#">%2$s</a></span><div style="display:none;"><input type="hidden" name="security" value="%6$s"><input type="text" name="mail_to" class="regular-text ltr" data-id="%1$s" value="%4$s"><button class="postman-resend button button-primary">%2$s</button><i style="color: black;">%5$s</i></div>', $item ['ID'], __( 'Resend', 'post-smtp' ), 'resend-' . $item ['ID'], esc_attr( $to ), __( 'comma-separated for multiple emails', 'post-smtp' ), wp_create_nonce( 'resend' ) );
 		} else {
 			$actions ['resend'] = sprintf( '%2$s', $resendUrl, __( 'Resend', 'post-smtp' ) );
 		}
@@ -260,8 +263,10 @@ class PostmanEmailLogView extends WP_List_Table {
 	 *       ************************************************************************
 	 */
 	function prepare_items() {
+        if ( ! empty( $_POST ) && ! wp_verify_nonce( $_REQUEST['post-smtp-log'], 'post-smtp' ) )
+            die( 'Security check' );
 
-		/**
+            /**
 		 * First, lets decide how many records per page to show
 		 */
 		$per_page = isset( $_POST['postman_page_records'] ) ? absint( $_POST['postman_page_records'] ) : 10;
@@ -367,7 +372,7 @@ class PostmanEmailLogView extends WP_List_Table {
 				/* Translators: where %s indicates the relative time from now */
 				$date = sprintf( _x( '%s ago', 'A relative time as in "five days ago"', 'post-smtp' ), $humanTime );
 			}
-			$meta_values = PostmanEmailLogs::get_data( $post->ID );
+			$meta_values = PostmanLogFields::get_instance()->get( $post->ID );
 			$sent_to = array_map( 'sanitize_email', explode( ',' , $meta_values ['to_header'] [0] ) );
 			$flattenedPost = array(
 					// the post title must be escaped as they are displayed in the HTML output
@@ -390,8 +395,8 @@ class PostmanEmailLogView extends WP_List_Table {
 		 * sorting technique would be unnecessary.
 		 */
 		function usort_reorder( $a, $b ) {
-			$orderby = ( ! empty( $_REQUEST ['orderby'] )) ? $_REQUEST ['orderby'] : 'title'; // If no sort, default to title
-			$order = ( ! empty( $_REQUEST ['order'] )) ? $_REQUEST ['order'] : 'asc'; // If no order, default to asc
+			$orderby = ( ! empty( $_REQUEST ['orderby'] )) ? sanitize_text_field($_REQUEST ['orderby']) : 'title'; // If no sort, default to title
+			$order = ( ! empty( $_REQUEST ['order'] )) ? sanitize_text_field($_REQUEST ['order']) : 'asc'; // If no order, default to asc
 			$result = strcmp( $a [ $orderby ], $b [ $orderby ] ); // Determine sort order
 			return ($order === 'asc') ? $result : - $result; // Send final sort direction to usort
 		}
