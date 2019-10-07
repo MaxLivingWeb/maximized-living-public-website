@@ -41,7 +41,7 @@ if ( ! function_exists('article_post_type') ) {
             'feeds'                 => true,
         );
         $taxonomies = array();
-        $supports = array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' );
+        $supports = array( 'title', 'editor', 'author', 'thumbnail', 'revisions', 'custom-fields' );
 
         if (get_current_blog_id() == 1) {
             $taxonomies = array('article_categories');

@@ -80,8 +80,6 @@ function mce_panel_gen ($apivalid,$listdata,$cf7_mch,$listatags,$mce_txcomodin) 
     <span><input id="mce_activalist" type="button" value="Connect and Fetch Your Mailing Lists" class="button button-primary" style="width:35%;" /><span class="spinner"></span></span>
     <small class="description">6283ef9bdef6755f8fe686ce53bdf75a-us9 <-- A number like this <a href="<?php echo MCE_URL ?>/mailchimp-api-key<?php echo vc_utm() ?>MC-api" class="helping-field" target="_blank" title="get help with MailChimp API Key:"> Get more help <span class="red-icon dashicons dashicons-admin-links"></span></a></small>
 
-  </div>
-
     <div id="mce_panel_ajagen">
         <?php  mce_panel_gen ($apivalid,$listdata,$cf7_mch,$listatags,$mce_txcomodin) ;    ?>
     </div>
@@ -104,8 +102,6 @@ function mce_panel_gen ($apivalid,$listdata,$cf7_mch,$listatags,$mce_txcomodin) 
           <input type="checkbox" id="wpcf7-mailchimp-cf-active" name="wpcf7-mailchimp[cfactive]" value="1"<?php echo ( isset($cf7_mch['cfactive']) ) ? ' checked="checked"' : ''; ?> />
           <label for="wpcf7-mailchimp-cfactive"><?php echo esc_html( __( 'Use Custom Fields', 'wpcf7' ) ); ?>  <a href="<?php echo MCE_URL ?>/mailchimp-custom-fields<?php echo vc_utm() ?>MC-custom-fields" class="helping-field" target="_blank" title="get help with Custom Fields"> Help <span class="red-icon dashicons dashicons-sos"></span></a></label>
         </p>
-
-
         <div class="mailchimp-custom-fields">
           <p>In the following fields, you can use these mail-tags: <?php echo mce_mail_tags(); ?>.</p>
 
@@ -130,22 +126,7 @@ function mce_panel_gen ($apivalid,$listdata,$cf7_mch,$listatags,$mce_txcomodin) 
 
      <p class="p-author"><a type="button" aria-expanded="false" class="mce-trigger a-support ">Show advanced settings</a> &nbsp; <a class="cme-trigger-sys a-support ">Get System Information</a></p>
 
-    <script>
-      jQuery(".cme-trigger-sys").click(function() {
 
-        jQuery( "#toggle-sys" ).slideToggle(250);
-
-      });
-
-      function toggleDiv() {
-
-        setTimeout(function () {
-            jQuery(".mce-cta").slideToggle(450);
-        }, 9000);
-
-      }
-      toggleDiv();
-    </script>
 
     <?php include SPARTAN_MCE_PLUGIN_DIR . '/lib/system.php'; ?>
       <!-- <hr class="p-hr"> -->
@@ -159,6 +140,7 @@ function mce_panel_gen ($apivalid,$listdata,$cf7_mch,$listatags,$mce_txcomodin) 
     </div>
 
   </div>
+
 
   <table class="form-table mt0 description">
     <tbody>
@@ -188,7 +170,22 @@ function mce_panel_gen ($apivalid,$listdata,$cf7_mch,$listatags,$mce_txcomodin) 
 
 </div>
 
+<!--
+    <div id="informationdiv_aux" class="postbox mce-move mc-lateral">
+      <h3>ChimpMatic is Here!</h3>
+      <div class="inside">
+        <p>We have the the best tool to integrate Contact Form 7 with your Chimpmail mailing lists with nifty features:</p>
+        <ol>
+          <li><a href="https://chimpmatic.com" target="_blank">Groups / Categories</a></li>
+          <li><a href="https://chimpmatic.com" target="_blank">Unlimited Fileds</a></li>
+          <li><a href="https://chimpmatic.com" target="_blank">Unlimited Audiences</a></li>
+          <li><a href="https://chimpmatic.com" target="_blank">Great Pricing Options</a></li>
+        </ol>
+        <p><a href="https://chimpmatic.com" class="dops-button is-primary" target="_blank">Read More</a></p>
+      </div>
+    </div> -->
 
+<?php echo mce_lateral_banner () ?>
 
 
 

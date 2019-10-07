@@ -445,3 +445,69 @@ function mce_get_bannerladilla (&$check,&$tittle) {
 	}
 }
 
+
+function mce_lateral_banner () {
+  ?>
+    <div id="informationdiv_aux" class="postbox mce-move mc-lateral">
+      <?php echo mce_set_lateralbanner()  ?>
+    </div>
+<?php
+}
+
+
+function mce_set_lateralbanner() {
+   $Defaultpanel = '<h3>ChimpMatic is Here!</h3>
+      <div class="inside">
+        <p>We have the the best tool to integrate Contact Form 7 with your Chimpmail mailing lists with nifty features:</p>
+        <ol>
+          <li><a href="https://chimpmatic.com?utm_source=ChimpMatic&utm_campaign=Groups" target="_blank">Groups / Categories</a></li>
+          <li><a href="https://chimpmatic.com?utm_source=ChimpMatic&utm_campaign=UnlimitesFields" target="_blank">Unlimited Fileds</a></li>
+          <li><a href="https://chimpmatic.com?utm_source=ChimpMatic&utm_campaign=UnlimitedAudiences" target="_blank">Unlimited Audiences</a></li>
+          <li><a href="https://chimpmatic.com?utm_source=ChimpMatic&utm_campaign=GreatPricing" target="_blank">Great Pricing Options</a></li>
+        </ol>
+        <p><a href="https://chimpmatic.com?utm_source=ChimpMatic&utm_campaign=ReadMore" class="dops-button is-primary" target="_blank">Read More</a></p>
+      </div>'  ;
+
+   $banner = $Defaultpanel ;
+   //delete_site_option('mce_conten_panel_lateralbanner');
+
+   if ( get_site_option('mce_conten_panel_lateralbanner') == null  ) {
+      add_site_option( 'mce_conten_panel_lateralbanner', $Defaultpanel ) ;
+      $banner = $Defaultpanel ;
+   }
+    else  {
+      $grabbanner = trim( get_site_option('mce_conten_panel_lateralbanner') ) ;
+      $banner = ( $grabbanner  == ''  ) ? $Defaultpanel : $grabbanner ;
+    }
+
+  return $banner ;
+
+}
+
+
+function mce_get_bannerlateral (&$check,&$tittle) {
+    $check = 0 ;
+    $response = wp_remote_get( 'https://renzojohnson.com/wp-json/wp/v2/posts?categories=17&orderby=modified&order=desc' );
+
+    if ( is_wp_error( $response ) ) {
+      $check = -1;
+      return '' ;
+    }
+
+    $posts = json_decode( wp_remote_retrieve_body( $response ) );
+
+    if ( empty( $posts ) or is_null ( $posts  ) ) {
+        $check = -2;
+		    return '' ;
+	  }
+
+	if ( ! empty( $posts ) ) {
+		  foreach ( $posts as $post ) {
+			    $fordate =  $post->modified  ;
+        $tittle = $post->title->rendered ;
+        return $post->content->rendered ;
+		  }
+	}
+}
+
+

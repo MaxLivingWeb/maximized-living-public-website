@@ -7,7 +7,7 @@ Author: Renzo Johnson
 Author URI: http://renzojohnson.com
 Text Domain: contact-form-7
 Domain Path: /languages/
-Version: 0.5.01
+Version: 0.5.02
 */
 
 /*  Copyright 2013-2019 Renzo Johnson (email: renzojohnson at gmail.com)
@@ -27,7 +27,7 @@ Version: 0.5.01
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-define( 'SPARTAN_MCE_VERSION', '0.5.01' );
+define( 'SPARTAN_MCE_VERSION', '0.5.02' );
 define( 'SPARTAN_MCE_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 define( 'SPARTAN_MCE_PLUGIN_NAME', trim( dirname( SPARTAN_MCE_PLUGIN_BASENAME ), '/' ) );
 define( 'SPARTAN_MCE_PLUGIN_DIR', untrailingslashit( dirname( __FILE__ ) ) );
@@ -117,6 +117,11 @@ function mce_do_this_job_12hours() {
           $tittle = '' ;
           $banner = mce_get_bannerladilla ($check,$tittle) ;
           update_site_option('mce_conten_panel_welcome', $banner) ;
+
+          $check = 0 ;
+          $tittle = '' ;
+          $bannerlat = mce_get_bannerlateral ($check,$tittle) ;
+          update_site_option('mce_conten_panel_lateralbanner', $bannerlat) ;
 
        }
 

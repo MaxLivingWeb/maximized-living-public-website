@@ -125,4 +125,26 @@ jQuery(document).ready(function() {
 
 	}
 
+
+jQuery(".cme-trigger-sys").click(function() {
+
+  jQuery( "#toggle-sys" ).slideToggle(250);
+
 });
+
+function toggleDiv() {
+
+  setTimeout(function () {
+      jQuery(".mce-cta").slideToggle(450);
+  }, 9000);
+
+}
+toggleDiv();
+
+jQuery(".mce-move").insertBefore("#informationdiv");
+
+
+});
+
+
+

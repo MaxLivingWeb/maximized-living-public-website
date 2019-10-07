@@ -103,13 +103,13 @@ function mc_get_latest_item(){
             'posts_per_page'    => -1,
             'fields'            => 'ids',
         );
-  
+
     $form = 0 ;
     if ( class_exists( 'WPCF7') ) {
-       $maxpost =  get_posts($args)  ;  
+       $maxpost =  get_posts($args)  ;
        $form = ( count ( $maxpost ) == 0  ) ? 0 : max( $maxpost ) ;
     }
- 
+
     //$form = ( class_exists( 'WPCF7') ? max( get_posts($args) ) : 0 ) ;
     $out = '';
     if (!empty($form)) {
@@ -151,13 +151,24 @@ function wpcf7_mce_ga_pageview () {
   $utms .= '&utm_term=F' . ini_get( 'allow_url_fopen' ) . 'C' . ( function_exists( 'curl_init' ) ? '1' : '0' ) . 'P' . PHP_VERSION . 'S' .  $wpdb->db_version() . '';
 
   $varurl = MCE_URL .$utms.'activated'; // all is url
-  $varurl = str_replace ( ' ','',$varurl  ) ; 
-  
+  $varurl = str_replace ( ' ','',$varurl  ) ;
+
   //var_dump  ( $varurl  ) ;
-  
+
   return vc_ga_send_pageview ('renzojohnson.com',$varurl,'Activated') ;
 
 }
+
+function plugin_activation( $plugin ) {
+    if( ! function_exists('activate_plugin') ) {
+        require_once ABSPATH . 'wp-admin/includes/plugin.php';
+    }
+
+    if( ! is_plugin_active( $plugin ) ) {
+        activate_plugin( $plugin );
+    }
+}
+
 
 
 

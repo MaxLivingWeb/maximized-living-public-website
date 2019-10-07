@@ -74,7 +74,7 @@ get_header();
                         <time datetime="<?php echo date( 'Y-m-d H:i', strtotime( date( 'F j, Y', $start ) . $startTime ) ); ?>"><?php echo $startDate; ?> </time>
                         <?php if ( ! empty( $end ) ) : ?>
                             <time datetime="<?php echo date( 'Y-m-d H:i', strtotime( date( 'F j, Y', $end ) . $endTime ) ); ?>">
-                                -<?php echo $endDate; ?></time>
+                                - <?php echo $endDate; ?></time>
                         <?php endif ?>
                         <?php echo $time; ?>
                     </p>

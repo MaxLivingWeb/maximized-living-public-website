@@ -6819,6 +6819,7 @@ input:-webkit-autofill {
       margin: 0 0.4rem 1.5rem 0.4rem; }
   .eventConferenceHero .heroEventDetails {
     position: absolute;
+    width: 100%;
     top: 2rem;
     left: 50%;
     -webkit-transform: translateX(-50%);
@@ -6838,7 +6839,7 @@ input:-webkit-autofill {
         margin-top: 0;
         margin-bottom: 0;
         margin-left: auto;
-        width: 18.75rem; } }
+        width: 25.75rem; } }
     .eventConferenceHero .heroEventDetails > p {
       line-height: 1.4;
       margin-bottom: 0;

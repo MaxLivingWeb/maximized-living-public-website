@@ -5,7 +5,7 @@ add_role(
     'clinic_admin',
     __('Clinic Admin'),
     [
-        'edit_posts'    => true,
+        'edit_post'    => true,
         'delete_posts'  => true,
         'read'          => true,
         'upload_files'   => true

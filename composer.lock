@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ff30527576132f3f60bb8e00891d1bf7",
+    "content-hash": "ee77510d68153834bed3b74d31a71a0e",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -1405,7 +1405,7 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7-mailchimp-extension",
-            "version": "0.5.01",
+            "version": "0.5.02",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7-mailchimp-extension/",
@@ -1413,7 +1413,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7-mailchimp-extension.zip?timestamp=1570126302",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7-mailchimp-extension.zip?timestamp=1570373888",
                 "reference": null,
                 "shasum": null
             },
@@ -1425,15 +1425,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-submissions",
-            "version": "1.6.2",
+            "version": "1.6.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-submissions/",
-                "reference": "tags/1.6.2"
+                "reference": "tags/1.6.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-submissions.1.6.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-submissions.1.6.3.zip",
                 "reference": null,
                 "shasum": null
             },

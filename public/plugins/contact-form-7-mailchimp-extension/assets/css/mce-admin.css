@@ -20,13 +20,22 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
+.mc-lateral {
+  box-shadow: 0 0 0 1px rgba(200,215,225,.5), 0 1px 2px #e9eff3;
+}
 
-.mce-new-green {
-    background: #00be28;
-    border-color: #00a523;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    flex-shrink: 0;
+.metabox-holder .mc-lateral h3 {
+  font-size: 19px;
+      padding: 15px 15px 13px !important;
+      background-color: #00aadc;
+      text-align: center;
+      color: #ffffff;
+      text-shadow: 0 -1px 1px #006799, 1px 0 1px #006799, 0 1px 1px #006799, -1px 0 1px #006799;
+}
+
+.metabox-holder .mc-lateral .inside {
+      padding: 0 15px 25px !important;
+      margin-top: 0;
 }
 
 .donate {
@@ -42,6 +51,50 @@
   text-shadow: 0 -1px 1px #3c9943, 1px 0 1px #3c9943, 0 1px 1px #3c9943, -1px 0 1px #3c9943 !important;
 
 
+}
+
+
+.dops-button.is-primary {
+    background: #00aadc;
+    border-color: #0087be;
+    color: #fff;
+}
+
+.dops-button {
+    background: #fff;
+    border: solid #d5d5d5;
+    border-width: 1px 1px 2px;
+    color: #414141;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0;
+    outline: 0;
+    overflow: hidden;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    vertical-align: top;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 21px;
+    border-radius: 4px;
+    padding: 7px 14px 9px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.dops-button.is-primary {
+    background: #00be28;
+    border-color: #00a523;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    flex-shrink: 0;
+}
+
+.dops-button.is-primary:hover {
+      background: #00a523;
+    border-color: #008b1d;
 }
 
 .mce-custom-fields .spinner {
