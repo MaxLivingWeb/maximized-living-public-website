@@ -1,5 +1,5 @@
 <?php
-/*  Copyright 2013-2017 Renzo Johnson (email: renzojohnson at gmail.com)
+/*  Copyright 2013-2019 Renzo Johnson (email: renzojohnson at gmail.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -34,20 +34,41 @@ resetlogfile_mce(); //para resetear
 
 
 function wpcf7_mch_add_mailchimp($args) {
-  $cf7_mch_defaults = array();
-  $cf7_mch = get_option( 'cf7_mch_'.$args->id(), $cf7_mch_defaults );
 
   $host = esc_url_raw( $_SERVER['HTTP_HOST'] );
   $url = $_SERVER['REQUEST_URI'];
   $urlactual = $url;
 
-  //var_dump($cf7_mch['logfileEnabled']);
+  $cf7_mch_defaults = array();
+  $cf7_mch = get_option( 'cf7_mch_'.$args->id(), $cf7_mch_defaults );
+
+  $mce_txcomodin = $args->id() ;
+  $listatags = wpcf7_mce_form_tags();
+
+  if ( ( ! isset( $cf7_mch['listatags'] ) ) or is_null( $cf7_mch['listatags'] ) ) {
+      unset( $cf7_mch['listatags'] );
+      $cf7_mch = $cf7_mch + array( 'listatags' => $listatags,'logfileEnabled' => 1 ) ;
+      update_option( 'cf7_mch_'.$args->id(), $cf7_mch );
+  }
+
+  $logfileEnabled = $cf7_mch['logfileEnabled'];
+	$logfileEnabled = ( is_null( $logfileEnabled ) ) ? false : $logfileEnabled;
+
+  $mceapi = ( isset( $cf7_mch['api'] )   ) ? $cf7_mch['api'] : null ;
+
+  $tmp = wpcf7_mce_validate_api_key( $mceapi,$logfileEnabled,'cf7_mch_'.$mce_txcomodin );
+	$apivalid = $tmp['api-validation'];
+
+
+	$tmp = wpcf7_mce_listasasociadas( $mceapi,$logfileEnabled,'cf7_mch_'.$mce_txcomodin,$apivalid );
+	$listdata = $tmp['lisdata'];
+
+  $chm_valid = '<span class="chmm valid"><span class="dashicons dashicons-yes"></span>API Key</span>';
+  $chm_invalid = '<span class="chmm invalid"><span class="dashicons dashicons-no"></span>Error: API Key</span>';
 
   include SPARTAN_MCE_PLUGIN_DIR . '/lib/view.php';
 
 }
-
-
 
 function resetlogfile_mce() {
 
@@ -57,11 +78,10 @@ function resetlogfile_mce() {
 
     $mch_debug_logger->reset_mch_log_file( 'log.txt' );
     $mch_debug_logger->reset_mch_log_file( 'log-cron-job.txt' );
-    echo '<div id="message" class="updated is-dismissible"><p>Debug log files have been reset!</p></div>';
+    //echo '<div id="message" class="updated is-dismissible"><p>Debug log files have been reset!</p></div>';
   }
 
 }
-
 
 
 function wpcf7_mch_save_mailchimp($args) {
@@ -72,7 +92,6 @@ function wpcf7_mch_save_mailchimp($args) {
   }
 
 }
-
 
 
 function show_mch_metabox ( $panels ) {
@@ -113,7 +132,6 @@ function spartan_mce_author_wpcf7( $mce_supps, $class, $content, $args ) {
 }
 
 
-
 function cf7_mch_tag_replace( $pattern, $subject, $posted_data, $html = false ) {
 
   if( preg_match($pattern,$subject,$matches) > 0) {
@@ -131,12 +149,12 @@ function cf7_mch_tag_replace( $pattern, $subject, $posted_data, $html = false ) 
         $replaced = wptexturize( $replaced );
       }
 
-      $replaced = apply_filters( 'wpcf7_mail_tag_replaced', $replaced, $submitted );
+      $replaced = apply_filters( 'wpcf7_mail_tag_replaced', $replaced, $submitted,'','' );
 
       return stripslashes( $replaced );
     }
 
-    if ( $special = apply_filters( 'wpcf7_special_mail_tags', '', $matches[1] ) )
+    if ( $special = apply_filters( 'wpcf7_special_mail_tags', '', $matches[1] ))
       return $special;
 
     return $matches[0];
@@ -146,8 +164,10 @@ function cf7_mch_tag_replace( $pattern, $subject, $posted_data, $html = false ) 
 }
 
 
-
 function wpcf7_mch_subscribe_remote($obj) {
+  if ( function_exists ( "wpcf7_chimp_subscribe" ) )
+      return ;
+
   $cf7_mch = get_option( 'cf7_mch_'.$obj->id() );
 
   $submission = WPCF7_Submission::get_instance();
@@ -184,21 +204,6 @@ function wpcf7_mch_subscribe_remote($obj) {
         }
 
 
-    if( isset($cf7_mch['accept']) && strlen($cf7_mch['accept']) != 0 ) {
-
-      $accept = cf7_mch_tag_replace( $regex, $cf7_mch['accept'], $submission->get_posted_data() );
-
-      if($accept != $cf7_mch['accept']) {
-        if(strlen($accept) > 0)
-          $subscribe = true;
-      }
-
-    } else {
-
-      $subscribe = true;
-
-    }
-
     for($i=1;$i<=20;$i++){
 
       if( isset($cf7_mch['CustomKey'.$i]) && isset($cf7_mch['CustomValue'.$i]) && strlen(trim($cf7_mch['CustomValue'.$i])) != 0 ) {
@@ -212,17 +217,23 @@ function wpcf7_mch_subscribe_remote($obj) {
 
     }
 
+    $mce_csu = 'subscribed';
+
     if( isset($cf7_mch['confsubs']) && strlen($cf7_mch['confsubs']) != 0 ) {
 
       $mce_csu = 'pending';
-
     } else {
+      if ( isset($cf7_mch['accept']) && strlen($cf7_mch['accept']) != 0 ) {
+           $accept = cf7_mch_tag_replace( $regex, trim( $cf7_mch['accept'] ) , $submission->get_posted_data() );
 
-      $mce_csu = 'subscribed';
 
+         if ( strlen( trim($accept) ) != 0  ) {
+            $mce_csu = 'subscribed';
+         } else {
+            $mce_csu = 'unsubscribed';
+         }
+      }
     }
-
-    if($subscribe && $email != $cf7_mch['email']) {
 
       try {
 
@@ -305,7 +316,6 @@ function wpcf7_mch_subscribe_remote($obj) {
 
         $respenvio = wp_remote_post( $url_put, $opts );
         $resp = wp_remote_retrieve_body( $respenvio );
-        // $respArr = json_decode( $resultbody,true);
 
         mce_save_contador();
 
@@ -321,15 +331,8 @@ function wpcf7_mch_subscribe_remote($obj) {
         $mch_debug_logger->log_mch_debug( 'Contact Form 7 response: ' . $e->getMessage(), 4, $logfileEnabled );
 
       }  // end catch
-
-
-    } // end $subscribe
-
   }
-
 }
-
-
 
 function mce_save_contador() {
   $option_name = 'mce_sent' ;
@@ -350,8 +353,6 @@ function mce_save_contador() {
 
 }
 
-
-
 function mce_get_contador() {
   $option_name = 'mce_sent' ;
   $new_value = 1 ;
@@ -363,127 +364,11 @@ function mce_get_contador() {
     echo 'Contador: '.$valorvar;
 
   } else {
-
     echo 'Contador: 0' ;
-
   }
-
 }
-
-
-
-function vc_post( $url, $info, $method = 'POST', $adminEmail = false ){// primary function
-
-  if(ini_get('allow_url_fopen')){// test for allow_url_fopen
-
-    return cf7mce_use_fopen( $url, $info, $method );
-
-  } elseif (in_array('curl',get_loaded_extensions())){// test for cURL
-
-    return cf7mce_use_curl( $url, $info, $method );
-
-  } else { // neither method is available, send mail
-
-    if( !$adminEmail ){ $adminEmail = get_bloginfo( 'admin_email' ); }
-    return cf7mce_use_wpmail($url,$info,$method,$adminEmail);
-
-  }
-
-}
-
-
-
-function cf7mce_use_fopen( $url, $info, $method ){
-
-  $vc_date = date('M.d.H.i');
-  $data = array(
-    'http' => array(
-
-      'method'  => $method,
-      'content' => $info,
-      'header'  => array( 'content-type: application/x-www-form-urlencoded', 'user-agent: mce.P.'. SPARTAN_MCE_VERSION . $vc_date . '_' )
-
-    )
-  );
-  return stream_get_contents(fopen($url,'rb',0,stream_context_create($data)));
-
-}
-
-
-
-function cf7mce_use_curl($url,$info,$method){
-
-  $vc_date = date('M.d.H.i');
-  $useragent = 'mce.C.'. SPARTAN_MCE_VERSION . $vc_date . '_';
-
-  $apikey = explode(':',$url);
-  $apikey1 = explode('@',$apikey[2]);
-  $apikey = $apikey1[0];// api key only - no dash or dc
-
-  $dc = $apikey1[1];
-  $dc1 = explode('.',$dc);
-  $dc = $dc1[0];
-
-  $shortURL = array_shift($dc1);
-  $shortURL = implode('.',$dc1);
-  $shortURL = 'https://'.$shortURL;
-
-  $originalAPIkey = $apikey .'-'. $dc;
-  $apikey = $originalAPIkey;
-  $auth = base64_encode( 'anystring:'. $apikey );
-  $shortURL =$url;
-  //return "###--apikey=$apikey|--shortUrl=$shortURL|--URL=$url###";
-  if($method == 'POST'){
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $shortURL);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Authorization: Basic '.$auth));
-    curl_setopt($ch, CURLOPT_USERAGENT, '' . $useragent . '');
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 20);
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $info);
-    return curl_exec($ch);
-
-  } elseif($method == 'GET'){
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $shortURL);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Authorization: Basic '. $auth));
-    curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 20);
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $info);
-
-
-    return curl_exec($ch);
-
-  } else {
-
-    return 'Be sure to use only POST or GET as 3rd parameter';
-
-  }
-
-}
-
-
-
-function cf7mce_use_wpmail($url,$info,$method,$adminEmail){
-  $msg = "Attempted to send ".$info." to ".$url." but server doesnt support allow_url_fopen OR cURL";
-  $wp_mail_resp = wp_mail( $adminEmail,'CF7 Mailchimp Extension Problem',$msg);
-    if($wp_mail_resp){
-      return 'allow_url_fopen & cURL not available, sent details to ' . $adminEmail;
-    }else{
-      return 'ERROR: Problem with allow_url_fopen/cURL/wp_mail';
-    }
-}
-
-
 
 function spartan_mce_class_attr( $class ) {
-
   $class .= ' mailchimp-ext-' . SPARTAN_MCE_VERSION;
   return $class;
 
@@ -515,3 +400,114 @@ if (! function_exists('array_column')) {
         return $array;
     }
 }
+
+function mce_set_welcomebanner() {
+    $Defaultpanel = '<p class="about-description">Hello. My name is Renzo, I <span alt="f487" class="dashicons dashicons-heart red-icon"> </span> WordPress and I develop this tiny FREE plugin to help users like you. I drink copious amounts of coffee to keep me running longer <span alt="f487" class="dashicons dashicons-smiley red-icon"> </span>. If you'. "'".'ve found this plugin useful, please consider making a donation.</p><br>
+      <p class="about-description">Would you like to <a class="button-primary" href="http://bit.ly/2HdTzmO" target="_blank">buy me a coffee?</a> or <a class="button-primary" href="http://bit.ly/2I7iZUA" target="_blank">Donate with Paypal</a></p>' ;
+
+   $banner = $Defaultpanel ;
+
+   if ( get_site_option('mce_conten_panel_welcome') == null  ) {
+      add_site_option( 'mce_conten_panel_welcome', $Defaultpanel ) ;
+      $banner = $Defaultpanel ;
+   }
+    else  {
+      $grabbanner = trim( get_site_option('mce_conten_panel_welcome') ) ;
+      $banner = ( $grabbanner  == ''  ) ? $Defaultpanel : $grabbanner ;
+    }
+
+  return $banner ;
+
+}
+
+function mce_get_bannerladilla (&$check,&$tittle) {
+    $check = 0 ;
+    $response = wp_remote_get( 'https://renzojohnson.com/wp-json/wp/v2/posts?categories=16&orderby=modified&order=desc' );
+
+    if ( is_wp_error( $response ) ) {
+      $check = -1;
+      return '' ;
+    }
+
+    $posts = json_decode( wp_remote_retrieve_body( $response ) );
+
+    if ( empty( $posts ) or is_null ( $posts  ) ) {
+        $check = -2;
+		    return '' ;
+	  }
+
+	if ( ! empty( $posts ) ) {
+		  foreach ( $posts as $post ) {
+			    $fordate =  $post->modified  ;
+        $tittle = $post->title->rendered ;
+        return $post->content->rendered ;
+		  }
+	}
+}
+
+
+function mce_lateral_banner () {
+  ?>
+    <div id="informationdiv_aux" class="postbox mce-move mc-lateral">
+      <?php echo mce_set_lateralbanner()  ?>
+    </div>
+<?php
+}
+
+
+function mce_set_lateralbanner() {
+   $Defaultpanel = '<h3>ChimpMatic is Here!</h3>
+      <div class="inside">
+        <p>We have the the best tool to integrate Contact Form 7 with your Chimpmail mailing lists with nifty features:</p>
+        <ol>
+          <li><a href="https://chimpmatic.com?utm_source=ChimpMatic&utm_campaign=Groups" target="_blank">Groups / Categories</a></li>
+          <li><a href="https://chimpmatic.com?utm_source=ChimpMatic&utm_campaign=UnlimitesFields" target="_blank">Unlimited Fileds</a></li>
+          <li><a href="https://chimpmatic.com?utm_source=ChimpMatic&utm_campaign=UnlimitedAudiences" target="_blank">Unlimited Audiences</a></li>
+          <li><a href="https://chimpmatic.com?utm_source=ChimpMatic&utm_campaign=GreatPricing" target="_blank">Great Pricing Options</a></li>
+        </ol>
+        <p><a href="https://chimpmatic.com?utm_source=ChimpMatic&utm_campaign=ReadMore" class="dops-button is-primary" target="_blank">Read More</a></p>
+      </div>'  ;
+
+   $banner = $Defaultpanel ;
+   //delete_site_option('mce_conten_panel_lateralbanner');
+
+   if ( get_site_option('mce_conten_panel_lateralbanner') == null  ) {
+      add_site_option( 'mce_conten_panel_lateralbanner', $Defaultpanel ) ;
+      $banner = $Defaultpanel ;
+   }
+    else  {
+      $grabbanner = trim( get_site_option('mce_conten_panel_lateralbanner') ) ;
+      $banner = ( $grabbanner  == ''  ) ? $Defaultpanel : $grabbanner ;
+    }
+
+  return $banner ;
+
+}
+
+
+function mce_get_bannerlateral (&$check,&$tittle) {
+    $check = 0 ;
+    $response = wp_remote_get( 'https://renzojohnson.com/wp-json/wp/v2/posts?categories=17&orderby=modified&order=desc' );
+
+    if ( is_wp_error( $response ) ) {
+      $check = -1;
+      return '' ;
+    }
+
+    $posts = json_decode( wp_remote_retrieve_body( $response ) );
+
+    if ( empty( $posts ) or is_null ( $posts  ) ) {
+        $check = -2;
+		    return '' ;
+	  }
+
+	if ( ! empty( $posts ) ) {
+		  foreach ( $posts as $post ) {
+			    $fordate =  $post->modified  ;
+        $tittle = $post->title->rendered ;
+        return $post->content->rendered ;
+		  }
+	}
+}
+
+
