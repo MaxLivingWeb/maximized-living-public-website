@@ -66,11 +66,6 @@ add_action( 'pre_get_posts', __NAMESPACE__  .'\Includes\FrontendPosts::post_list
 add_action( 'wp', __NAMESPACE__  .'\Includes\FrontendPosts::after_post_list_loading' );
 
 /**
- * Doing some customization for the list, hiding thing with JS
- */
-add_action( 'admin_footer', __NAMESPACE__  .'\Includes\Posts::hide_admin_filters' );
-
-/**
  * Cache article/recipe single views
  */
 //add_action( 'save_post', __NAMESPACE__  .'\Includes\Posts::cache_single_views' );

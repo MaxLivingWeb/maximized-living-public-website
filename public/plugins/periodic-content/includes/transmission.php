@@ -254,7 +254,7 @@ class Transmission
 
     public static function post_corporate_post_list_query()
     {
-        if (!is_admin()) {
+        if ( ! is_admin() ) {
             return;
         }
 
