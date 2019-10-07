@@ -5,13 +5,7 @@
  * @package WPSEO\Admin
  */
 
-/**
- * Alerts template variables.
- *
- * @noinspection PhpUnusedLocalVariableInspection
- *
- * @var array
- */
+/** @noinspection PhpUnusedLocalVariableInspection */
 $alerts_data = Yoast_Alerts::get_template_variables();
 
 $notifier = new WPSEO_Configuration_Notifier();
@@ -30,7 +24,7 @@ $wpseo_contributors_phrase = sprintf(
 
 		<?php echo $notifier->notify(); ?>
 
-		<div class="yoast-container yoast-container__error">
+		<div class="yoast-container yoast-container__alert">
 			<?php require WPSEO_PATH . 'admin/views/partial-alerts-errors.php'; ?>
 		</div>
 

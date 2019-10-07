@@ -13,8 +13,6 @@ class WPSEO_Premium_Redirect_Service {
 	/**
 	 * Saves the redirect to the redirects.
 	 *
-	 * This save function is only used in the deprecated google-search-console integration.
-	 *
 	 * @param WP_REST_Request $request The request object.
 	 *
 	 * @return WP_REST_Response The response to send back.
@@ -85,8 +83,7 @@ class WPSEO_Premium_Redirect_Service {
 		$origin = $request->get_param( 'origin' );
 		$target = $request->get_param( 'target' );
 		$type   = $request->get_param( 'type' );
-		$format = $request->get_param( 'format' );
 
-		return new WPSEO_Redirect( $origin, $target, $type, $format );
+		return new WPSEO_Redirect( $origin, $target, $type );
 	}
 }

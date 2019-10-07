@@ -74,9 +74,7 @@ if ( $import ) {
 			$status = 'updated';
 		}
 
-		$class = 'message ' . $status;
-
-		echo '<div id="message" class="', esc_attr( $status ), '"><p>', esc_html( $msg ), '</p></div>';
+		echo '<div id="message" class="message ', $status, '"><p>', esc_html( $msg ), '</p></div>';
 	}
 }
 

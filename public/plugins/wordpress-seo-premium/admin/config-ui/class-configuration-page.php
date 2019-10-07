@@ -6,13 +6,11 @@
  */
 
 /**
- * Loads the Yoast configuration wizard.
+ * @class WPSEO_Configuration_Wizard Loads the Yoast configuration wizard.
  */
 class WPSEO_Configuration_Page {
 
 	/**
-	 * Admin page identifier.
-	 *
 	 * @var string
 	 */
 	const PAGE_IDENTIFIER = 'wpseo_configurator';

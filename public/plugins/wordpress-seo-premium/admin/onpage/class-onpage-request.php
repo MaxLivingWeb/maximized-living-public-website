@@ -13,9 +13,7 @@
 class WPSEO_OnPage_Request {
 
 	/**
-	 * The endpoint where the request will be send to.
-	 *
-	 * @var string
+	 * @var string The endpoint where the request will be send to.
 	 */
 	private $onpage_endpoint = 'https://indexability.yoast.onpage.org/';
 

@@ -11,8 +11,6 @@
 class WPSEO_Link_Extractor {
 
 	/**
-	 * The content to extract the links from.
-	 *
 	 * @var string
 	 */
 	protected $content;

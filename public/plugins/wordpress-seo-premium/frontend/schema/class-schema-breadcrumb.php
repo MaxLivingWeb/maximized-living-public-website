@@ -11,14 +11,12 @@
  * @since 10.2
  */
 class WPSEO_Schema_Breadcrumb implements WPSEO_Graph_Piece {
-
 	/**
 	 * A value object with context variables.
 	 *
 	 * @var WPSEO_Schema_Context
 	 */
 	private $context;
-
 	/**
 	 * Current position in the List.
 	 *

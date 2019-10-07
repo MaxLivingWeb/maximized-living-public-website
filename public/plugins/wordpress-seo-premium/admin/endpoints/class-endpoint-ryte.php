@@ -11,22 +11,16 @@
 class WPSEO_Endpoint_Ryte implements WPSEO_Endpoint {
 
 	/**
-	 * The namespace of the REST route.
-	 *
 	 * @var string
 	 */
 	const REST_NAMESPACE = 'yoast/v1';
 
 	/**
-	 * The route of the ryte endpoint.
-	 *
 	 * @var string
 	 */
 	const ENDPOINT_RETRIEVE = 'ryte';
 
 	/**
-	 * The name of the capability needed to retrieve data using the endpoints.
-	 *
 	 * @var string
 	 */
 	const CAPABILITY_RETRIEVE = 'manage_options';

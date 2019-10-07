@@ -8,9 +8,11 @@
 namespace Yoast\WP\Free\Watchers;
 
 use WPSEO_Meta;
-use Yoast\WP\Free\Conditionals\Indexables_Feature_Flag_Conditional;
-use Yoast\WP\Free\Repositories\Primary_Term_Repository;
+use Yoast\WP\Free\Exceptions\No_Indexable_Found;
+use Yoast\WP\Free\Loggers\Logger;
+use Yoast\WP\Free\Models\Primary_Term as Primary_Term_Indexable;
 use Yoast\WP\Free\WordPress\Integration;
+
 
 /**
  * Watches Posts to save the primary term when set.
@@ -18,32 +20,15 @@ use Yoast\WP\Free\WordPress\Integration;
 class Primary_Term_Watcher implements Integration {
 
 	/**
-	 * @inheritdoc
-	 */
-	public static function get_conditionals() {
-		return [ Indexables_Feature_Flag_Conditional::class ];
-	}
-
-	/**
-	 * @var \Yoast\WP\Free\Repositories\Primary_Term_Repository
-	 */
-	protected $repository;
-
-	/**
-	 * Primary_Term_Watcher constructor.
+	 * Initializes the integration.
 	 *
-	 * @param \Yoast\WP\Free\Repositories\Primary_Term_Repository $repository The primary term repository.
-	 */
-	public function __construct( Primary_Term_Repository $repository ) {
-		$this->repository = $repository;
-	}
-
-	/**
-	 * @inheritdoc
+	 * This is the place to register hooks and filters.
+	 *
+	 * @return void
 	 */
 	public function register_hooks() {
-		\add_action( 'save_post', [ $this, 'save_primary_terms' ] );
-		\add_action( 'delete_post', [ $this, 'delete_primary_terms' ] );
+		\add_action( 'save_post', array( $this, 'save_primary_terms' ) );
+		\add_action( 'delete_post', array( $this, 'delete_primary_terms' ) );
 	}
 
 	/**
@@ -55,13 +40,12 @@ class Primary_Term_Watcher implements Integration {
 	 */
 	public function delete_primary_terms( $post_id ) {
 		foreach ( $this->get_primary_term_taxonomies( $post_id ) as $taxonomy ) {
-			$indexable = $this->repository->find_by_postid_and_taxonomy( $post_id, $taxonomy->name, false );
-
-			if ( ! $indexable ) {
+			try {
+				$indexable = $this->get_indexable( $post_id, $taxonomy->name, false );
+				$indexable->delete();
+			} catch ( No_Indexable_Found $exception ) {
 				continue;
 			}
-
-			$indexable->delete();
 		}
 	}
 
@@ -97,14 +81,17 @@ class Primary_Term_Watcher implements Integration {
 			return;
 		}
 
-		$term_selected = ! empty( $term_id );
-		$primary_term  = $this->repository->find_by_postid_and_taxonomy( $post_id, $taxonomy, $term_selected );
+		try {
+			$primary_term = $this->get_indexable( $post_id, $taxonomy );
 
-		// Removes the indexable when found.
-		if ( ! $term_selected ) {
-			if ( $primary_term ) {
-				$primary_term->delete();
+			// Removes the indexable when found.
+			if ( empty( $term_id ) ) {
+				$this->delete_indexable( $primary_term );
+
+				return;
 			}
+		}
+		catch ( No_Indexable_Found $exception ) {
 			return;
 		}
 
@@ -123,7 +110,7 @@ class Primary_Term_Watcher implements Integration {
 	 */
 	protected function get_primary_term_taxonomies( $post_id = null ) {
 		if ( null === $post_id ) {
-			$post_id = \get_the_ID();
+			$post_id = $this->get_current_id();
 		}
 
 		$taxonomies = $this->generate_primary_term_taxonomies( $post_id );
@@ -141,7 +128,7 @@ class Primary_Term_Watcher implements Integration {
 	protected function generate_primary_term_taxonomies( $post_id ) {
 		$post_type      = \get_post_type( $post_id );
 		$all_taxonomies = \get_object_taxonomies( $post_type, 'objects' );
-		$all_taxonomies = \array_filter( $all_taxonomies, [ $this, 'filter_hierarchical_taxonomies' ] );
+		$all_taxonomies = \array_filter( $all_taxonomies, array( $this, 'filter_hierarchical_taxonomies' ) );
 
 		/**
 		 * Filters which taxonomies for which the user can choose the primary term.
@@ -169,7 +156,60 @@ class Primary_Term_Watcher implements Integration {
 	}
 
 	/**
+	 * Retrieves an indexable for a primary taxonomy.
+	 *
+	 * @codeCoverageIgnore
+	 *
+	 * @param int    $post_id     The post the indexable is based upon.
+	 * @param string $taxonomy    The taxonomy the indexable belongs to.
+	 * @param bool   $auto_create Optional. Creates an indexable if it does not exist yet.
+	 *
+	 * @return \Yoast\WP\Free\Models\Indexable Instance of the indexable.
+	 *
+	 * @throws \Yoast\WP\Free\Exceptions\No_Indexable_Found Exception when no indexable could be found
+	 *                                                      for the supplied post.
+	 */
+	protected function get_indexable( $post_id, $taxonomy, $auto_create = true ) {
+		$indexable = Primary_Term_Indexable::find_by_postid_and_taxonomy( $post_id, 'post', $auto_create );
+
+		if ( ! $indexable ) {
+			throw No_Indexable_Found::from_primary_term( $post_id, $taxonomy );
+		}
+
+		return $indexable;
+	}
+
+	/**
+	 * Deletes the given indexable.
+	 *
+	 * @param \Yoast\WP\Free\Models\Indexable $indexable The indexable to delete.
+	 *
+	 * @return void
+	 */
+	protected function delete_indexable( $indexable ) {
+		try {
+			$indexable->delete();
+		}
+		catch ( \Exception $exception ) {
+			Logger::get_logger()->notice( $exception->getMessage() );
+		}
+	}
+
+	/**
+	 * Get the current post ID.
+	 *
+	 * @coveCoverageIgnore
+	 *
+	 * @return integer The post ID.
+	 */
+	protected function get_current_id() {
+		return \get_the_ID();
+	}
+
+	/**
 	 * Checks if the request is a post request.
+	 *
+	 * @codeCoverageIgnore
 	 *
 	 * @return bool Whether the method is a post request.
 	 */
@@ -179,6 +219,8 @@ class Primary_Term_Watcher implements Integration {
 
 	/**
 	 * Retrieves the posted term ID based on the given taxonomy.
+	 *
+	 * @codeCoverageIgnore
 	 *
 	 * @param string $taxonomy The taxonomy to check.
 	 *
@@ -190,6 +232,8 @@ class Primary_Term_Watcher implements Integration {
 
 	/**
 	 * Checks if the referer is valid for given taxonomy.
+	 *
+	 * @codeCoverageIgnore
 	 *
 	 * @param string $taxonomy The taxonomy to validate.
 	 *

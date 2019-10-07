@@ -1,12 +1,12 @@
 <?php
 /**
- * Yoast SEO Plugin File.
+ * Primary Term table migration.
  *
  * @package WPSEO\Migrations
  */
 
-use Yoast\WP\Free\ORM\Yoast_Model;
 use YoastSEO_Vendor\Ruckusing_Migration_Base;
+use Yoast\WP\Free\Yoast_Model;
 
 /**
  * Migration for the Primary Term.

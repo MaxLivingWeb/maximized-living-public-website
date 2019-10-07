@@ -11,7 +11,6 @@
  * @since 10.2
  */
 class WPSEO_Schema_Article implements WPSEO_Graph_Piece {
-
 	/**
 	 * A value object with context variables.
 	 *

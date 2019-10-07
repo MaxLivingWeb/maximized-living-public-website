@@ -11,8 +11,6 @@
 class WPSEO_Admin_Editor_Specific_Replace_Vars {
 
 	/**
-	 * Holds the editor specific replacements variables.
-	 *
 	 * @var array The editor specific replacement variables.
 	 */
 	protected $replacement_variables = array(

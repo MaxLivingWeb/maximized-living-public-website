@@ -11,8 +11,6 @@
 final class WPSEO_Admin_Asset_SEO_Location implements WPSEO_Admin_Asset_Location {
 
 	/**
-	 * Path to the plugin file.
-	 *
 	 * @var string
 	 */
 	protected $plugin_file;

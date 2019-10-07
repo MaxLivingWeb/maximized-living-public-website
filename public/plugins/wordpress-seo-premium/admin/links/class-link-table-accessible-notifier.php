@@ -11,8 +11,6 @@
 class WPSEO_Link_Table_Accessible_Notifier {
 
 	/**
-	 * Notification id.
-	 *
 	 * @var string
 	 */
 	const NOTIFICATION_ID = 'wpseo-links-table-not-accessible';

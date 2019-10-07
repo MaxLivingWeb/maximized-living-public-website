@@ -11,8 +11,6 @@
 class WPSEO_GSC_Platform_Tabs {
 
 	/**
-	 * The current active tab.
-	 *
 	 * @var string
 	 */
 	private $current_tab;

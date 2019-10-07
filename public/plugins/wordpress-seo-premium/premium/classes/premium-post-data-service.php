@@ -11,86 +11,7 @@
  */
 class WPSEO_Premium_Post_Data_Service {
 
-	/**
-	 * The Yoast meta data to retrieve from each post.
-	 *
-	 * Includes:
-	 *  - focus keyphrase
-	 *  - meta description
-	 *  - SEO title
-	 *  - related keyphrases,
-	 *  - keyphrase synonyms
-	 *
-	 * Contains for each DB column name the human readable name and whether it should
-	 * be decoded from a string to JSON.
-	 *
-	 * @var array An array with meta key names and settings.
-	 */
-	public $meta_keys = array(
-		'focuskw' => array(
-			'name'                => 'focus_keyphrase',
-			'should_decode'       => false,
-			'should_replace_vars' => false,
-		),
-		'metadesc' => array(
-			'name'                => 'meta_description',
-			'should_decode'       => false,
-			'should_replace_vars' => true,
-		),
-		'focuskeywords' => array(
-			'name'                => 'related_keyphrases',
-			'should_decode'       => true,
-			'should_replace_vars' => false,
-		),
-		'keywordsynonyms' => array(
-			'name'                => 'keyphrase_synonyms',
-			'should_decode'       => true,
-			'should_replace_vars' => false,
-		),
-		'title' => array(
-			'name'                => 'meta_title',
-			'should_decode'       => false,
-			'should_replace_vars' => true,
-		),
-	);
-
-	/**
-	 * A private instance of the WPSEO_Replace_Vars.
-	 *
-	 * @var WPSEO_Replace_Vars An instance of WPSEO_Replace_Vars.
-	 */
-	private $replacer;
-
-	/**
-	 * A private instance of the WPSEO_Premium_Prominent_Words_Unindexed_Post_Query.
-	 *
-	 * @var WPSEO_Premium_Prominent_Words_Unindexed_Post_Query An instance of the WPSEO_Premium_Prominent_Words_Unindexed_Post_Query.
-	 */
-	private $prominent_words_query;
-
-	/**
-	 * A private instance of the WPSEO_Premium_Prominent_Words_Support.
-	 *
-	 * @var WPSEO_Premium_Prominent_Words_Support An instance of the WPSEO_Premium_Prominent_Words_Support
-	 */
-	private $prominent_words_support;
-
-	/**
-	 * WPSEO_Premium_Post_Data_Service constructor.
-	 *
-	 * @param WPSEO_Replace_Vars                                 $replacer                An instance of WPSEO_Replace_Vars.
-	 * @param WPSEO_Premium_Prominent_Words_Unindexed_Post_Query $prominent_words_query   An instance of WPSEO_Premium_Prominent_Words_Unindexed_Post_Query.
-	 * @param WPSEO_Premium_Prominent_Words_Support              $prominent_words_support An instance of WPSEO_Premium_Prominent_Words_Support.
-	 */
-	public function __construct(
-		WPSEO_Replace_Vars $replacer,
-		WPSEO_Premium_Prominent_Words_Unindexed_Post_Query $prominent_words_query,
-		WPSEO_Premium_Prominent_Words_Support $prominent_words_support
-	) {
-		$this->replacer                = $replacer;
-		$this->prominent_words_query   = $prominent_words_query;
-		$this->prominent_words_support = $prominent_words_support;
-	}
+	const YOAST_META_PREFIX = '_yoast_wpseo_';
 
 	/**
 	 * Retrieves a post and its Yoast metadata.
@@ -108,219 +29,233 @@ class WPSEO_Premium_Post_Data_Service {
 	 */
 	public function query( WP_REST_Request $request ) {
 		$limit     = $request->get_param( 'per_page' );
-		$post_type = $this->prominent_words_support->get_supported_post_types();
+		$post_type = $this->get_post_types();
 
-		// Set the post ids that are yet to be indexed.
-		$post_ids = $this->prominent_words_query->get_unindexed_post_ids( $post_type, $limit );
+		$prominent_words = new WPSEO_Premium_Prominent_Words_Unindexed_Post_Query();
+		$post_ids        = $prominent_words->get_unindexed_post_ids( $post_type, $limit );
 
-		// If no posts have been left unindexed, return the empty array.
+		// No posts have been left unindexed, return the empty array.
 		if ( ! $post_ids ) {
 			return new WP_REST_Response( array() );
 		}
 
-		// Retrieve and set the relevant posts.
-		$posts = $this->retrieve_posts( $post_ids, $post_type );
+		// Make sure that the post IDs are integers (instead of strings) and unique.
+		$post_ids = wp_parse_id_list( $post_ids );
 
-		// Retrieve the posts and their meta data from the database (and processes shortcodes).
+		$meta_keys = array_keys( $this->get_meta_to_retrieve() );
+		// Retrieve the posts and their meta data from the database.
+		$post_data = $this->retrieve_post_data( $post_ids, $meta_keys );
+		$posts     = $this->group_results_on_post_id( $post_data, $this->get_meta_to_retrieve() );
+		$posts     = $this->process_shortcodes( $posts );
+
 		// Return the enriched posts.
-		return new WP_REST_Response( $this->retrieve_post_data( $posts ) );
+		return new WP_REST_Response( $posts );
 	}
 
 	/**
-	 * Gets the meta_keys set in this class.
+	 * The Yoast meta data to retrieve from each post.
 	 *
-	 * @return array The meta keys.
+	 * Includes:
+	 *  - focus keyphrase
+	 *  - meta description
+	 *  - SEO title
+	 *  - related keyphrases,
+	 *  - keyphrase synonyms
+	 *
+	 * Contains for each DB column name the human readable name and whether it should
+	 * be decoded from a string to JSON.
 	 */
-	public function get_meta_keys() {
-		return $this->meta_keys;
+	private function get_meta_to_retrieve() {
+		return array(
+			self::YOAST_META_PREFIX . 'focuskw'         =>
+				array(
+					'name'          => 'focus_keyphrase',
+					'should_decode' => false,
+				),
+			self::YOAST_META_PREFIX . 'metadesc'        =>
+				array(
+					'name'          => 'meta_description',
+					'should_decode' => false,
+				),
+			self::YOAST_META_PREFIX . 'focuskeywords'   =>
+				array(
+					'name'          => 'related_keyphrases',
+					'should_decode' => true,
+				),
+			self::YOAST_META_PREFIX . 'keywordsynonyms' =>
+				array(
+					'name'          => 'keyphrase_synonyms',
+					'should_decode' => true,
+				),
+			self::YOAST_META_PREFIX . 'title'           =>
+				array(
+					'name'          => 'meta_title',
+					'should_decode' => false,
+				),
+			'_yst_prominent_words_version'           =>
+				array(
+					'name'          => 'index_version',
+					'should_decode' => false,
+				),
+		);
 	}
 
 	/**
-	 * Gets the unindexed posts.
+	 * Retrieves a list of associative arrays containing the content and given metadata of a post.
 	 *
-	 * @param array $post_ids   A list of ids from unindexed posts.
-	 * @param array $post_types The post types to include.
+	 * @param array $post_ids  A list of IDs of the posts to retrieve the data for.
+	 * @param array $meta_keys The meta keys to retrieve data for, as stored in the `post_meta` column.
 	 *
-	 * @return int[]|WP_Post[] An array of posts that match the requirements.
+	 * @return array An indexed array of SQL query results, each item containing a 'post_id', 'meta_key', 'meta_value' and 'contents' field.
 	 */
-	public function retrieve_posts( $post_ids, $post_types ) {
-		// Retrieve post content of all the posts based on their IDs.
-		return get_posts(
-			array(
-				'include'     => $post_ids,
-				'post_type'   => $post_types,
-				'post_status' => $this->prominent_words_query->get_supported_post_statuses(),
+	private function retrieve_post_data( $post_ids, $meta_keys ) {
+		global $wpdb;
+
+		// If no post IDs are present, return the empty array of results to avoid errors executing the query.
+		if ( ! $post_ids ) {
+			return array();
+		}
+
+		// Generate the placeholder strings for the wpdb prepare function (e.g. '%s, %s, %s' when there are three meta keys).
+		$meta_keys_placeholders = $this->generate_wpdb_prepare_placeholder( $meta_keys, '%s' );
+		$post_ids_placeholders  = $this->generate_wpdb_prepare_placeholder( $post_ids, '%d' );
+
+		// Retrieve the contents and Yoast metadata (focus keyphrase, meta description etc.) from the database.
+		return $wpdb->get_results(
+			$wpdb->prepare(
+				'SELECT post_id, meta_key, meta_value, post_content FROM ' . $wpdb->postmeta .
+				' RIGHT JOIN ' . $wpdb->posts . ' ON post_id = ID ' .
+				// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared -- Placeholders exist, are generated above.
+				' WHERE meta_key IN (' . $meta_keys_placeholders . ') AND post_id IN (' . $post_ids_placeholders . ')' .
+				' ORDER BY ID ',
+				array_merge( $meta_keys, $post_ids )
 			)
 		);
 	}
 
 	/**
-	 * Retrieves post content and Yoast metadata (focus keyphrase, meta description etc.) from the database and
-	 * groups these attributes per post.
+	 * Groups the results on post ID.
+	 * Decodes the meta values when they are stored as stringified JSON and gives them new names depending on the given `$meta_map`.
 	 *
-	 * @param array $posts The posts to retrieve data for.
+	 * E.g.
+	 * ```
+	 * array(
+	 *      array( "post_id" => 12, "meta_key" => "_yoast_wpseo_focuskw", "meta_value" => "cats", "post_content" => "abc" ),
+	 *      array( "post_id" => 12, "meta_key" => "_yoast_wpseo_meta_description", "meta_value" => "many cats", "post_content" => "abc" ),
+	 *      array( "post_id" => 14, "meta_key" => "_yoast_wpseo_focuskw", "meta_value" => "dogs", "post_content" => "xyz" )
+	 * );
+	 * ```
+	 * becomes:
+	 * ```
+	 * array(
+	 *      array( 'ID' => 12, 'content' => 'abc', 'meta' => array( 'focus_keyphrase' => 'cats', 'meta_description' => 'many cats' ) ),
+	 *      array( 'ID' => 14, 'content' => 'xyz', 'meta' => array( 'focus_keyphrase' => 'dogs') )
+	 * );
+	 * ```
 	 *
-	 * @return array An indexed array of SQL query results, where each item corresponds to a post.
-	 * Every item is an associative array containing the fields 'post_id', 'post_content' and 'meta',
-	 * where the latter is a collection of 'key'-'value' pairs.
+	 * @param array $results  The results of a query on the WordPress post and post meta table.
+	 * @param array $meta_map An associative array mapping meta keys to:
+	 *                        1. 'name': the parameter name in the final list of objects,
+	 *                        2. 'should_decode': whether the meta value has been JSON-stringified and should be decoded first.
+	 *
+	 * @return array An array of objects, where each object has an `ID`, `meta` and `content` attribute.
 	 */
-	protected function retrieve_post_data( $posts ) {
-		$results = array();
-
-		// Now retrieve meta data per post and per meta key.
-		foreach ( $posts as $post ) {
-			$results[] = $this->build_post_data( $post );
+	private function group_results_on_post_id( $results, $meta_map ) {
+		if ( $results === array() ) {
+			// results are empty, we do not need to do any processing.
+			return array();
 		}
 
-		return $results;
-	}
+		$posts        = array();
+		$current_post = array();
 
-	/**
-	 * Wraps a static method WPSEO_Meta::get_value to be able to access it in tests.
-	 *
-	 * @codeCoverageIgnore This will always be mocked in unit tests.
-	 *
-	 * @param string $meta_key The name of the meta key that needs to be extracted.
-	 * @param int    $post_id  The ID of the post to extract meta key for.
-	 *
-	 * @return string The value of the meta key for the given post_id
-	 */
-	protected function get_meta_value_wrapper( $meta_key, $post_id ) {
-		return WPSEO_Meta::get_value( $meta_key, $post_id );
-	}
-
-	/**
-	 * Wraps a static method WPSEO_Options::get to be able to access it in tests.
-	 * The original function retrieves a single field from any option for the SEO plugin.
-	 *
-	 * @codeCoverageIgnore This will always be mocked in unit tests.
-	 *
-	 * @param string $key     The key it should return.
-	 * @param mixed  $default The default value that should be returned if the key isn't set.
-	 *
-	 * @return mixed|null Returns value if found, $default if not.
-	 */
-	protected function get_options_wrapper( $key, $default ) {
-		return WPSEO_Options::get( $key, $default );
-	}
-
-	/**
-	 * Check if there is a modified SEO-title available to save.
-	 * If the SEO title was not modified, check if the user specified a default SEO title for this content type.
-	 * Otherwise use the absolute default title '%%title%% %%sep%% %%sitename%%' (WPSEO_Frontend::$default_title).
-	 *
-	 * @param string $post_type The content type to use default for.
-	 *
-	 * @return string The post-specific or a default title.
-	 */
-	private function apply_default_title( $post_type ) {
-		// Try to obtain user-specified defaults for the given content type (post, page, etc.).
-		$user_default_title = $this->get_options_wrapper( 'title-' . $post_type, '' );
-		if ( $user_default_title != '' ) {
-			return $user_default_title;
-		}
-
-		// Return the absolute default value, which is currently set to '%%title%% %%sep%% %%sitename%%'.
-		return WPSEO_Frontend::$default_title;
-	}
-
-	/**
-	 * Replaces any replace variables (e.g. `%%sitename%% or `%%title%%`) in the given string with their corresponding values.
-	 * Replace variables in the form `%%replacevar%%` that could not be replaced are removed from the string.
-	 *
-	 * @param string  $string The string to replace the variables in.
-	 * @param WP_Post $post   The post to be used as context when replacing the replace vars (e.g. to get the post's title from).
-	 *
-	 * @return string The given string, with the replace variables replaced.
-	 */
-	public function process_replacevars( $string, $post ) {
-		$replaced = $this->replacer->replace( $string, $post->to_array() );
-
-		/*
-		 * Remove non-replaced variables in the form ` %%something%% `.
-		 * Note that only replacement variables that are surrounded by a space on either side are captured,
-		 * and that the replacement is a single space.
-		 */
-		return preg_replace( '`(\s%%[^\s%]+%%\s)+`iu', ' ', $replaced );
-	}
-
-	/**
-	 * Returns the content from a post, in which shortcodes have been replaced.
-	 *
-	 * @param WP_Post $post_with_shortcodes An WP post.
-	 *
-	 * @return string The content of the post with all shortcodes in the post content processed.
-	 */
-	public function process_shortcodes( $post_with_shortcodes ) {
-		global $post;
-
-		/*
-		 * Set the global $post to be the post in this iteration.
-		 * This is required for post-specific shortcodes that reference the global post.
-		 */
-
-		// phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- To setup the post we need to do this explicitly.
-		$post = $post_with_shortcodes;
-		// Set up WordPress data for this post, outside of "the_loop".
-		setup_postdata( $post );
-		$content = do_shortcode( $post->post_content );
-		wp_reset_postdata();
-
-		return $content;
-	}
-
-	/**
-	 * Builds the data for a post.
-	 *
-	 * @param WP_Post $post A WordPress post.
-	 *
-	 * @return array The enriched post.
-	 */
-	protected function build_post_data( $post ) {
-		$meta_data = array();
-
-		foreach ( $this->get_meta_keys() as $meta_key => $meta_info ) {
-			$meta_data_for_key = $this->get_meta_value_wrapper( $meta_key, $post->ID );
-			$post_type         = $post->post_type;
+		foreach ( $results as $result_row ) {
+			// The data in this row.
+			$post_content = $result_row->post_content;
+			$meta_key     = $result_row->meta_key;
+			$meta_value   = $result_row->meta_value;
+			$post_id      = $result_row->post_id;
 
 			/*
-			 * If there is no meta_data for the current key, check for default settings
-			 *
-			 * For title we need to check if there is a modified SEO-title available and save it.
-			 * If the SEO title was not modified, we check if the user specified a default SEO title for this content type.
-			 * Otherwise we use a default title '%%title%% %%sep%% %%sitename%%' (WPSEO_Frontend::$default_title).
-			 *
-			 * If the meta description was not modified, we check if the user specified a default meta description for this content type.
+			 * The human readable name of this meta key,
+			 * plus whether the meta value is JSON-stringified and should be decoded first.
 			 */
-			if ( $meta_data_for_key === '' ) {
-				switch ( $meta_key ) {
-					case 'title':
-						$meta_data_for_key = $this->apply_default_title( $post_type );
-						break;
-					case 'metadesc':
-						$meta_data_for_key = $this->get_options_wrapper( 'metadesc-' . $post_type, '' );
-						break;
-				}
-			}
+			$meta_name     = $meta_map[ $meta_key ]['name'];
+			$should_decode = $meta_map[ $meta_key ]['should_decode'];
 
-			// Get the name we use as a human readable meta_data label in the results.
-			$meta_key_name = $meta_info['name'];
-			// Apply json decoder to meta keys that are arrays (e.g., related keywords).
-			if ( $meta_info['should_decode'] ) {
-				$meta_data[ $meta_key_name ] = json_decode( $meta_data_for_key );
+			if ( $current_post['ID'] == $post_id ) {
+				// Decode when necessary.
+				$meta_value = ( $should_decode ) ? json_decode( $meta_value ) : $meta_value;
+
+				$current_post['meta'][ $meta_name ] = $meta_value;
 			}
 			else {
-				$meta_data[ $meta_key_name ] = $meta_data_for_key;
-				if ( $meta_info['should_replace_vars'] ) {
-					$meta_data[ $meta_key_name ] = $this->process_replacevars( $meta_data_for_key, $post );
+				// The current post is empty if we have just started populating the post list.
+				if ( $current_post !== array() ) {
+					// Current post has been populated with all meta values, add it to the list of posts.
+					$posts[] = $current_post;
 				}
+				// Start with populating a new post.
+				$current_post = array( 'ID' => $post_id );
+				// Decode when necessary.
+				$meta_value = ( $should_decode ) ? json_decode( $meta_value ) : $meta_value;
+
+				$current_post['meta'][ $meta_name ] = $meta_value;
+				$current_post['post_content']       = $post_content;
 			}
 		}
 
-		return array(
-			'ID'           => $post->ID,
-			'post_content' => $this->process_shortcodes( $post ),
-			'meta'         => $meta_data,
-		);
+		// Always add the current open post to the post list.
+		$posts[] = $current_post;
+
+		return $posts;
+	}
+
+	/**
+	 * Returns an array of posts in which all shortcodes in the content of each respective post have
+	 * been processed.
+	 *
+	 * @param array $posts An array of post objects.
+	 *
+	 * @return array An array of posts objects where all shortcodes in the post content have been processed.
+	 */
+	public function process_shortcodes( $posts ) {
+		$posts_modified = $posts;
+
+		foreach ( $posts_modified as &$post ) {
+			if ( array_key_exists( 'post_content', $post ) ) {
+				$post['post_content'] = do_shortcode( $post['post_content'] );
+			}
+		}
+
+		return $posts_modified;
+	}
+
+	/**
+	 * Returns a list of supported post types.
+	 *
+	 * @return array The supported post types.
+	 */
+	private function get_post_types() {
+		$prominent_words_support = new WPSEO_Premium_Prominent_Words_Support();
+
+		return $prominent_words_support->get_supported_post_types();
+	}
+
+	/**
+	 * Generates a placeholder string for the given SQL query variables for use in wpdb::prepare.
+	 *
+	 * **Example**:
+	 * ```
+	 * $placeholder_string = generate_wpdb_prepare_placeholder( array( 2, 4, 6 ), '%d' ) // $placeholder_string = '%d, %d, %d'
+	 * ```
+	 *
+	 * @param array  $query_variables The SQL query variables to generate the placeholder string for.
+	 * @param string $placeholder     The placeholder type to use, '%d' for integers, '%s' for strings.
+	 *
+	 * @return string The generated placeholder string.
+	 */
+	private function generate_wpdb_prepare_placeholder( $query_variables, $placeholder ) {
+		return implode( ', ', array_fill( 0, count( $query_variables ), $placeholder ) );
 	}
 }

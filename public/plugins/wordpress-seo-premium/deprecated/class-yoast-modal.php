@@ -1,7 +1,5 @@
 <?php
 /**
- * WPSEO plugin file.
- *
  * @package WPSEO\Admin
  */
 
@@ -21,7 +19,7 @@ class Yoast_Modal {
 	 * @deprecated 9.2
 	 */
 	public function __construct() {
-		_deprecated_function( __METHOD__, '9.2' );
+		_deprecated_constructor( 'Yoast_Modal', '9.2' );
 	}
 
 	/**

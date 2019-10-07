@@ -32,6 +32,7 @@ class Yoast_Dismissable_Notice_Ajax {
 	 */
 	const FOR_SITE = 'option';
 
+
 	/**
 	 * Name of the notice that will be dismissed.
 	 *

@@ -11,15 +11,11 @@
 class WPSEO_Link_Type_Classifier {
 
 	/**
-	 * Host of the URL.
-	 *
 	 * @var string
 	 */
 	protected $base_host = '';
 
 	/**
-	 * Path of the URL.
-	 *
 	 * @var string
 	 */
 	protected $base_path = '';

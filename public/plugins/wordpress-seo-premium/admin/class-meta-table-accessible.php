@@ -11,15 +11,11 @@
 class WPSEO_Meta_Table_Accessible {
 
 	/**
-	 * Indicates that the table is accessible.
-	 *
 	 * @var string
 	 */
 	const ACCESSIBLE = '0';
 
 	/**
-	 * Indicates that the table is inaccessible.
-	 *
 	 * @var string
 	 */
 	const INACCESSBILE = '1';

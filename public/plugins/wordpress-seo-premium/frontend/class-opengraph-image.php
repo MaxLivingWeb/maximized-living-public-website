@@ -11,8 +11,6 @@
 class WPSEO_OpenGraph_Image {
 
 	/**
-	 * The image ID used when the image is external.
-	 *
 	 * @var string
 	 */
 	const EXTERNAL_IMAGE_ID = '-1';

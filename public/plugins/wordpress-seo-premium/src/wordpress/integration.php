@@ -10,7 +10,7 @@ namespace Yoast\WP\Free\WordPress;
 /**
  * An interface for registering integrations with WordPress
  */
-interface Integration extends Loadable {
+interface Integration {
 
 	/**
 	 * Initializes the integration.

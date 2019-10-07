@@ -11,8 +11,6 @@
 class WPSEO_GSC_Issues {
 
 	/**
-	 * Holds the option name.
-	 *
 	 * @var string
 	 */
 	private $option_name = '';

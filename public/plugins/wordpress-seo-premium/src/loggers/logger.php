@@ -8,46 +8,61 @@
 namespace Yoast\WP\Free\Loggers;
 
 use YoastSEO_Vendor\Psr\Log\LoggerInterface;
-use YoastSEO_Vendor\Psr\Log\LoggerTrait;
 use YoastSEO_Vendor\Psr\Log\NullLogger;
 
 /**
  * Creates an instance of a logger object.
  */
-class Logger implements LoggerInterface {
-	use LoggerTrait;
+class Logger {
 
 	/**
-	 * @var \YoastSEO_Vendor\Psr\Log\LoggerInterface
+	 * The instance of the logger.
+	 *
+	 * @var \YoastSEO_Vendor\Psr\Log\LoggerInterface|null
 	 */
-	protected $wrapped_logger;
+	protected static $logger;
 
 	/**
-	 * Logger constructor.
+	 * Retrieves an instance of the logger.
+	 *
+	 * @return \YoastSEO_Vendor\Psr\Log\LoggerInterface The logger.
 	 */
-	public function __construct() {
-		$this->wrapped_logger = new NullLogger();
+	public static function get_logger() {
+		static $logger;
 
-		/**
-		 * Gives the possibility to set override the logger interface.
-		 *
-		 * @api \YoastSEO_Vendor\Psr\Log\LoggerInterface $logger Instance of NullLogger.
-		 *
-		 * @return \YoastSEO_Vendor\Psr\Log\LoggerInterface The logger object.
-		 */
-		$this->wrapped_logger = \apply_filters( 'wpseo_logger', $this->wrapped_logger );
+		if ( self::$logger instanceof LoggerInterface ) {
+			return self::$logger;
+		}
+
+		if ( ! $logger ) {
+			$logger = new NullLogger();
+
+			/**
+			 * Gives the possibility to set override the logger interface.
+			 *
+			 * @api \YoastSEO_Vendor\Psr\Log\LoggerInterface $logger Instance of NullLogger.
+			 *
+			 * @return \YoastSEO_Vendor\Psr\Log\LoggerInterface The logger object.
+			 */
+			$logger = \apply_filters( 'wpseo_logger', $logger );
+		}
+
+		if ( ! $logger instanceof LoggerInterface ) {
+			$logger = new NullLogger();
+		}
+
+		return $logger;
 	}
 
 	/**
-	 * Logs with an arbitrary level.
+	 * Sets the logger object.
 	 *
-	 * @param mixed  $level   The log level.
-	 * @param string $message The log message.
-	 * @param array  $context The log context.
-	 *
-	 * @return void
+	 * @param \YoastSEO_Vendor\Psr\Log\LoggerInterface|null $logger The logger to use.
 	 */
-	public function log( $level, $message, array $context = array() ) {
-		$this->wrapped_logger->log( $level, $message, $context );
+	public static function set_logger( LoggerInterface $logger = null ) {
+		if ( ! $logger instanceof LoggerInterface ) {
+			$logger = new NullLogger();
+		}
+		self::$logger = $logger;
 	}
 }

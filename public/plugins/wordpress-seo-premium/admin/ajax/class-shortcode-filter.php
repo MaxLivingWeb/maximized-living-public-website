@@ -36,7 +36,6 @@ class WPSEO_Shortcode_Filter {
 			);
 		}
 
-		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Reason: WPSEO_Utils::format_json_encode is considered safe.
 		wp_die( WPSEO_Utils::format_json_encode( $parsed_shortcodes ) );
 	}
 }

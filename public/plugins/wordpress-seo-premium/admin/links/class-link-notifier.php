@@ -11,8 +11,6 @@
 class WPSEO_Link_Notifier {
 
 	/**
-	 * The ID of the link indexing notification.
-	 *
 	 * @var string
 	 */
 	const NOTIFICATION_ID = 'wpseo-reindex-links';

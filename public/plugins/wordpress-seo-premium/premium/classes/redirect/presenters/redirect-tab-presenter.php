@@ -36,7 +36,8 @@ abstract class WPSEO_Redirect_Tab_Presenter implements WPSEO_Redirect_Presenter 
 	 * @return void
 	 */
 	public function display( array $display = array() ) {
-		$view_vars = $this->get_view_vars( $display );
+		extract( $this->get_view_vars( $display ) );
+
 		include WPSEO_PREMIUM_PATH . 'classes/redirect/views/redirects-tab-' . $this->view . '.php';
 	}
 

@@ -11,8 +11,6 @@
 class WPSEO_Post_Metabox_Formatter implements WPSEO_Metabox_Formatter_Interface {
 
 	/**
-	 * Holds the WordPress Post.
-	 *
 	 * @var WP_Post
 	 */
 	private $post;

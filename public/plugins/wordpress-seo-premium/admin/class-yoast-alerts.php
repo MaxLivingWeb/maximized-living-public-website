@@ -11,8 +11,6 @@
 class Yoast_Alerts {
 
 	/**
-	 * Holds the admin page's ID.
-	 *
 	 * @var string
 	 */
 	const ADMIN_PAGE = 'wpseo_dashboard';
@@ -141,14 +139,12 @@ class Yoast_Alerts {
 	private function output_ajax_response( $type ) {
 
 		$html = $this->get_view_html( $type );
-		// phpcs:disable WordPress.Security.EscapeOutput -- Reason: WPSEO_Utils::format_json_encode is safe.
 		echo WPSEO_Utils::format_json_encode(
 			array(
 				'html'  => $html,
 				'total' => self::get_active_alert_count(),
 			)
 		);
-		// phpcs:enable -- Reason: WPSEO_Utils::format_json_encode is safe.
 	}
 
 	/**
@@ -174,11 +170,7 @@ class Yoast_Alerts {
 		// Re-collect alerts.
 		self::collect_alerts();
 
-		/**
-		 * Stops PHPStorm from nagging about this variable being unused. The variable is used in the view.
-		 *
-		 * @noinspection PhpUnusedLocalVariableInspection
-		 */
+		/** @noinspection PhpUnusedLocalVariableInspection */
 		$alerts_data = self::get_template_variables();
 
 		ob_start();
@@ -206,11 +198,7 @@ class Yoast_Alerts {
 	 */
 	public static function show_overview_page() {
 
-		/**
-		 * Stops PHPStorm from nagging about this variable being unused. The variable is used in the view.
-		 *
-		 * @noinspection PhpUnusedLocalVariableInspection
-		 */
+		/** @noinspection PhpUnusedLocalVariableInspection */
 		$alerts_data = self::get_template_variables();
 
 		include WPSEO_PATH . 'admin/views/alerts-dashboard.php';

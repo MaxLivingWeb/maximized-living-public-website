@@ -16,21 +16,18 @@
  * @property int                   $position The position in the list.
  */
 class WPSEO_Schema_FAQ_Questions {
-
 	/**
 	 * The Schema array.
 	 *
 	 * @var array
 	 */
 	private $data;
-
 	/**
 	 * All the blocks of this block-type.
 	 *
 	 * @var WP_Block_Parser_Block
 	 */
 	private $block;
-
 	/**
 	 * Position in the list.
 	 *
@@ -72,19 +69,19 @@ class WPSEO_Schema_FAQ_Questions {
 	 *
 	 * @param array $question The question to generate schema for.
 	 *
-	 * @return array Schema.org Question piece.
+	 * @return array unsigned Schema.org Question piece.
 	 */
-	protected function generate_question_block( $question ) {
+	private function generate_question_block( $question ) {
 		return array(
 			'@type'          => 'Question',
 			'@id'            => $this->context->canonical . '#' . $question['id'],
 			'position'       => $this->position ++,
 			'url'            => $this->context->canonical . '#' . $question['id'],
-			'name'           => strip_tags( $question['jsonQuestion'] ),
+			'name'           => $question['jsonQuestion'],
 			'answerCount'    => 1,
 			'acceptedAnswer' => array(
 				'@type' => 'Answer',
-				'text'  => strip_tags( $question['jsonAnswer'], '<h1><h2><h3><h4><h5><h6><br><ol><ul><li><a><p><b><strong><i><em>' ),
+				'text'  => $question['jsonAnswer'],
 			),
 		);
 	}

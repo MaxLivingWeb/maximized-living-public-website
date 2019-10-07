@@ -11,8 +11,6 @@
 class WPSEO_Link_Compatibility_Notifier {
 
 	/**
-	 * Notification id.
-	 *
 	 * @var string
 	 */
 	const NOTIFICATION_ID = 'wpseo-links-compatibility';

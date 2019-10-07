@@ -25,8 +25,6 @@ class WPSEO_Link_Columns {
 	const COLUMN_LINKS = 'links';
 
 	/**
-	 * Holds the link column count instance.
-	 *
 	 * @var WPSEO_Link_Column_Count
 	 */
 	protected $link_count;
@@ -216,7 +214,7 @@ class WPSEO_Link_Columns {
 	public function set_count_objects() {
 		global $wp_query;
 
-		$posts    = empty( $wp_query->posts ) ? $wp_query->get_posts() : $wp_query->posts;
+		$posts    = $wp_query->get_posts();
 		$post_ids = array();
 
 		// Post lists return a list of objects.

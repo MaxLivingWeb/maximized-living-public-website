@@ -35,7 +35,6 @@ if ( is_array( $wpseo_taxonomies ) && $wpseo_taxonomies !== array() ) {
 					'editor_specific_replace_vars' => $editor_specific_replace_vars,
 				),
 				'title_after' => ' (<code>' . esc_html( $wpseo_taxonomy->name ) . '</code>)',
-				'class'       => 'search-appearance',
 			)
 		);
 		echo $wpseo_taxonomy_presenter->get_output();

@@ -22,7 +22,6 @@ $wpseo_media_presenter = new WPSEO_Paper_Presenter(
 			'has-wrapper'
 		),
 		'paper_id'  => 'settings-media-attachment-url',
-		'class'     => 'search-appearance',
 	)
 );
 

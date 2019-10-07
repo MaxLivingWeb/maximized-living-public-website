@@ -27,8 +27,6 @@ class WPSEO_Author_Sitemap_Provider implements WPSEO_Sitemap_Provider {
 	}
 
 	/**
-	 * Get the links for the sitemap index.
-	 *
 	 * @param int $max_entries Entries per sitemap.
 	 *
 	 * @return array
@@ -157,8 +155,8 @@ class WPSEO_Author_Sitemap_Provider implements WPSEO_Sitemap_Provider {
 
 		$users = $this->get_users( $user_criteria );
 
-		// Throw an exception when there are no users in the sitemap.
-		if ( count( $users ) === 0 ) {
+		// Determine max page based on the total number of users.
+		if ( $user_criteria['offset'] > count( $users ) ) {
 			throw new OutOfBoundsException( 'Invalid sitemap page requested' );
 		}
 
