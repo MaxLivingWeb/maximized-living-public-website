@@ -24,7 +24,6 @@
         "guzzlehttp/guzzle": "^6.3.3",
         "guzzlehttp/oauth-subscriber": "^0.3.0",
         "johnpbloch/wordpress": "5.2.3",
-<<<<<<< HEAD
         "respect/validation": "^1.1.29",
         "spomky-labs/jose": "^7.1.0",
         "thepixeldeveloper/sitemap": "^5.1.3",
@@ -35,8 +34,7 @@
         "wpackagist-plugin/contact-form-submissions":"^1.6.2",
         "wpackagist-plugin/shortpixel-image-optimiser":"^4.14.5",
         "wpackagist-plugin/wordfence":"^7.4.0",
-        "wpackagist-plugin/wp-external-links":"^2.35.0"
-=======
+        "wpackagist-plugin/wp-external-links":"^2.35.0",
         "respect/validation": "1.1.29",
         "spomky-labs/jose": "7.1.0",
         "thepixeldeveloper/sitemap": "5.1.3",
@@ -49,7 +47,6 @@
         "wpackagist-plugin/shortpixel-image-optimiser":"4.14.5",
         "wpackagist-plugin/wordfence":"7.4.0",
         "wpackagist-plugin/wp-external-links":"2.35.0"
->>>>>>> before-acf-broke
 
 
     },
