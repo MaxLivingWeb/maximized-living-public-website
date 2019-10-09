@@ -78,6 +78,11 @@ Do you have questions or issues with Contact Form 7 MailChimp Extension? Use the
 
 For more information, see [Releases](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension).
 
+
+= 0.5.03 =
+
+* Modified Doble Opt-in behavior.
+
 = 0.5 =
 
 * Ajax added to fetch your mailing lists from Mailchim.com

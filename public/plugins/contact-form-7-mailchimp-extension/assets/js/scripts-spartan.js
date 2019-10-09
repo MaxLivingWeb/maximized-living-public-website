@@ -91,8 +91,33 @@ jQuery(document).ready(function() {
 			}
 
 		});
+    
+    //Here test check dbl optin 
+    
+    if (! jQuery('#wpcf7-mailchimp-conf-subs').is(':checked'))
 
+			jQuery('#wpcf7-mailchimp-dbloptin').hide();
 
+		jQuery('#wpcf7-mailchimp-conf-subs').click(function() {
+
+			if (jQuery('#wpcf7-mailchimp-dbloptin').is(':hidden')
+			&& jQuery('#wpcf7-mailchimp-conf-subs').is(':checked')) {
+
+				jQuery('#wpcf7-mailchimp-dbloptin').slideDown('fast');
+			}
+
+			else if (jQuery('#wpcf7-mailchimp-dbloptin').is(':visible')
+			&& jQuery('#wpcf7-mailchimp-conf-subs').not(':checked')) {
+
+				jQuery('#wpcf7-mailchimp-dbloptin').slideUp('fast');
+        //jQuery(this).closest('form').find("#wpcf7-mailchimp-dbloptin input[type=text]").val(""); //al quitarle el check lo deberia volver en blanco
+
+			}
+
+		});        
+    
+    //end
+    
 
 		jQuery(".mce-trigger").click(function() {
 

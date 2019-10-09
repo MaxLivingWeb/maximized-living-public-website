@@ -35,7 +35,7 @@ restore_current_blog();
                     </time>
                 </p>
             <?php endif; ?>
-            <div class="link">
+            <!-- <div class="link">
                 <?php
                 $text = "Shop Now";
                 $link = "https://store.maxliving.com/";
@@ -45,7 +45,7 @@ restore_current_blog();
                 }
                 ?>
                 <a class="button button-tertiary button-large" href="<?php echo $link; ?>"><?php echo $text; ?></a>
-            </div>
+            </div> -->
         </header>
 
         <?php

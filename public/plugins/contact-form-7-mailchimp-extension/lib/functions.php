@@ -220,19 +220,16 @@ function wpcf7_mch_subscribe_remote($obj) {
     $mce_csu = 'subscribed';
 
     if( isset($cf7_mch['confsubs']) && strlen($cf7_mch['confsubs']) != 0 ) {
-
-      $mce_csu = 'pending';
-    } else {
+ 
       if ( isset($cf7_mch['accept']) && strlen($cf7_mch['accept']) != 0 ) {
            $accept = cf7_mch_tag_replace( $regex, trim( $cf7_mch['accept'] ) , $submission->get_posted_data() );
-
-
          if ( strlen( trim($accept) ) != 0  ) {
-            $mce_csu = 'subscribed';
+            $mce_csu = 'pending';
          } else {
             $mce_csu = 'unsubscribed';
          }
-      }
+      } else $mce_csu = 'pending';
+      
     }
 
       try {
@@ -460,13 +457,13 @@ function mce_set_lateralbanner() {
       <div class="inside">
         <p>We have the the best tool to integrate Contact Form 7 with your Chimpmail mailing lists with nifty features:</p>
         <ol>
-          <li><a href="https://chimpmatic.com?utm_source=ChimpMatic&utm_campaign=Groups" target="_blank">Groups / Categories</a></li>
-          <li><a href="https://chimpmatic.com?utm_source=ChimpMatic&utm_campaign=UnlimitesFields" target="_blank">Unlimited Fileds</a></li>
-          <li><a href="https://chimpmatic.com?utm_source=ChimpMatic&utm_campaign=UnlimitedAudiences" target="_blank">Unlimited Audiences</a></li>
-          <li><a href="https://chimpmatic.com?utm_source=ChimpMatic&utm_campaign=GreatPricing" target="_blank">Great Pricing Options</a></li>
+          <li><a href="https://chimpmatic.com" target="_blank">Groups / Categories</a></li>
+          <li><a href="https://chimpmatic.com" target="_blank">Unlimited Fileds</a></li>
+          <li><a href="https://chimpmatic.com" target="_blank">Unlimited Audiences</a></li>
+          <li><a href="https://chimpmatic.com" target="_blank">Great Pricing Options</a></li>
         </ol>
-        <p><a href="https://chimpmatic.com?utm_source=ChimpMatic&utm_campaign=ReadMore" class="dops-button is-primary" target="_blank">Read More</a></p>
-      </div>'  ;
+        <p><a href="https://chimpmatic.com" class="dops-button is-primary" target="_blank">Read More</a></p>
+      </div>';
 
    $banner = $Defaultpanel ;
    //delete_site_option('mce_conten_panel_lateralbanner');
