@@ -21,7 +21,6 @@ $categorySortScripts = true;
         <div class="heroContent centerAlign container">
             <h1 class="heroHeadline">Our Events</h1>
             <p class="heroDescription">
-                Our professional seminars and training sessions for chiropractic doctors and students support continued elevation of the profession. Our community and patient workshops teach you how to balance your health naturally.
             </p>
             <span class="icon-lineWave"></span>
         </div>
