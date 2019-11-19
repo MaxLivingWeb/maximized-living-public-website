@@ -18,10 +18,11 @@
 
 require_once( SPARTAN_MCE_PLUGIN_DIR . '/lib/activate.php' );
 require_once( SPARTAN_MCE_PLUGIN_DIR . '/lib/enqueue.php' );
-require_once( SPARTAN_MCE_PLUGIN_DIR . '/lib/tools.php' );
-require_once( SPARTAN_MCE_PLUGIN_DIR . '/lib/mch-debug-logger.php' );
-require_once( SPARTAN_MCE_PLUGIN_DIR . '/lib/functions.php' );
+require_once( SPARTAN_MCE_PLUGIN_DIR . '/lib/tools.php' ); 
+require_once( SPARTAN_MCE_PLUGIN_DIR . '/lib/chimp_db_log.php' );
+require_once( SPARTAN_MCE_PLUGIN_DIR . '/lib/helper.php' ); 
+require_once( SPARTAN_MCE_PLUGIN_DIR . '/lib/handler.php' );
 require_once( SPARTAN_MCE_PLUGIN_DIR . '/lib/wp.php' );
 require_once( SPARTAN_MCE_PLUGIN_DIR . '/lib/deactivate.php' );
-require_once( SPARTAN_MCE_PLUGIN_DIR . '/lib/functions-ajax.php' );
+require_once( SPARTAN_MCE_PLUGIN_DIR . '/lib/find.php' );
 require_once( SPARTAN_MCE_PLUGIN_DIR . '/lib/events.php' );

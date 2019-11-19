@@ -38,8 +38,8 @@ get_template_part('template-parts/nav-item-permissions');
                             <?php endif; ?>
                             <li><a href="<?php echo get_home_url() . '/power-of-chiropractic'; ?>"
                                    title="Power of Chiropractic">Power of Chiropractic</a></li>
-                            <li><a href="<?php echo get_home_url() . '/success-stories'; ?>"
-                                   title="Patient Success Stories">Patient Success Stories</a></li>
+                            <!-- <li><a href="<?php echo get_home_url() . '/success-stories'; ?>"
+                                   title="Patient Success Stories">Patient Success Stories</a></li> -->
                             <li><a href="<?php echo get_home_url() . '/#contact'; ?>"
                                    title="Contact Us">Contact Us</a></li>
                         </ul>

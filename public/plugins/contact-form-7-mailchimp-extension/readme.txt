@@ -1,10 +1,10 @@
-=== Contact Form 7 Extension For MailChimp ===
-Contributors: rnzo
+=== Contact Form 7 Extension For Mailchimp ===
+Contributors: rnzo, chimpmatic
 Donate link: https://bit.ly/2HdTzmO
-Tags: mailchimp, chimpmail, mailchimp form, mailchimp list, newsletter
-Requires at least: 4.0
-Tested up to: 5.3
-Stable tag: 4.0.0
+Tags: contact form 7, mailchimp, chimpmail, mailchimp list, newsletter, chimpmatic
+Requires at least: 4.9
+Tested up to: 5.3.9
+Stable tag: 5.3.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,35 +12,38 @@ MailChimp for Wordpress. Simple way to integrate MailChimp mailing lists to Cont
 
 == Description ==
 
-Wordpress Extension For MailChimp. Integrate Contact Form 7 with [MailChimp](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension). Automatically add form submissions to predetermined lists in MailChimp, using MailChimp's latest API. This Extension for MailChimp supports multiple mailing lists and API Keys.
+Wordpress Extension For Mailchimp. Integrate Contact Form 7 with [Mailchimp](https://chimpmatic.com). Automatically add form submissions to predetermined lists in Mailchimp, using Mailchimp's latest API. This Extension for Mailchimp supports multiple mailing lists and API Keys.
 
 > <strong>Extension For Mailchimp Support</strong><br>
-> Active support is not always provided for the <a href="https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension" rel="friend">Contact Form 7 MailChimp Extension</a> on the WordPress.org forums. One-on-one email support is available to people who email the <a href="https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension" rel="friend">Mailchimp Extension developer</a>.
+> Active support is not always provided for the <a href="https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension" rel="friend">Contact Form 7 Mailchimp Extension</a> on the WordPress.org forums. One-on-one email support is available to people who email the <a href="https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension" rel="friend">Mailchimp Extension developer</a>.
 >
 > <strong>Bug Reports</strong><br>
-> Bug reports for the Contact Form 7 MailChimp Extension are welcome in the <a href="https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension" rel="friend">Wordpress developers</a> website.
+> Bug reports for the Contact Form 7 Mailchimp Extension are welcome in the <a href="https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension" rel="friend">Wordpress developers</a> website.
 
 = Key Features =
 
 * Easy to use
+* Use a different API key per contact form
 * Use a different mailing list per contact form
 * Single opt-in - no confirmation email send to subscribers
 * Double opt-in - confirmation email send to subscribers
 * [Opt-in checkbox](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-opt-in-checkbox) - add the chance to opt-in/opt-out
-* Support for [custom fields](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-custom-fields)
-* Latest MailChimp API V3
+* Support for [many custom fields](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-custom-fields)
+* Latest Mailchimp API V3
 * Constantly updated
 
-= Please note*** =
+= Premium Features =
 
-* Support for groups - coming soon
-* Support for segments - coming soon
+* [Support for groups](https://chimpmatic.com)
+* [Support for tags](https://chimpmatic.com)
+* [Support for language](https://chimpmatic.com)
+* [Support for text/html](https://chimpmatic.com)
+* [Support for segments](https://chimpmatic.com)
 
 = Requirements =
 
-1. Self hosted WordPress.org installation (4.0 or higher)
-2. Contact Form 7 (4.2 or higher)
-3. MailChimp account
+1. Contact Form 7
+2. Mailchimp account
 
 = Leave a Comment or a Review =
 
@@ -54,86 +57,46 @@ If this plugin is useful to you, please leave a review here: [Extension Review P
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Once the plugin is active, you will see a new 'tab' inside Contact Form 7 admin interface.
 
-You will find '[MailChimp: Subscriber List Details](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)' menu in your Contact Form 7 editor.
+You will find '[Mailchimp: Subscriber List Details](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)' menu in your Contact Form 7 editor.
 
-For basic usage, you can also have a look at the [Contact Form 7 MailChimp Extension homepage](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension), you can also have a look at the [Contact Form 7 homepage](https://contactform7.com).
+For basic usage, you can also have a look at the [Contact Form 7 Mailchimp Extension homepage](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension), you can also have a look at the [Contact Form 7 homepage](https://contactform7.com).
 
 == Frequently Asked Questions ==
 
-Do you have questions or issues with Contact Form 7 MailChimp Extension? Use these support channels appropriately.
+Do you have questions or issues with Contact Form 7 Mailchimp Extension? Use these support channels appropriately.
 
-1. [Basic setup - Mail Chimp Extension 101](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-contact-form)
-2. [Contact Form 7 MailChimp Extension Docs](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-contact-form)
-3. [Contact Form 7 MailChimp](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
-4. [MailChimp API Key](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-api-key)
-5. [MailChimp List ID](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-list-id)
-6. [MailChimp Opt-in Checkbox](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-opt-in-checkbox)
+1. [Basic setup - Mailchimp Extension 101](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-contact-form)
+2. [Contact Form 7 Mailchimp Extension Docs](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-contact-form)
+3. [Contact Form 7 Mailchimp](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
+4. [Mailchimp API Key](https://chimpmatic.com/how-to-find-your-mailchimp-api-key)
+4. [Mailchimp Tags or Labels](https://chimpmatic.com/how-to-find-your-mailchimp-api-key)
+5. [Mailchimp List ID](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-list-id)
+6. [Mailchimp Opt-in Checkbox](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-opt-in-checkbox)
 7. [Chimpmail](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
-8. [MailChimp Form](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
+8. [Mailchimp Form](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
 9. [Aweber vs Mailchimp](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
 10. [Mailchimp Contact Form](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
-11. [MailChimp Custom fields](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-custom-fields)
+11. [Mailchimp Custom fields](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-custom-fields)
 
 == Changelog ==
 
 For more information, see [Releases](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension).
 
+= 0.5.08 =
+
+* Fix debugger memory usage
+
+= 0.5.07 =
+
+* Improved debugger.
 
 = 0.5.03 =
 
-* Modified Doble Opt-in behavior.
+* Modified Double Opt-in behavior.
 
 = 0.5 =
 
-* Ajax added to fetch your mailing lists from Mailchim.com
-
-= 0.4.59 =
-
-* Fixed bug that limited to pull only 10 lists from Mailchimp.com
-
-= 0.4.50 =
-
-* Fixed reported PHP error
-
-= 0.4.50 =
-
-* Updated API methods
-
-= 0.4.42 =
-
-* Fixed TagsManager error
-
-= 0.4.41 =
-
-* Fixed reported PHP error
-
-= 0.4.38 =
-
-* Added [mail-tag] list to help users
-
-= 0.4.36 =
-
-* Updated doc links
-
-= 0.4.34 =
-
-* Tested up to WP 4.8
-* killed a bug generated in the last release
-
-
-= 0.4.33 =
-
-* Improved debugger
-
-
-= 0.4.8 =
-
-* Fixed a bug when ‘duplicating’ a contact form 7
-
-= 0.4.7 =
-
-* Fixed form not submitting when email already subscribed
-* Fixed conflict with any other plugin using Mailchimp class
+* Ajax added to fetch your mailing lists from Mailchimp.com
 
 = 0.4.2 =
 

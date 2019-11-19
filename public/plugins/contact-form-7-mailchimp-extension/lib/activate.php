@@ -143,6 +143,23 @@ function mce_difer_dateact_date() {
 
 }
 
+function mce_diferdays_dateact_date() {
+  $option_name = 'mce_loyalty' ;
+  $today = getdate() ;
+  mce_save_date_activation();
+
+  $date_act = get_option( $option_name );
+
+  $datetime_ini = new DateTime("now");
+  $datetime_fin = new DateTime($date_act['year'].'-'.$date_act['mon'].'-'.$date_act['wday']);
+
+  $fechaF = date_diff($datetime_ini,$datetime_fin);
+  
+  $resultf = $fechaF->format('%a'); 
+  return $resultf; 
+}
+
+
 
 
 if (get_site_option('mce_show_notice') == 1) {
@@ -223,9 +240,43 @@ function mce_news_notices () {
   $class = 'notice is-dismissible vc-notice welcome-panel';
   $check = 0 ;
   $tittle = '' ;
-  $message = mce_get_postnotice ($check,$tittle ) ;
+  //$message = mce_get_postnotice ($check,$tittle ) ;
+  
+    $Defaulttittle = 'ChimpMatic Lite is now 0.5!' ;
+    $Defaultpanel = '<p class="about-description">Easier setup to get you up and running in no time. Please <a href="https://renzojohnson.com/contact" target="_blank" rel="noopener noreferrer">lets us know</a> what kind of features you would like to see added <a href="https://renzojohnson.com/contact" target="_blank" rel="noopener noreferrer">HERE</a></p>
+<div class="welcome-panel-column-container">
+<div class="welcome-panel-column">
+<h3>Get Started</h3>
+<p>Make sure it works as you expect <br><a class="button button-primary button-hero load-customize" href="/wp-admin/admin.php?page=wpcf7&amp;post=8&amp;active-tab=4">Review your settings <span alt="f111" class="dashicons dashicons-admin-generic" style="font-size: 17px;vertical-align: middle;"> </span> </a></p>
+</div>
+<div class="welcome-panel-column">
+<h3>Next Steps</h3>
+<p>Help me develop the plugin and provide support by <br><a class="donate button button-primary button-hero load-customize" href="https://www.paypal.me/renzojohnson" target="_blank" rel="noopener noreferrer">Donating even a small sum <span alt="f524" class="dashicons dashicons-tickets-alt"> </span></a></p>
+</div>
+</div>' ;     
+  
+  $banner = $Defaultpanel ;
+  $tittle = $Defaulttittle ;
+   //delete_site_option('mce_conten_panel_lateralbanner');
+
+   if ( get_site_option('mce_conten_panel_master') == null  ) {
+      add_site_option( 'mce_conten_panel_master', $Defaultpanel ) ;
+      add_site_option( 'mce_conten_tittle_master', $Defaulttittle ) ;
+      $banner = $Defaultpanel ;
+      $tittle = $Defaulttittle ;
+   }
+    else  {
+      $grabbanner = trim( get_site_option('mce_conten_panel_master') ) ;
+      $grabtittle = trim( get_site_option('mce_conten_tittle_master') ) ;
+      
+      $banner = ( $grabbanner  == ''  ) ? $Defaultpanel : $grabbanner ;
+      $tittle = ( $grabtittle  == ''  ) ? $Defaulttittle : $grabtittle ;
+      
+    }
+  
+    
   $tittle2 = '<h2>'.$tittle.'</h2>';
-  $message2 = $tittle2.$message ;
+  $message2 = $tittle2.$banner ;
 
   echo '<div id="mce-notice" class="'.$class.'"><div class="welcome-panel-content">'.$message2.'</div></div>';
 
@@ -276,6 +327,7 @@ if (  (  get_site_option('mce_show_update_news') == null )  or get_site_option('
 }
 
 
+
 function mce_get_postnotice (&$check,&$tittle) {
 
     $check = 0 ;
@@ -283,15 +335,21 @@ function mce_get_postnotice (&$check,&$tittle) {
 
     if ( is_wp_error( $response ) ) {
       $check = -1;
-      return;
+      return '';
     }
 
     $posts = json_decode( wp_remote_retrieve_body( $response ) );
 
     if ( empty( $posts ) or is_null ( $posts  ) ) {
         $check = -2;
-		    return  ;
+		    return ''  ;
 	  }
+  
+  if ( $response["response"]["code"] != 200 ) {
+      $check = -3;
+		  return ''  ;
+  } 
+  
 
 	if ( ! empty( $posts ) ) {
 		  foreach ( $posts as $post ) {
