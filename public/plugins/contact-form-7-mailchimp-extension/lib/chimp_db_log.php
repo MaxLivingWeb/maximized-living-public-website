@@ -61,26 +61,27 @@ class chimp_db_log {
 				$master_error = $master_error + array( $maxarray => $serror_log ) ;
 			
 			if ( !get_option ( $form.'_log' ) ) {
-					
+				//	error_log ( 'Entra al log Add'  ) ; 
 					$deprecated = null;
       		$autoload = 'no';
       		add_option( $form.'_log', $master_error, $deprecated, $autoload );
 				
 			} else {
+				//	error_log ( 'Entra al log Up'  ) ; 				
 				  update_option ( $form.'_log' , $master_error  ) ;
 			}
 						
-			$master_save = get_option ( $form.'_log' ) ;
+			//error_log ( print_r ( $master_error,true )  ) ;
 			
-			//error_log ( print_r ( $master_save,true  ) ) ;
-				
+			$master_save = get_option ( $form.'_log' ) ;
+									
 			
 		}
 	
 		public function chimp_log_delete_db () {
 			$form = $this->form.'_log'   ;
 			 
-			error_log ( $form  ) ;
+			//error_log ( $form  ) ;
 			$result = delete_option ( $form ) ;
 			return $result ;
 		} 

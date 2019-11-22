@@ -91,7 +91,7 @@ function mce_init_constants(){
   define( 'MCE_AUTH', '//renzojohnson.com' );
   define( 'MCE_AUTH_COMM', '<!-- campaignmonitor extension by Renzo Johnson -->' );
   define( 'MCE_NAME', 'MailChimp Contact Form 7 Extension' );
-  define( 'MCE_SETT', admin_url( 'admin.php?page=wpcf7&post='.mc_get_latest_item().'&active-tab=4' ) );
+  define( 'MCE_SETT', admin_url( 'admin.php?page=wpcf7' ) );
   define( 'MCE_DON', 'https://www.paypal.me/renzojohnson' );
 
 }
@@ -171,5 +171,59 @@ function plugin_activation( $plugin ) {
 
 
 
+if (!function_exists('chimpmatic_tags')) {
+  function chimpmatic_tags( $output, $name, $html ) {
+
+    if ( '_domain' == $name ) {
+      $output = chimpmatic_domain();
+    }
+
+    if ( '_formID' == $name ) {
+      $output = chimpmatic_form_id();
+    }
 
 
+    return $output;
+
+  }
+}
+add_filter( 'wpcf7_special_mail_tags', 'chimpmatic_tags', 10, 3 );
+
+
+if (!function_exists('chimpmatic_add_form_tag_posts')) {
+  function chimpmatic_add_form_tag_posts() {
+
+    wpcf7_add_form_tag('_domain', 'chimpmatic_domain');
+    wpcf7_add_form_tag('_formID', 'chimpmatic_form_id');
+
+  }
+}
+add_action('wpcf7_init', 'chimpmatic_add_form_tag_posts', 11);
+
+
+if (!function_exists('chimpmatic_domain')) {
+  function chimpmatic_domain() {
+
+    $strToLower       = strtolower(trim( get_home_url() ));
+    $httpPregReplace  = preg_replace('/^http:\/\//i', '', $strToLower);
+    $httpsPregReplace = preg_replace('/^https:\/\//i', '', $httpPregReplace);
+    $wwwPregReplace   = preg_replace('/^www\./i', '', $httpsPregReplace);
+    $explodeToArray   = explode('/', $wwwPregReplace);
+    $finalDomainName  = trim($explodeToArray[0]);
+
+    return $finalDomainName;
+
+  }
+}
+
+
+if (!function_exists('chimpmatic_form_id')) {
+  function chimpmatic_form_id() {
+
+    $wpcf7 = WPCF7_ContactForm::get_current();
+    $res = $wpcf7->id();
+
+    return $res;
+
+  }
+}

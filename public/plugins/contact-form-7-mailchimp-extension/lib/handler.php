@@ -31,6 +31,9 @@ if ( in_array( $plugchimpmail , $plugins ) ) {
 
 
 function wpcf7_mch_add_mailchimp($args) {
+	
+	if ( function_exists ( "wpcf7_chimp_add_mailchimp" ) )
+      return ;
 
   $host = esc_url_raw( $_SERVER['HTTP_HOST'] );
   $url = $_SERVER['REQUEST_URI'];
@@ -67,6 +70,9 @@ function wpcf7_mch_add_mailchimp($args) {
 
 
 function wpcf7_mch_save_mailchimp($args) {
+	 if ( function_exists ( "wpcf7_chimp_save_mailchimp" ) )
+      return ;
+
 
   if (!empty($_POST)){
 		

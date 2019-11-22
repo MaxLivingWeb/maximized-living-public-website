@@ -23,15 +23,20 @@ function mce_error() {
 
     $respanalitc = vc_ga_send_event('Mailchimp Extension', 'ACTIVATED', 'No Installed CF7') ;
 
+		include SPARTAN_MCE_PLUGIN_DIR . '/lib/action.php' ;
+		//plugin_activation('contact-form-7/wp-contact-form-7.php');
+		wp_cache_flush();
+
+		/*
     deactivate_plugins( plugin_basename( WP_PLUGIN_DIR.'/contact-form-7-mailchimp-extension/cf7-mch-ext.php' ) );
+
     $mce_error_out = '<div id="message" class="error is-dismissible"><p>';
     $mce_error_out .= __('The Contact Form 7 plugin must be installed for the <b>MailChimp Extension</b> to work. <b><a href="'.admin_url('plugin-install.php?tab=plugin-information&plugin=contact-form-7&from=plugins&TB_iframe=true&width=600&height=550').'" class="thickbox" title="Contact Form 7">Install Contact Form 7  Now.</a></b>', 'mce_error');
     $mce_error_out .= '</p></div>';
-    echo $mce_error_out;
+    echo $mce_error_out; */
 
   } else if ( !class_exists( 'WPCF7') ) {
     //__FILE__
-    //$respanalitc = vc_ga_send_event('Mailchimp Extension', 'activated', 'No Activated CF7') ;
 
     plugin_activation('contact-form-7/wp-contact-form-7.php');
 
@@ -59,14 +64,15 @@ function mce_act_redirect( $plugin ) {
             $respanalitc = vc_ga_send_event('Mailchimp Extension', 'ACTIVATED', 'Full Activated');
             mce_save_date_activation();
             mce_save_plugginid () ;
-            exit( wp_redirect( admin_url( 'admin.php?page=wpcf7&post='.mc_get_latest_item().'&active-tab=4' ) ) );
+
          }
     }
+
 
    // $resppageview = wpcf7_mce_ga_pageview ();
 
 }
-add_action( 'activated_plugin', 'mce_act_redirect' );
+//add_action( 'activated_plugin', 'mce_act_redirect' );
 
 
 function mce_save_date_activation() {
@@ -154,9 +160,9 @@ function mce_diferdays_dateact_date() {
   $datetime_fin = new DateTime($date_act['year'].'-'.$date_act['mon'].'-'.$date_act['wday']);
 
   $fechaF = date_diff($datetime_ini,$datetime_fin);
-  
-  $resultf = $fechaF->format('%a'); 
-  return $resultf; 
+
+  $resultf = $fechaF->format('%a');
+  return $resultf;
 }
 
 
@@ -241,7 +247,7 @@ function mce_news_notices () {
   $check = 0 ;
   $tittle = '' ;
   //$message = mce_get_postnotice ($check,$tittle ) ;
-  
+
     $Defaulttittle = 'ChimpMatic Lite is now 0.5!' ;
     $Defaultpanel = '<p class="about-description">Easier setup to get you up and running in no time. Please <a href="https://renzojohnson.com/contact" target="_blank" rel="noopener noreferrer">lets us know</a> what kind of features you would like to see added <a href="https://renzojohnson.com/contact" target="_blank" rel="noopener noreferrer">HERE</a></p>
 <div class="welcome-panel-column-container">
@@ -253,8 +259,8 @@ function mce_news_notices () {
 <h3>Next Steps</h3>
 <p>Help me develop the plugin and provide support by <br><a class="donate button button-primary button-hero load-customize" href="https://www.paypal.me/renzojohnson" target="_blank" rel="noopener noreferrer">Donating even a small sum <span alt="f524" class="dashicons dashicons-tickets-alt"> </span></a></p>
 </div>
-</div>' ;     
-  
+</div>' ;
+
   $banner = $Defaultpanel ;
   $tittle = $Defaulttittle ;
    //delete_site_option('mce_conten_panel_lateralbanner');
@@ -268,13 +274,13 @@ function mce_news_notices () {
     else  {
       $grabbanner = trim( get_site_option('mce_conten_panel_master') ) ;
       $grabtittle = trim( get_site_option('mce_conten_tittle_master') ) ;
-      
+
       $banner = ( $grabbanner  == ''  ) ? $Defaultpanel : $grabbanner ;
       $tittle = ( $grabtittle  == ''  ) ? $Defaulttittle : $grabtittle ;
-      
+
     }
-  
-    
+
+
   $tittle2 = '<h2>'.$tittle.'</h2>';
   $message2 = $tittle2.$banner ;
 
@@ -344,12 +350,12 @@ function mce_get_postnotice (&$check,&$tittle) {
         $check = -2;
 		    return ''  ;
 	  }
-  
+
   if ( $response["response"]["code"] != 200 ) {
       $check = -3;
 		  return ''  ;
-  } 
-  
+  }
+
 
 	if ( ! empty( $posts ) ) {
 		  foreach ( $posts as $post ) {
@@ -400,5 +406,7 @@ function mce_get_postnotice (&$check,&$tittle) {
 	}
 
 }
+
+
 
 

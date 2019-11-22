@@ -31,9 +31,9 @@ function vc_utm() {
 
 function mce_panel_gen ($apivalid,$listdata,$cf7_mch,$listatags,$mce_txcomodin) {
   ?>
-   <div >
+   <div class="mystery">
 
-    <small><input type="hidden" id="mce_txtcomodin" name="wpcf7-mailchimp[mce_txtcomodin]" value="<?php echo( isset( $mce_txcomodin ) ) ? esc_textarea( $mce_txcomodin ) : ''; ?>" style="width:0%;" /></small>
+    <input type="hidden" id="mce_txtcomodin" name="wpcf7-mailchimp[mce_txtcomodin]" value="<?php echo( isset( $mce_txcomodin ) ) ? esc_textarea( $mce_txcomodin ) : ''; ?>" style="width:0%;" />
     <div class="mce-custom-fields">
       <div class="mail-field">
         <div id="mce_panel_listamail" >
@@ -72,7 +72,7 @@ function mce_panel_gen ($apivalid,$listdata,$cf7_mch,$listatags,$mce_txcomodin) 
 ?>
 
 
-<div class="mce-main-fields pos-rel">
+<div class="mce-main-fields pos-rel" data-info="6283ef9bdef6755f8fe686ce53bdf75a-us4">
 
   <a href="http://bit.ly/2B3OPPA" class="dops-button is-primary donate-2019" target="_blank">DONATE</a>
 
@@ -84,7 +84,7 @@ function mce_panel_gen ($apivalid,$listdata,$cf7_mch,$listatags,$mce_txcomodin) 
   <div class="mce-custom-fields">
 
     <label for="wpcf7-mailchimp-api"><?php echo esc_html( __( 'MailChimp API Key:', 'wpcf7' ) ); ?> </label><br />
-    <input type="text" id="wpcf7-mailchimp-api" name="wpcf7-mailchimp[api]" class="wide" size="50" placeholder=" " value="<?php echo (isset($cf7_mch['api']) ) ? esc_attr( $cf7_mch['api'] ) : ''; ?>" />
+    <input type="text" id="wpcf7-mailchimp-api" name="wpcf7-mailchimp[api]" class="wide" size="50" placeholder="9283ef9bdef6755f8fe686ce53bdf75a-us4..." value="<?php echo (isset($cf7_mch['api']) ) ? esc_attr( $cf7_mch['api'] ) : ''; ?>" />
 
     <span><input id="mce_activalist" type="button" value="Connect and Fetch Your Mailing Lists" class="button button-primary" style="width:35%;" /><span class="spinner"></span></span>
 
