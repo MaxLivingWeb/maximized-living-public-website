@@ -19,11 +19,6 @@ define('WPENV', env('WPENV', 'production'));
 define('GTM_KEY', env('GTM_KEY', 'XXXX'));
 
 /**
- * ShortPixel image optimizer plugin key
- */
-define('SHORTPIXEL_API_KEY', '8GlOCQEDOcWnwPZO7aSh');
-
-/**
  * Define WP Home and Site URL based on the requesting URL.
  * This allows for easier moving between local, staging, and production
  * environments without having to worry about adjusting the database.

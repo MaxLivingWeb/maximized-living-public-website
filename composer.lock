@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2fe2b0b9ddfb1ada973e8c968fdc863b",
+    "content-hash": "dee165c19caba5d65978536ae08917d4",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -1483,26 +1483,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/post-smtp/"
-        },
-        {
-            "name": "wpackagist-plugin/shortpixel-image-optimiser",
-            "version": "4.14.6",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/shortpixel-image-optimiser/",
-                "reference": "tags/4.14.6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/shortpixel-image-optimiser.4.14.6.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/shortpixel-image-optimiser/"
         },
         {
             "name": "wpackagist-plugin/wordfence",
