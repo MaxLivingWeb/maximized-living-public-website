@@ -8,7 +8,7 @@ files:
   - source: /log
     destination: /var/www/html/log
   - source: /public
-    destination: /var/www/html/public    
+    destination: /var/www/html/public
   - source: /composer.json
     destination: /var/www/html
   - source: /composer.lock
@@ -17,6 +17,8 @@ files:
     destination: /var/www/html
   - source: /deploy/EnvironmentSetting.sh
     destination: /var/www/html/public
+  - source: /uploads
+    destination: /var/www/html/public/uploads
 hooks:
   ApplicationStop:
     - location: deploy/ApplicationStop.sh
@@ -30,3 +32,8 @@ hooks:
   ApplicationStart:
     - location: deploy/ApplicationStart.sh
       runas: root
+permissions:
+    - object: /uploads
+      mode: 777
+      type:
+        - directory
