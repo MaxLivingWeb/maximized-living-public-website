@@ -17,8 +17,6 @@ files:
     destination: /var/www/html
   - source: /deploy/EnvironmentSetting.sh
     destination: /var/www/html/public
-  - source: /uploads
-    destination: /var/www/html/public/uploads
 hooks:
   ApplicationStop:
     - location: deploy/ApplicationStop.sh
@@ -32,8 +30,3 @@ hooks:
   ApplicationStart:
     - location: deploy/ApplicationStart.sh
       runas: root
-permissions:
-    - object: /uploads
-      mode: 777
-      type:
-        - directory

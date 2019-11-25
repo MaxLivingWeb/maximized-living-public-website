@@ -102,7 +102,7 @@ define('WP_CONTENT_DIR', WEBROOT);
 define('WP_CONTENT_URL', WP_HOME);
 define('WPMU_PLUGIN_DIR', WEBROOT . '/plugins/required');
 define('WPMU_PLUGIN_URL', WP_HOME . '/plugins');
-define('UPLOADS', '../uploads');
+define('UPLOADS', WP_HOME . '/uploads');
 
 /**
  * Wordpress insists on outputting its logging to the public folder which is a
