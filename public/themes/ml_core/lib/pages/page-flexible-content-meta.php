@@ -544,7 +544,7 @@ if( function_exists('acf_add_local_field_group') ):
                     '5a1d9e4bb8c87' => array(
                         'key' => '5a1d9e4bb8c87',
                         'name' => 'video_card_list',
-                        'label' => 'Video Card List',
+                        'label' => 'Vimeo Video Card List',
                         'display' => 'row',
                         'sub_fields' => array(
                             array(
@@ -587,20 +587,20 @@ if( function_exists('acf_add_local_field_group') ):
                                 'sub_fields' => array(
                                     array(
                                         'key' => 'field_5a1d9e77b8c8a',
-                                        'label' => 'Video URL',
+                                        'label' => 'Vimeo Video Card List',
                                         'name' => 'video_url',
-                                        'type' => 'url',
+                                        'type' => 'oembed',
                                         'instructions' => '',
-                                        'required' => 1,
+                                        'required' => 0,
                                         'conditional_logic' => 0,
                                         'wrapper' => array(
-                                            'width' => '',
-                                            'class' => '',
-                                            'id' => '',
+                                          'width' => '',
+                                          'class' => '',
+                                          'id' => '',
                                         ),
-                                        'default_value' => '',
-                                        'placeholder' => '',
-                                    ),
+                                        'width' => '',
+                                        'height' => '',
+                                      ),
                                     array(
                                         'key' => 'field_5a1d9e80b8c8b',
                                         'label' => 'Video Title',

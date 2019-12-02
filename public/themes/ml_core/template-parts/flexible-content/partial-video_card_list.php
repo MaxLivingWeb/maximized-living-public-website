@@ -15,9 +15,30 @@ $youtubeScripts = true;
                 parse_str($content, $ytarr);
                 ?>
                 <div class="videoContainer card card-third card-shadowHover card-underlineHover-brandGrey">
+                  <div class="embed-container">
                     <?php if(get_sub_field('video_url')) :?>
-                        <div class="videoPlayer" data-id="<?php echo $id; ?>" data-name="<?php echo htmlspecialchars($ytarr['title']);?>"></div>
-                    <?php endif; ?>
+                        <?php the_sub_field('video_url'); ?>
+                      <?php endif; ?>
+                  </div>
+                  <style>
+    .embed-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        overflow: hidden;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .embed-container iframe,
+    .embed-container object,
+    .embed-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
                     <div class="videoContent">
                         <?php if(get_sub_field('video_title')) :?>
                             <h3><?php the_sub_field('video_title'); ?></h3>

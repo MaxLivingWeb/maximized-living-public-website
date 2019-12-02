@@ -1,7 +1,3 @@
-<IfModule mod_headers.c>
-Header set Content-Security-Policy "default-src 'self' 'unsafe-eval' data: *.gstatic.com *.visualwebsiteoptimizer.com *.google-analytics.com *.hotjar.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https: http://www.googleadservices.com http://*.googletagmanager.com http://*.doubleclick.net http://*.visualwebsiteoptimizer.com http://www.gstatic.com http://bat.bing.com https://cdn.callrail.com; style-src 'self' 'unsafe-inline' https: http://hello.myfonts.net; img-src 'self' data: https: *.gravatar.com http://*.visualwebsiteoptimizer.com http://bat.bing.com; font-src 'self' data: https: http://maxliving.com; connect-src 'self' https://*.trackduck.com https://stats.g.doubleclick.net https://*.doubleclick.net http://*.visualwebsiteoptimizer.com; media-src 'self' https:; object-src 'self'; frame-src 'self' https://www.youtube.com https://www.google.com https://www.eventbrite.ca https://www.eventbrite.com https://www.googletagmanager.com https://connect.facebook.net https://www.facebook.com https://bid.g.doubleclick.net https://*.visualwebsiteoptimizer.com; form-action 'self' https:; report-uri https://df20e771691f9b03eab387e2cb951226.report-uri.com/r/d/csp/enforce;"
-</IfModule>
-
 <IfModule mod_setenvif.c>
   SetEnvIf X-Forwarded-Proto "^https$" HTTPS
 </IfModule>
