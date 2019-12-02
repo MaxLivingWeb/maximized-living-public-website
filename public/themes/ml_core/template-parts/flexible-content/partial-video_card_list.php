@@ -31,4 +31,3 @@ $youtubeScripts = true;
         endif; ?>
     </div>
 </section>
-
