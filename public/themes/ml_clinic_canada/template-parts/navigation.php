@@ -74,26 +74,6 @@ get_template_part('template-parts/nav-item-permissions');
                                 class="invisible">Toggle Submenu</span></button>
                 </li>
                 <li>
-                    <a class="navLink" href="<?php echo get_home_url() . '/healthy-articles'; ?>" title="Articles and Recipes">Articles &amp; Recipes</a>
-                    <div class="navDropdown">
-                        <ul>
-                            <li><a href="<?php echo get_home_url() . '/healthy-articles'; ?>"
-                                   title="Healthy Articles">Healthy Articles</a></li>
-                            <li><a href="<?php echo get_home_url() . '/healthy-recipes'; ?>"
-                                   title="Healthy Recipes">Healthy
-                                    Recipes</a></li>
-                            <?php if ($_SESSION['clinicHasPosts'] || is_user_logged_in()): ?>
-                                <li><a href="<?php echo get_home_url() . '/doctors-blog'; ?>"
-                                       title="Doctor's Blog">Doctor's
-                                        Blog</a></li>
-                            <?php endif; ?>
-                        </ul>
-                        <div class="navDropdownShadow"></div>
-                    </div>
-                    <button class="navDropdownToggle" title="Toggle Submenu"><span
-                                class="invisible">Toggle Submenu</span></button>
-                </li>
-                <li>
                     <a class="navLink" href="<?php echo get_home_url() . '/patient-paperwork'; ?>" title="Patient Resources">Patient Resources</a>
                     <div class="navDropdown">
                         <ul>
@@ -109,15 +89,8 @@ get_template_part('template-parts/nav-item-permissions');
                 </li>
                 <li>
                     <span class="divider"></span>
-                    <!-- <a class="navLinkWithIcon"
-                       href="<?php echo get_home_url(1) . '/store?affiliateId=' . $affiliate_id . utmURL('child'); ?>"
-                       rel="nofollow"
-                       title="Shop">
-                        <span class="icon-cart"></span>
-                        <span class="navLinkText">Shop</span>
-                    </a> -->
                     <a class="navLinkWithIcon"
-                       href="https://store.maxliving.com/?srrf=<?php the_field('affiliate_id', 'clinic_options'); ?>"
+                       href="<?php echo get_home_url() . '/store'; ?>"
                        rel="nofollow"
                        title="Store">
                         <span class="icon-cart"></span>

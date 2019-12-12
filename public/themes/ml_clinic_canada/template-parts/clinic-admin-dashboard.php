@@ -2,10 +2,6 @@
 global $blog_id;
 $createURL = admin_url('admin.php?page=create-content');
 $createEvent = admin_url('post-new.php?post_type=event');
-$createRecipe = admin_url('post-new.php?post_type=recipe');
-$draftRecipe = admin_url('edit.php?post_type=recipe&post_status=draft');
-$createArticle = admin_url('post-new.php?post_type=article');
-$draftArticle = admin_url('edit.php?post_type=article&post_status=draft');
 $locationURL = admin_url('admin.php?page=location-details');
 $manageHome = admin_url('admin.php?page=clinic-home-page-options');
 $manageTeam = admin_url('admin.php?page=our-team-page-options');
@@ -39,54 +35,7 @@ $profileURL = admin_url('profile.php');
 </style>
 <div class="wrap">
     <h1>Clinic Admin Dashboard</h1>
-    <hr>
-    <p>Welcome to your clinic admin dashboard! Here you can manage your clinics website - you can create content, edit
-        pages, and update your location information.</p>
-
     <div class="clinic-admin-dashboard">
-        <div class="clinic-admin-dashboard-item-full">
-            <h2>Content Management</h2>
-            <hr>
-
-        </div>
-        <div class="clinic-admin-dashboard-item">
-            <h3>Create Content</h3>
-            <p>
-                Here you can create Events, Recipes, or Articles to share on your website.
-            </p>
-            <a href="<?php echo $createURL; ?>" class="button-primary" title="Create Content">Create Content</a>
-            <br>
-            <br>
-        </div>
-        <div class="clinic-admin-dashboard-item">
-            <h3>Events</h3>
-            <p>Here you can create events to display on your website under "Community Education" or "Professional
-                Development" categories.
-            </p>
-            <a href="<?php echo $createEvent; ?>" class="button-primary" title="Create Event">Create Event</a>
-            <br>
-            <br>
-        </div>
-        <div class="clinic-admin-dashboard-item">
-            <h3>Recipes</h3>
-            <p>Submit recipes to be shared in your region, network wide, or just your website.</p>
-            <a href="<?php echo $createRecipe; ?>" class="button-primary" title="Create Recipe">Create Recipe</a>
-            <a href="<?php echo $draftRecipe; ?>" class="button-primary" title="Recipe Drafts">Recipe Drafts</a>
-            <br>
-            <br>
-        </div>
-        <div class="clinic-admin-dashboard-item">
-            <h3>Articles</h3>
-            <p>Submit articles to be shared in your region, network wide, or just your website.</p>
-            <a href="<?php echo $createArticle; ?>" class="button-primary" title="Create Article">Create Article</a>
-            <a href="<?php echo $draftArticle; ?>" class="button-primary" title="Article Drafts">Article Drafts</a>
-            <br>
-            <br>
-        </div>
-        <div class="clinic-admin-dashboard-item-full">
-            <h2>Website Management</h2>
-            <hr>
-        </div>
         <div class="clinic-admin-dashboard-item">
             <h3>Location</h3>
             <p>Here you can manage your clinic's location information.</p>
@@ -110,7 +59,7 @@ $profileURL = admin_url('profile.php');
         </div>
         <div class="clinic-admin-dashboard-item">
             <h3>Footer Options</h3>
-            <p>Here you can manage the Footer of your website. Add your Facebook Page, Twitter Page, or Google+ Page.
+            <p>Here you can manage the Footer of your website. Add your Facebook, Instagram, or Twitter profiles.
                 You
                 can also add a custom disclaimer in the footer.</p>
             <a href="<?php echo $manageFooter; ?>" class="button-primary" title="Manage Footer">Manage Footer</a>

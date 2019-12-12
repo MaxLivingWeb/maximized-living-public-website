@@ -51,7 +51,7 @@ endif;
             To request an appointment, please complete and submit the form below. Someone from our clinic will contact you soon to schedule your consultation.
         </p>
     </div>
-    <?php echo do_shortcode('[generic_form show_affiliate_id=true delivery_email="'.$clinicEmail.'"]'); ?>
+    <?php echo do_shortcode('[contact-form-7 id="'.get_field('appointment_id', 'clinic-home-page-options').'" title="Request an Appointment"]'); ?>
 </section>
 
 <?php if ($locationTelephone && $clinicEmail) : ?>
