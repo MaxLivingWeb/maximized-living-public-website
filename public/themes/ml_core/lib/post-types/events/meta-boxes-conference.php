@@ -156,7 +156,7 @@ array(
 	'label' => 'Upcoming Events Page Video (Optional)',
 	'name' => 'upcoming_events_page_video',
 	'type' => 'oembed',
-	'instructions' => 'This field is used on https://maxliving.com/events page.',
+	'instructions' => 'You must delete the image in the above field if you are using this media field. Not doing this will break the page.',
 	'required' => 0,
 	'conditional_logic' => 0,
 	'wrapper' => array(

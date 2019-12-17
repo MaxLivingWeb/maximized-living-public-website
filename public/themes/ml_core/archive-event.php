@@ -16,6 +16,25 @@ $postType = 'event';
 $categorySortScripts = true;
 ?>
 
+<style>
+    .embed-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        overflow: hidden;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .embed-container iframe,
+    .embed-container object,
+    .embed-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
 
     <div class="hero hero-archive wave wave-multi" style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/hero-events.jpg');'" id="content">
         <div class="heroContent centerAlign container">
@@ -113,35 +132,20 @@ $categorySortScripts = true;
                 ?>
                 <article class="archiveListItem">
                     <div class="articleImage">
+                      <?php if( get_field('upcoming_events_page_video') ): ?>
                         <div class="image bg-image">
-
-                              <?php if( get_field('upcoming_events_page_video') ): ?>
-
-                                <div class="embed-container">
-    <?php the_field('upcoming_events_page_video'); ?>
-</div>
-<style>
-    .embed-container {
-        position: relative;
-        padding-bottom: 56.25%;
-        overflow: hidden;
-        max-width: 100%;
-        height: auto;
-    }
-
-    .embed-container iframe,
-    .embed-container object,
-    .embed-container embed {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-</style>
-
-                              <?php endif; ?>
-
+                          <div class="embed-container">
+                            <?php the_field('upcoming_events_page_video'); ?>
+                          </div>
+                        <?php else: ?>
+                        <?php endif; ?>
+                        <?php if( get_field('upcoming_events_page_image') ): ?>
+                          <div class="image bg-image">
+                            <div class="embed-container">
+                              <img src="<?php the_field('upcoming_events_page_image'); ?>" />
+                            </div>
+                          <?php else: ?>
+                          <?php endif; ?>
 
                         </div>
 
