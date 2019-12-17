@@ -7,31 +7,6 @@ acf_add_local_field_group(array(
 	'title' => 'Event Details',
 	'fields' => array(
 		array(
-			'key' => 'field_5c4a2f34af0b6',
-			'label' => 'Upcoming Events Page Image',
-			'name' => 'upcoming_events_page_image',
-			'type' => 'image',
-			'instructions' => 'This image will show up next to the event when viewed on <a href="https://maxliving.com/events" target="_blank">https://maxliving.com/events</a><br>
-Minimum dimensions: <strong>488px x 337px</strong>',
-			'required' => 1,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'return_format' => 'url',
-			'preview_size' => 'medium',
-			'library' => 'all',
-			'min_width' => 488,
-			'min_height' => 337,
-			'min_size' => '',
-			'max_width' => '',
-			'max_height' => '',
-			'max_size' => '',
-			'mime_types' => '',
-		),
-		array(
 			'key' => 'field_5c4a2d19d98f2',
 			'label' => 'Event Details Description',
 			'name' => 'event_details_description',

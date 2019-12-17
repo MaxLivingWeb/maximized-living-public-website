@@ -117,15 +117,34 @@ $categorySortScripts = true;
 
                               <?php if( get_field('upcoming_events_page_image') ): ?>
 
-                              	<img src="<?php the_field('upcoming_events_page_image'); ?>" />
+                                <div class="embed-container">
+    <?php the_field('upcoming_events_page_image'); ?>
+</div>
+<style>
+    .embed-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        overflow: hidden;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .embed-container iframe,
+    .embed-container object,
+    .embed-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
 
                               <?php endif; ?>
 
 
                         </div>
-                        <a title="<?php the_title(); ?>"  href="<?php the_permalink(); ?>">
-                            <span class="invisible" aria-hidden="true"><?php the_title(); ?></span>
-                        </a>
+
                     </div>
                     <div class="articlePreviewContent">
                         <?php if ( !empty($category_name) ): ?>
