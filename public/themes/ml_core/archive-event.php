@@ -115,10 +115,10 @@ $categorySortScripts = true;
                     <div class="articleImage">
                         <div class="image bg-image">
 
-                              <?php if( get_field('upcoming_events_page_image') ): ?>
+                              <?php if( get_field('upcoming_events_page_video') ): ?>
 
                                 <div class="embed-container">
-    <?php the_field('upcoming_events_page_image'); ?>
+    <?php the_field('upcoming_events_page_video'); ?>
 </div>
 <style>
     .embed-container {
