@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dee165c19caba5d65978536ae08917d4",
+    "content-hash": "df2d5a3e353445802a305019503ce428",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -254,16 +254,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.5.0",
+            "version": "6.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "dbc2bc3a293ed6b1ae08a3651e2bfd213d19b6a5"
+                "reference": "43ece0e75098b7ecd8d13918293029e555a50f82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/dbc2bc3a293ed6b1ae08a3651e2bfd213d19b6a5",
-                "reference": "dbc2bc3a293ed6b1ae08a3651e2bfd213d19b6a5",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/43ece0e75098b7ecd8d13918293029e555a50f82",
+                "reference": "43ece0e75098b7ecd8d13918293029e555a50f82",
                 "shasum": ""
             },
             "require": {
@@ -317,7 +317,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2019-12-07T18:20:45+00:00"
+            "time": "2019-12-23T11:57:10+00:00"
         },
         {
             "name": "guzzlehttp/oauth-subscriber",
@@ -1407,15 +1407,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "5.1.5",
+            "version": "5.1.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/5.1.5"
+                "reference": "tags/5.1.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.1.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.1.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1427,7 +1427,7 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7-mailchimp-extension",
-            "version": "0.5.09",
+            "version": "0.5.10",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7-mailchimp-extension/",
@@ -1435,7 +1435,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7-mailchimp-extension.zip?timestamp=1574426763",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7-mailchimp-extension.zip?timestamp=1576088100",
                 "reference": null,
                 "shasum": null
             },
@@ -1487,15 +1487,15 @@
         },
         {
             "name": "wpackagist-plugin/wordfence",
-            "version": "7.4.1",
+            "version": "7.4.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordfence/",
-                "reference": "tags/7.4.1"
+                "reference": "tags/7.4.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordfence.7.4.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordfence.7.4.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1507,15 +1507,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-external-links",
-            "version": "2.40",
+            "version": "2.42",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-external-links/",
-                "reference": "tags/2.40"
+                "reference": "tags/2.42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-external-links.2.40.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-external-links.2.42.zip",
                 "reference": null,
                 "shasum": null
             },

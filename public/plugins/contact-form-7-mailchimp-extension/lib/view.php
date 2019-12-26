@@ -74,7 +74,7 @@ function mce_panel_gen ($apivalid,$listdata,$cf7_mch,$listatags,$mce_txcomodin) 
 
 <div class="mce-main-fields pos-rel" data-info="6283ef9bdef6755f8fe686ce53bdf75a-us4">
 
-  <a href="http://bit.ly/2B3OPPA" class="dops-button is-primary donate-2019" target="_blank">DONATE</a>
+  <a href="http://bit.ly/latte4renzo" class="dops-button is-primary donate-2019" target="_blank">DONATE</a>
 
   <div id="mce_apivalid">
     <h2>ChimpMatic <span class="cm-lite">Lite</span>  <?php echo isset( $apivalid ) && '1' == $apivalid ? $chm_valid : $chm_invalid ; ?> <span class="mc-code"><?php global $wpdb; $mce_sents = get_option( 'mce_sent'); echo SPARTAN_MCE_VERSION . 'CF7:' . WPCF7_VERSION . 'WP' . get_bloginfo( 'version' ) . 'P' . PHP_VERSION . 'S' . $wpdb->db_version() .' - ' . $mce_sents .  ' sent in ' .  mce_difer_dateact_date(); ?></span></h2>

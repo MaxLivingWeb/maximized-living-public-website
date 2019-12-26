@@ -31,7 +31,7 @@ if ( in_array( $plugchimpmail , $plugins ) ) {
 
 
 function wpcf7_mch_add_mailchimp($args) {
-	
+
 	if ( function_exists ( "wpcf7_chimp_add_mailchimp" ) )
       return ;
 
@@ -56,11 +56,11 @@ function wpcf7_mch_add_mailchimp($args) {
   $mceapi = ( isset( $cf7_mch['api'] )   ) ? $cf7_mch['api'] : null ;
 
   //$tmp = wpcf7_mce_validate_api_key( $mceapi,$logfileEnabled,'cf7_mch_'.$mce_txcomodin );
-	$apivalid = ( isset( $cf7_mch['api-validation'] )   ) ? $cf7_mch['api-validation'] : null ;   
+	$apivalid = ( isset( $cf7_mch['api-validation'] )   ) ? $cf7_mch['api-validation'] : null ;
 
 	//$tmp = wpcf7_mce_listasasociadas( $mceapi,$logfileEnabled,'cf7_mch_'.$mce_txcomodin,$apivalid );
-	$listdata = ( isset( $cf7_mch['lisdata'] )   ) ? $cf7_mch['lisdata'] : null ; 
-	
+	$listdata = ( isset( $cf7_mch['lisdata'] )   ) ? $cf7_mch['lisdata'] : null ;
+
   $chm_valid = '<span class="chmm valid"><span class="dashicons dashicons-yes"></span>API Key</span>';
   $chm_invalid = '<span class="chmm invalid"><span class="dashicons dashicons-no"></span>API Key</span>';
 
@@ -75,25 +75,25 @@ function wpcf7_mch_save_mailchimp($args) {
 
 
   if (!empty($_POST)){
-		
-		
+
+
 		$default = array () ;
 		$cf7_mch = get_option ( 'cf7_mch_'.$args->id(), $default  ) ;
-		
+
 		$apivalid = ( isset( $cf7_mch['api-validation'] ) ) ? $cf7_mch['api-validation'] : 0   ;
 		$listdata = ( isset( $cf7_mch['lisdata'] ) ) ? $cf7_mch['lisdata'] : 0   ;
-		
+
 		$globalarray = $_POST['wpcf7-mailchimp'] ;
-		
-		if ( !isset( $_POST['wpcf7-mailchimp']['api-validation'] ) )		
-				$globalarray += array ('api-validation' => $apivalid  ) ;	
-		
+
+		if ( !isset( $_POST['wpcf7-mailchimp']['api-validation'] ) )
+				$globalarray += array ('api-validation' => $apivalid  ) ;
+
 		if ( !isset( $_POST['wpcf7-mailchimp']['lisdata'] )  ) {
 				$globalarray += array ('lisdata' => $listdata  ) ;
 		}
-			
+
     update_option( 'cf7_mch_'.$args->id(), $globalarray );
-		
+
   }
 
 }
@@ -175,9 +175,9 @@ function wpcf7_mch_subscribe_remote($obj) {
 
   $cf7_mch = get_option( 'cf7_mch_'.$obj->id() );
 	$idform = 'cf7_mch_'.$obj->id() ;
-	
+
 	if ( $cf7_mch['api-validation'] != 1 )
-		 return ;	
+		 return ;
 
   $submission = WPCF7_Submission::get_instance();
 
@@ -240,7 +240,7 @@ function wpcf7_mch_subscribe_remote($obj) {
       } else $mce_csu = 'pending';
 
     } else {
-      
+
        if ( isset($cf7_mch['accept']) && strlen($cf7_mch['accept']) != 0 ) {
            $accept = cf7_mch_tag_replace( $regex, trim( $cf7_mch['accept'] ) , $submission->get_posted_data() );
          if ( strlen( trim($accept) ) != 0  ) {
@@ -248,8 +248,8 @@ function wpcf7_mch_subscribe_remote($obj) {
          } else {
             $mce_csu = 'unsubscribed';
          }
-      } else $mce_csu = 'subscribed'; 
-      
+      } else $mce_csu = 'subscribed';
+
     }
 
       try {
@@ -336,17 +336,17 @@ function wpcf7_mch_subscribe_remote($obj) {
 
         mce_save_contador();
 
-        
+
 				$chimp_db_log = new chimp_db_log( 'mce_db_issues',  $logfileEnabled,'api',$idform );
-				
-				$chimp_db_log->chimp_log_insert_db(1, 'Subscribe Response: ' , $resp  ); 
+
+				$chimp_db_log->chimp_log_insert_db(1, 'Subscribe Response: ' , $resp  );
 
       } // end try
 
       catch (Exception $e) {
-				
+
 				$chimp_db_log = new chimp_db_log( 'mce_db_issues' , $logfileEnabled,'api',$idform );
-				$chimp_db_log->chimp_log_insert_db(4, 'Contact Form 7 response: Try Catch  ' . $e->getMessage()  , $e  );      
+				$chimp_db_log->chimp_log_insert_db(4, 'Contact Form 7 response: Try Catch  ' . $e->getMessage()  , $e  );
 
       }  // end catch
   }
@@ -421,7 +421,7 @@ if (! function_exists('array_column')) {
 
 function mce_set_welcomebanner() {
     $Defaultpanel = '<p class="about-description">Hello. My name is Renzo, I <span alt="f487" class="dashicons dashicons-heart red-icon"> </span> WordPress and I develop this free plugin to help users like you. I drink copious amounts of coffee to keep me running longer <span alt="f487" class="dashicons dashicons-smiley red-icon"> </span>. If you'. "'".'ve found this plugin useful, please consider making a donation.</p><br>
-      <p class="about-description">Would you like to <a class="button-primary" href="http://bit.ly/2HdTzmO" target="_blank">buy me a coffee?</a> or <a class="button-primary" href="http://bit.ly/2I7iZUA" target="_blank">Donate with Paypal</a></p>' ;
+      <p class="about-description">Would you like to <a class="button-primary" href="http://bit.ly/cafe4renzo" target="_blank">buy me a coffee?</a> or <a class="button-primary" href="http://bit.ly/cafe4renzo" target="_blank">Donate with Paypal</a></p>' ;
 
    $banner = $Defaultpanel ;
 
@@ -454,11 +454,11 @@ function mce_get_bannerladilla (&$check,&$tittle) {
         $check = -2;
 		    return '' ;
 	  }
-  
+
     if ( $response["response"]["code"] != 200 ) {
       $check = -3;
 		  return ''  ;
-    } 
+    }
 
 	if ( ! empty( $posts ) ) {
 		  foreach ( $posts as $post ) {
@@ -526,11 +526,11 @@ function mce_get_bannerlateral (&$check,&$tittle) {
         $check = -2;
 		    return '' ;
 	  }
-  
+
    if ( $response["response"]["code"] != 200 ) {
       $check = -3;
 		  return ''  ;
-    } 
+    }
 
 	if ( ! empty( $posts ) ) {
 		  foreach ( $posts as $post ) {

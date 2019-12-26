@@ -35,10 +35,12 @@ Wordpress Extension For Mailchimp. Integrate Contact Form 7 with [Mailchimp](htt
 = Premium Features =
 
 * [Support for groups](https://chimpmatic.com)
+* [Support for categories](https://chimpmatic.com)
 * [Support for tags](https://chimpmatic.com)
 * [Support for language](https://chimpmatic.com)
 * [Support for text/html](https://chimpmatic.com)
 * [Support for segments](https://chimpmatic.com)
+* [Support for interests](https://chimpmatic.com)
 
 = Requirements =
 
@@ -82,7 +84,7 @@ Do you have questions or issues with Contact Form 7 Mailchimp Extension? Use the
 
 For more information, see [Releases](https://renzojohnson.com/contributions/contact-form-7-mailchimp-extension).
 
-= 0.5.08 =
+= 0.5.10 =
 
 * Fix debugger memory usage
 
