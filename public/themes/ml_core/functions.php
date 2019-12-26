@@ -6,8 +6,17 @@
 include 'lib/additions/variables.php';
 $stylesheet = get_option('stylesheet');
 
+/**
+ * Hide plugin updates
+ */
 function filter_plugin_updates( $value ) {
     unset( $value->response['post-smtp/postman-smtp.php'] );
+    return $value;
+}
+add_filter( 'site_transient_update_plugins', 'filter_plugin_updates' );
+
+function filter_plugin_updates( $value ) {
+    unset( $value->response['wordpress-seo-premium/wp-seo-premium.php'] );
     return $value;
 }
 add_filter( 'site_transient_update_plugins', 'filter_plugin_updates' );
