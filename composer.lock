@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "df2d5a3e353445802a305019503ce428",
+    "content-hash": "1ab64390a3a8cb86bf71d23deef2a24d",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -1507,15 +1507,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-external-links",
-            "version": "2.42",
+            "version": "2.43",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-external-links/",
-                "reference": "tags/2.42"
+                "reference": "tags/2.43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-external-links.2.42.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-external-links.2.43.zip",
                 "reference": null,
                 "shasum": null
             },
