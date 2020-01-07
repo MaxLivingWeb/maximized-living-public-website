@@ -126,6 +126,9 @@ Redirect 302 /mlx https://maxliving.com/events/mlx-vision-june-2018
 Redirect 302 /events/mlx-generations https://maxliving.com/events/mlx-fresh-october-2018
 Redirect 302 /events/mlx-vision-june-2018 https://maxliving.com/events/mlx-fresh-october-2018
 
+# Canada Store Redirect for Facebook
+Redirect 302 /canadastore https://store.maxlivingcanada.com/
+
 
 #Category Filtering Redirects - Recipes
 RewriteRule ^healthy-recipes?categoryID=1408 /healthy-recipes?category=advanced-plan [L,R=301,NC]

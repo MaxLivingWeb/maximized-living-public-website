@@ -23,7 +23,7 @@
         "php": ">=7.1.0",
         "guzzlehttp/guzzle": "^6.3.3",
         "guzzlehttp/oauth-subscriber": "^0.3.0",
-        "johnpbloch/wordpress": "5.2.4",
+        "johnpbloch/wordpress": "5.3.2",
         "respect/validation": "^1.1.31",
         "spomky-labs/jose": "^7.1.0",
         "thepixeldeveloper/sitemap": "^5.1.3",
