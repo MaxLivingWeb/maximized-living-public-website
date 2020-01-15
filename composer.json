@@ -34,7 +34,7 @@
         "wpackagist-plugin/contact-form-7-mailchimp-extension":"0.5.10",
         "wpackagist-plugin/contact-form-submissions":"1.6.2",
         "wpackagist-plugin/post-smtp":"2.0.2",
-        "wpackagist-plugin/wordfence":"7.4.2",
+        "wpackagist-plugin/wordfence":"7.4.4",
         "wpackagist-plugin/wp-external-links":"2.43"
     },
     "autoload": {

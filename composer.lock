@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c124859699db543d1ebeecd407683f0c",
+    "content-hash": "4c3bd6043b08785059f90ceaeca62351",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -1487,15 +1487,15 @@
         },
         {
             "name": "wpackagist-plugin/wordfence",
-            "version": "7.4.2",
+            "version": "7.4.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordfence/",
-                "reference": "tags/7.4.2"
+                "reference": "tags/7.4.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordfence.7.4.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordfence.7.4.4.zip",
                 "reference": null,
                 "shasum": null
             },
