@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4c3bd6043b08785059f90ceaeca62351",
+    "content-hash": "0281396205b58607595693d5400921d9",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -1384,6 +1384,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/acf-content-analysis-for-yoast-seo/"
+        },
+        {
+            "name": "wpackagist-plugin/addsearch-instant-search",
+            "version": "2.0.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/addsearch-instant-search/",
+                "reference": "tags/2.0.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/addsearch-instant-search.2.0.5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/addsearch-instant-search/"
         },
         {
             "name": "wpackagist-plugin/classic-editor",

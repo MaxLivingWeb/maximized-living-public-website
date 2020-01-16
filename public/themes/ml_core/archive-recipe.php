@@ -30,7 +30,8 @@ $categorySortScripts = true;
         <div class="articleListIntro">
             <h2>Latest Recipes</h2>
             <div class="categoryFilter inputField">
-                <form>
+              <?php echo do_shortcode( '[addsearch]' ); ?>
+                <!-- <form>
                     <label class="invisible" for="categoryFilter">Filter by Category</label>
                     <?php
                     switch_to_blog(1);
@@ -50,7 +51,7 @@ $categorySortScripts = true;
                     endif;
                     restore_current_blog();
                     ?>
-                </form>
+                </form> -->
             </div>
         </div>
         <div class="articleList">
