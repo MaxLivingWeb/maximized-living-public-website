@@ -36,7 +36,7 @@ acf_add_local_field_group(array(
 			'name' => 'header_description',
 			'type' => 'wysiwyg',
 			'instructions' => '',
-			'required' => 1,
+			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
@@ -74,7 +74,7 @@ acf_add_local_field_group(array(
 					'name' => 'button_text',
 					'type' => 'text',
 					'instructions' => '',
-					'required' => 1,
+					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -93,7 +93,7 @@ acf_add_local_field_group(array(
 					'name' => 'button_link',
 					'type' => 'text',
 					'instructions' => '',
-					'required' => 1,
+					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -134,7 +134,7 @@ acf_add_local_field_group(array(
 			'type' => 'image',
 			'instructions' => 'This image will show up next to the event when viewed on <a href="https://maxliving.com/events" target="_blank">https://maxliving.com/events</a><br>
 Minimum dimensions: <strong>488px x 337px</strong>',
-			'required' => 1,
+			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
@@ -158,7 +158,7 @@ Minimum dimensions: <strong>488px x 337px</strong>',
 			'name' => 'event_start_date',
 			'type' => 'date_time_picker',
 			'instructions' => '',
-			'required' => 1,
+			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
@@ -192,7 +192,7 @@ Minimum dimensions: <strong>488px x 337px</strong>',
 			'name' => 'event_venue_name',
 			'type' => 'text',
 			'instructions' => '',
-			'required' => 1,
+			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
@@ -211,7 +211,7 @@ Minimum dimensions: <strong>488px x 337px</strong>',
 			'name' => 'event_address_street',
 			'type' => 'text',
 			'instructions' => '',
-			'required' => 1,
+			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
@@ -230,7 +230,7 @@ Minimum dimensions: <strong>488px x 337px</strong>',
 			'name' => 'event_address_city',
 			'type' => 'text',
 			'instructions' => '',
-			'required' => 1,
+			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
@@ -249,7 +249,7 @@ Minimum dimensions: <strong>488px x 337px</strong>',
 			'name' => 'event_address_state',
 			'type' => 'text',
 			'instructions' => '',
-			'required' => 1,
+			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
@@ -348,7 +348,7 @@ If the even is free to attend enter "FREE".',
 			'name' => 'image_video',
 			'type' => 'repeater',
 			'instructions' => 'Images are required, if a video is added it will replace the image.',
-			'required' => 1,
+			'required' => 0,
 			'conditional_logic' => array(
 				array(
 					array(
@@ -375,7 +375,7 @@ If the even is free to attend enter "FREE".',
 					'name' => 'image_iv',
 					'type' => 'image',
 					'instructions' => '',
-					'required' => 1,
+					'required' => 0,
 					'conditional_logic' => array(
 						array(
 							array(
@@ -433,7 +433,7 @@ If the even is free to attend enter "FREE".',
 			'name' => 'section_title',
 			'type' => 'text',
 			'instructions' => '',
-			'required' => 1,
+			'required' => 0,
 			'conditional_logic' => array(
 				array(
 					array(
@@ -514,7 +514,7 @@ If the even is free to attend enter "FREE".',
 			'name' => 'image',
 			'type' => 'image',
 			'instructions' => '',
-			'required' => 1,
+			'required' => 0,
 			'conditional_logic' => array(
 				array(
 					array(
@@ -546,7 +546,7 @@ If the even is free to attend enter "FREE".',
 			'name' => 'title',
 			'type' => 'wysiwyg',
 			'instructions' => '',
-			'required' => 1,
+			'required' => 0,
 			'conditional_logic' => array(
 				array(
 					array(
@@ -573,7 +573,7 @@ If the even is free to attend enter "FREE".',
 			'name' => 'content',
 			'type' => 'wysiwyg',
 			'instructions' => '',
-			'required' => 1,
+			'required' => 0,
 			'conditional_logic' => array(
 				array(
 					array(
@@ -670,7 +670,7 @@ If the even is free to attend enter "FREE".',
 			'name' => 'title_speakers',
 			'type' => 'text',
 			'instructions' => '',
-			'required' => 1,
+			'required' => 0,
 			'conditional_logic' => array(
 				array(
 					array(
@@ -697,7 +697,7 @@ If the even is free to attend enter "FREE".',
 			'name' => 'description_speakers',
 			'type' => 'wysiwyg',
 			'instructions' => '',
-			'required' => 1,
+			'required' => 0,
 			'conditional_logic' => array(
 				array(
 					array(
@@ -724,7 +724,7 @@ If the even is free to attend enter "FREE".',
 			'name' => 'speakers',
 			'type' => 'repeater',
 			'instructions' => '',
-			'required' => 1,
+			'required' => 0,
 			'conditional_logic' => array(
 				array(
 					array(
@@ -775,7 +775,7 @@ If the even is free to attend enter "FREE".',
 					'name' => 'name',
 					'type' => 'text',
 					'instructions' => '',
-					'required' => 1,
+					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -923,7 +923,7 @@ If the even is free to attend enter "FREE".',
 					'name' => 'content',
 					'type' => 'wysiwyg',
 					'instructions' => '',
-					'required' => 1,
+					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -942,7 +942,7 @@ If the even is free to attend enter "FREE".',
 					'name' => 'image',
 					'type' => 'image',
 					'instructions' => '',
-					'required' => 1,
+					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -985,7 +985,7 @@ If the even is free to attend enter "FREE".',
 					'name' => 'cta_title',
 					'type' => 'text',
 					'instructions' => '',
-					'required' => 1,
+					'required' => 0,
 					'conditional_logic' => array(
 						array(
 							array(
@@ -1012,7 +1012,7 @@ If the even is free to attend enter "FREE".',
 					'name' => 'cta_link',
 					'type' => 'url',
 					'instructions' => '',
-					'required' => 1,
+					'required' => 0,
 					'conditional_logic' => array(
 						array(
 							array(
@@ -1139,7 +1139,7 @@ If the even is free to attend enter "FREE".',
 					'name' => 'venue_latitude',
 					'type' => 'number',
 					'instructions' => '',
-					'required' => 1,
+					'required' => 0,
 					'conditional_logic' => array(
 						array(
 							array(
@@ -1168,7 +1168,7 @@ If the even is free to attend enter "FREE".',
 					'name' => 'venue_longitude',
 					'type' => 'number',
 					'instructions' => '',
-					'required' => 1,
+					'required' => 0,
 					'conditional_logic' => array(
 						array(
 							array(
@@ -1197,7 +1197,7 @@ If the even is free to attend enter "FREE".',
 					'name' => 'title',
 					'type' => 'text',
 					'instructions' => '',
-					'required' => 1,
+					'required' => 0,
 					'conditional_logic' => array(
 						array(
 							array(
@@ -1224,7 +1224,7 @@ If the even is free to attend enter "FREE".',
 					'name' => 'description',
 					'type' => 'wysiwyg',
 					'instructions' => '',
-					'required' => 1,
+					'required' => 0,
 					'conditional_logic' => array(
 						array(
 							array(
