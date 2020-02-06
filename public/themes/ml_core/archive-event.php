@@ -117,7 +117,7 @@ $categorySortScripts = true;
 
                               <?php if( get_field('upcoming_events_page_image') ): ?>
 
-                              	<img src="<?php the_field('upcoming_events_page_image'); ?>" />
+                              	<img src="<?php the_field('upcoming_events_page_image'); ?>" stlye="width: inherit;" />
 
                               <?php endif; ?>
 

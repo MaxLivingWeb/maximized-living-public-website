@@ -13,7 +13,7 @@ acf_add_local_field_group(array(
 			'type' => 'image',
 			'instructions' => 'This image will show up next to the event when viewed on <a href="https://maxliving.com/events" target="_blank">https://maxliving.com/events</a><br>
 Minimum dimensions: <strong>488px x 337px</strong>',
-			'required' => 1,
+			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
