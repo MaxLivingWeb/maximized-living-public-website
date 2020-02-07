@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name:       AddSearch Instant Search
-Plugin URI:        http://www.addsearch.com/support/wordpress-plugin/
+Plugin URI:        https://www.addsearch.com/product/wordpress-search-plugin/?utm_campaign=Wordpress%20Plugin&utm_source=wordpress_plugin
 Description:       AddSearch is an instant site search engine for your website.
-Version:           2.0.5
+Version:           2.0.6
 Author:            AddSearch Ltd.
-Author URI:        http://www.addsearch.com/
+Author URI:        https://www.addsearch.com/?utm_campaign=Wordpress%20Plugin&utm_source=wordpress_plugin
 License:           GPL-2.0+
 License URI:       http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 Text Domain:       addsearch
@@ -145,7 +145,7 @@ final class AddSearch {
 	 * @return void
 	 */
 	public function i18n() {
-		load_plugin_textdomain( 'addsearch', false, 'addsearch/languages' );
+		load_plugin_textdomain( 'addsearch', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 	}
 
 	/**

@@ -1,11 +1,11 @@
-﻿=== AddSearch ===
-Plugin URI: http://www.addsearch.com/support/wordpress-plugin/
-Author URI: http://www.addsearch.com/
+﻿=== AddSearch Site Search ===
+Plugin URI: https://www.addsearch.com/product/wordpress-search-plugin/?utm_campaign=Wordpress%20Plugin&utm_source=wordpress_plugin
+Author URI: https://www.addsearch.com/?utm_campaign=Wordpress%20Plugin&utm_source=wordpress_plugin
 Contributors: AddSearch, Sofokus, sami.keijonen
 Tags: search, instant search, site search, page search, category search, custom search, better search, autocomplete, typeahead
 Requires at least: 3.9
 Tested up to: 5.3.2
-Stable tag: 2.0.5
+Stable tag: 2.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,7 +33,7 @@ We're developing AddSearch constantly, and welcome any feedback or suggestions. 
 
 Installing AddSearch is really easy, and takes just minutes. Follow these instructions:
 
-1. Go to [www.addsearch.com](http://www.addsearch.com) and sign up with your WordPress website address and email.
+1. Go to [www.addsearch.com](https://www.addsearch.com?utm_campaign=Wordpress%20Plugin&utm_source=wordpress_plugin) and sign up with your WordPress website address and email.
 
 2. Log in to your WordPress site. Select `Plugins` and click `Add New`. Search for `addsearch`, click `Install Now` and select `OK`.
 
@@ -55,11 +55,11 @@ If you run into any trouble, feel free to shoot us an email at [support@addsearc
 
 * Does AddSearch plugin work with any theme? No, but it works with any theme that uses WordPress native <code>get_search_form()</code> function.
 
-* For questions and answers, please see [www.addsearch.com/support/](http://www.addsearch.com/support/)
+* For questions and answers, please see [our documentation](https://www.addsearch.com/support/documentation/?utm_campaign=Wordpress%20Plugin&utm_source=wordpress_plugin)
 
 == Pricing ==
 
-See pricing information at [www.addsearch.com/pricing/](http://www.addsearch.com/pricing/)
+See pricing information [here](https://www.addsearch.com/pricing/?utm_campaign=Wordpress%20Plugin&utm_source=wordpress_plugin)
 
 == Screenshots ==
 
@@ -70,6 +70,12 @@ See pricing information at [www.addsearch.com/pricing/](http://www.addsearch.com
 3. The same search on an iPhone 5.
 
 == Changelog ==
+
+= 2.0.6 =
+* Fixed texts, localizations, link formats.
+
+= 2.0.5 =
+* Fixed PHP compatibility issue
 
 = 1.3.1 =
 * Update version number

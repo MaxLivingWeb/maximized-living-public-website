@@ -69,11 +69,11 @@ function addsearch_options_page() {
 						<td>
 							<label>
 								<select name="addsearch_settings[installation_method]">
-									<option value="widget" <?php if ('widget' === $addsearch_installation) echo 'selected="selected"'; ?>><?php _e('Search as you type (Widget view)'); ?></option>
-									<option value="resultpage" <?php if ('resultpage' === $addsearch_installation) echo 'selected="selected"';?>><?php _e('Separate page for results') ?></option>
+									<option value="widget" <?php if ('widget' === $addsearch_installation) echo 'selected="selected"'; ?>><?php _e('Search as you type (Widget view)', 'addsearch'); ?></option>
+									<option value="resultpage" <?php if ('resultpage' === $addsearch_installation) echo 'selected="selected"';?>><?php _e('Separate page for results', 'addsearch') ?></option>
 								</select>
 								<p class="description">
-									<?php _e('Select whether you want to have results as you type, or a separate page for results.'); ?>
+									<?php _e('Select whether you want to have results as you type, or a separate page for results.', 'addsearch'); ?>
 								</p>
 							</label>
 						</td>
@@ -89,7 +89,8 @@ function addsearch_options_page() {
 						<th scope="row"><label><?php _e( 'About AddSearch', 'addsearch' ); ?></label></th>
 						<td>
 							<ol>
-								<li><?php echo sprintf( __( 'Go to <a href="%s" target="_blank">www.addsearch.com</a> and sign up with your WordPress website address and e-mail.', 'addsearch' ), 'http://www.addsearch.com/' ); ?></li>
+								<li><?php echo sprintf( __( 'Go to <a href="%s" target="_blank">www.addsearch.com</a> and sign up with your WordPress website address and e-mail.', 'addsearch' ),
+								'http://www.addsearch.com/?utm_campaign=Wordpress%20Plugin&utm_source=wordpress_plugin' ); ?></li>
 								<li><?php _e( 'Open the confirmation e-mail, and from the bottom, copy your Site Key.', 'addsearch' ); ?></li>
 								<li><?php _e( 'Come back to this page in WordPress. Paste your Site Key above and click <strong>Save Changes</strong>.', 'addsearch' ); ?></li>
 								<li><?php _e( 'Go to <strong>Appearance &rarr; Widgets</strong>. Drag the WordPress native Search Widget to your preferred widget area.', 'addsearch' ); ?></li>

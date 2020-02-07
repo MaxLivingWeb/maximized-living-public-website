@@ -29,13 +29,13 @@
         "thepixeldeveloper/sitemap": "^5.1.3",
         "vlucas/phpdotenv": "^2.6.1",
         "wpackagist-plugin/acf-content-analysis-for-yoast-seo":"2.3.0",
-        "wpackagist-plugin/addsearch-instant-search":"2.0.5",
+        "wpackagist-plugin/addsearch-instant-search":"2.0.6",
         "wpackagist-plugin/classic-editor":"1.5",
         "wpackagist-plugin/contact-form-7":"5.1.6",
         "wpackagist-plugin/contact-form-7-mailchimp-extension":"0.5.10",
         "wpackagist-plugin/contact-form-submissions":"1.6.2",
         "wpackagist-plugin/post-smtp":"2.0.2",
-        "wpackagist-plugin/wordfence":"7.4.4",
+        "wpackagist-plugin/wordfence":"7.4.5",
         "wpackagist-plugin/wp-external-links":"2.43"
     },
     "autoload": {
