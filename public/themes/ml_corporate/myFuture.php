@@ -25,7 +25,7 @@ get_header();
         </div>
         <div class="myFutureHeroFormContainer">
             <div class="myFutureHeroFormIntro">
-                <h2>Get more info.</h2>
+                <h2>Get more information</h2>
                 <p style="padding-bottom: 20px;">
                   Interested in MaxLiving? Let us know! We’re dedicated to building shared success in the natural health field through a wealth of resources designed for education, engagement, and advocacy.
                 </p>
