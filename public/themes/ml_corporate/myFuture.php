@@ -20,7 +20,6 @@ get_header();
 
 <section class="myFutureHero bg-faintGrey">
     <div class="container">
-        <a id="myFutureCTA" href="#myFutureForm" class="smoothScroll">Get more info</a>
         <div class="myFutureHeroTitle">
             <h1>Own your future.</h1>
         </div>
