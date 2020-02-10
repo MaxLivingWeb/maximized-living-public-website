@@ -127,7 +127,7 @@ get_header();
     <div class="container myFuture-flexibleContainer">
         <div class="contentRow">
             <div class="contentContainer">
-                <h3 class="title">Join our Network of Chiropractors</h3>
+                <h3 class="title">Align Your Health With Our Network of Chiropractors</h3>
                 <div class="content">
                     <p>
                         With <strong>257% more weekly patient visits</strong> than the chiropractic national average, we’re transforming the future of natural,
@@ -142,7 +142,7 @@ get_header();
                             Access to affordable and results-driven web and marketing support to bring new patients into your clinic — with minimal work required by you!
                         </li>
                         <li>
-                            Personal and professional development and practice support from successful MaxLiving chiropractors plus training and support for CAs.
+                            Personal, professional development, and practice consulting services from successful MaxLiving chiropractors in the fields of health and nutrition.
                         </li>
                         <li>
                             Access to premium patient education through exclusive in-office streaming updated monthly.
@@ -151,8 +151,8 @@ get_header();
                 </div>
             </div>
             <div class="imageContainer">
-                <div class="imageContent bg-image myFuture-imageZoom"
-                     style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/MyFuture_BodyImage1.png');">
+                <div class="imageContent bg-image"
+                     style="background-image: url('https://d23i5jq6adgv5h.cloudfront.net/production/uploads/2020/02/10090343/Adjustment-scaled.jpg');">
                 </div>
             </div>
         </div>
@@ -184,7 +184,7 @@ get_header();
             </div>
             <div class="imageContainer">
                 <div class="imageContent bg-image"
-                     style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/MyFuture_BodyImage2.jpg');">
+                     style="background-image: url('https://d23i5jq6adgv5h.cloudfront.net/production/uploads/2020/02/10090356/MaxLiving-Maxgreens-scaled.jpg');">
                 </div>
             </div>
         </div>
@@ -216,7 +216,7 @@ get_header();
             </div>
             <div class="imageContainer">
                 <div class="imageContent bg-image"
-                     style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/MyFuture_BodyImage3.jpg');">
+                     style="background-image: url('https://d23i5jq6adgv5h.cloudfront.net/production/uploads/2020/02/10090349/DrIreneGold.jpg');">
                 </div>
             </div>
         </div>

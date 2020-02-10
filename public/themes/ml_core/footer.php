@@ -32,7 +32,7 @@ if ($showFooter === true): ?>
             get_template_part('template-parts/footer');
         else: ?>
             <div class="footerSimple container centerAlign">
-                <p>&copy; Copyright <?php echo date('Y'); ?> MaxLiving. All rights reserved.</p>
+                <p>&copy; Copyright <?php echo date('Y'); ?> MaxLiving. All Rights Reserved.</p>
             </div>
         <?php endif; ?>
 
