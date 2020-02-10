@@ -248,7 +248,7 @@ get_header();
             </div>
             <div class="imageContainer">
                 <div class="imageContent bg-image"
-                     style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/MyFuture_BodyImage4.png');">
+                     style="background-image: url('https://d23i5jq6adgv5h.cloudfront.net/production/uploads/2020/02/10093503/MaxU-Image-scaled.jpg');">
                 </div>
             </div>
         </div>
