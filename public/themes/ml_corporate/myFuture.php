@@ -21,13 +21,13 @@ get_header();
 <section class="myFutureHero bg-faintGrey">
     <div class="container">
         <div class="myFutureHeroTitle">
-            <h1>Own your future.</h1>
+            <h2><strong>MAXLIVING ALIGN YOUR HEALTH</strong></h2>
         </div>
         <div class="myFutureHeroFormContainer">
             <div class="myFutureHeroFormIntro">
-                <h2>Get more information</h2>
+                <h2 style="padding-bottom:20px;">Own your future.</h2>
                 <p style="padding-bottom: 20px;">
-                  Interested in MaxLiving? Let us know! We’re dedicated to building shared success in the natural health field through a wealth of resources designed for education, engagement, and advocacy.
+                  Interested in MaxLiving? Let us know! We’re dedicated to building shared success in the natural health field through a wealth of business consulting, coaching, and resources designed for education, engagement, and advocacy. We offer several options when joining our organization.
                 </p>
             </div>
 
@@ -37,22 +37,19 @@ get_header();
 </section>
 <section class="myFutureWhyMaxliving bg-brandGrey wave wave-white">
     <div class="flexible-fullWidth text-white centerAlign container">
-        <h2 class="title">Why MaxLiving?</h2>
+        <h2 class="title">Why Join the MaxLiving Organization?</h2>
         <div class="description">
             <p>
-                We’re transforming lives across North America and changing the future of chiropractic. Our natural approach to wellness has helped
-                hundreds of thousands of people across the globe better understand and manage their health now to keep them healthy long-term.
+                We’re transforming lives across North America and changing the future of chiropractic. Our natural healthcare delivery system and holistic approach to wellness has helped hundreds of thousands of people across North America better understand and manage their health long-term.
             </p>
         </div>
     </div>
 </section>
 <section class="essentials bg-white centerAlign">
     <div class="container discoverEssentials">
-        <h2>Discover the 5 Essentials<sup>&trade;</sup></h2>
+        <h2>Discover the 5 Essentials<sup style="vertical-align: super; font-size: 20px;">&reg;</sup></h2>
         <p>
-            We believe there are 5 Essentials™ to good health — chiropractic care, pure and simple nutrition, the right mindset, exercise and oxygen,
-            and minimizing toxin exposure. Our natural, holistic lifestyle approach has been adopted by some of the most successful chiropractors in
-            the country, transforming the lives of chiropractors and their patients since 1998.
+            We believe there are 5 Essentials<sup>&reg;</sup> to good health — core chiropractic care, pure and simple nutrition, the right mindset, exercise and oxygen, and minimizing toxin exposure. Our natural, holistic lifestyle approach has been adopted by some of the most successful chiropractors in North America, transforming chiropractic practices and the lives of their patients since 1998.
         </p>
     </div>
     <div class="essentialsContainer container">
@@ -126,16 +123,17 @@ get_header();
     <div class="container myFuture-flexibleContainer">
         <div class="contentRow">
             <div class="contentContainer">
-                <h3 class="title">Align Your Health With Our Network of Chiropractors</h3>
+                <h3 class="title">MaxLiving Align Your Health with Our Network of Chiropractors</h3>
                 <div class="content">
                     <p>
-                        With <strong>257% more weekly patient visits</strong> than the chiropractic national average, we’re transforming the future of natural,
-                        holistic healthcare. From opening your own franchise to professional coaching and business support, MaxLiving offers a turnkey approach
-                        to building a successful practice.
+                        With <strong>257% more weekly patient visits</strong> than the chiropractic national average, we’re transforming the future of natural, holistic healthcare. From Affiliate and Partnership programs to opening your own franchise, we offer professional services, consulting, coaching, business support, educational programs, process improvement, and product resources. MaxLiving offers a turnkey approach to building a successful and sustainable practice.
                     </p>
                     <ul>
                         <li>
-                            Better patient results through professionally developed marketing materials for 12–15 research-based educational workshops annually.
+                             Better patient results through professionally developed marketing materials that are research-based.
+                        </li>
+                        <li>
+                            Access to educational workshops that are updated annually.
                         </li>
                         <li>
                             Access to affordable and results-driven web and marketing support to bring new patients into your clinic — with minimal work required by you!
@@ -158,22 +156,20 @@ get_header();
 
         <div class="contentRow">
             <div class="contentContainer">
-                <h3 class="title">Ensure Patients Receive High-Quality Supplements</h3>
+                <h3 class="title">Ensure Patients Receive High-Quality Nutraceuticals</h3>
                 <div class="content">
                     <p>
-                        Offer MaxLiving’s high-quality vitamins and supplements to your patients and earn additional revenue for your clinic.
-                        These supplements are designed by chiropractors for chiropractic patients, reflecting our commitment to providing only
-                        the best in natural health care.
+                        Offer MaxLiving’s high-quality products and nutraceuticals to your patients and earn additional revenue for your clinic. Our nutraceuticals are designed by health professionals for chiropractic patients, reflecting our commitment to providing only the best in natural healthcare.
                     </p>
                     <ul>
                         <li>
-                            Health centers average $80K in additional revenue annually from MaxLiving supplement and resource sales.
+                            MaxLiving Health Centers average $80K in additional revenue annually from MaxLiving resource sales.
                         </li>
                         <li>
                             Your clinic becomes a one-stop-shop for your patients to enhance their wellness journey.
                         </li>
                         <li>
-                            Receive supportive product education from MaxLiving that aligns with chiropractic values.
+                            Receive supportive product education from MaxLiving that aligns with core chiropractic values.
                         </li>
                         <li>
                             Help your patients reach their full potential with products that go beyond their in-clinic visits.
@@ -193,19 +189,17 @@ get_header();
                 <h3 class="title">Attend Chiropractic Events</h3>
                 <div class="content">
                     <p>
-                        Join us at our series of energetic and inspirational seminars for chiropractic professionals. They feature
-                        passionate world-class speakers from across the field and industry leaders hosting specialized training
-                        sessions to support the continued growth of the profession.
+                        Join us at our series of energetic and inspirational seminars for chiropractic professionals. They feature passionate world-class speakers from across the field and industry leaders hosting specialized training sessions to support the continued growth of the profession.
                     </p>
                     <ul>
                         <li>
-                            Participate in intensive training for, DCs, CAs and Office Managers.
+                            Participate in intensive regional trainings for DCs, CAs, and Office Managers.
                         </li>
                         <li>
                             Earn continuing education credits delivered by world-class chiropractors.
                         </li>
                         <li>
-                            Learn about MaxLiving’s holistic approach to wellness through the 5 Essentials™.
+                            Learn about MaxLiving’s holistic approach to wellness through the 5 Essentials<sup>&reg;</sup> Healthcare Delivery System.
                         </li>
                         <li>
                             Attend practical workshops and classes on all the latest chiropractic techniques and research.
@@ -225,13 +219,11 @@ get_header();
                 <h3 class="title">Go from Class to Clinic with MaxU</h3>
                 <div class="content">
                     <p>
-                        MaxU brings together chiropractic students to educate, inspire, and empower them to reach their
-                        full potential. MaxU opens the door for multiple career opportunities, including associate positions,
-                        business owners, and future coaching clients.
+                        MaxU brings together chiropractic students to educate, inspire, and empower them to reach their full potential. MaxU opens the door for multiple career opportunities, including associate positions, business owners, and future coaching clients.
                     </p>
                     <ul>
                         <li>
-                            Get support on opening, building, and growing a successful business.
+                            Get support on opening, building, and growing a successful Chiropractic business.
                         </li>
                         <li>
                             Free access to North America’s top chiropractic doctors and in-office mentorship opportunities.
@@ -240,7 +232,7 @@ get_header();
                             Obtain your Nutrition Certification and Spinal Corrective Process Certification.
                         </li>
                         <li>
-                            Graduates can choose between three different tracks — become an associate, open a MaxLiving Health Center, or become a MaxLiving Partner.
+                            Graduates can choose between several different tracks — become an associate, open a MaxLiving Health Center, become a MaxLiving Partner, or become a MaxLiving Affiliate.  
                         </li>
                     </ul>
                 </div>
