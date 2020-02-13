@@ -354,31 +354,19 @@ if ( get_field( 'eventbrite_id' ) ):
             <div id="eventRegister">
                 <div id="eventbrite-widget-container-<?php the_field( 'eventbrite_id' ); ?>"></div>
             </div>
-            <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
-
-            <script type="text/javascript">
-                var registerComplete = function () {
-                    dataLayer.push({
-                        'event': 'eventRegister',
-                        'eventAction': 'Event: - <?php the_title(); ?>',
-                        'eventLabel': window.location.pathname
-                    });
+            <div id="IframeDivId"></div>
+              <script>
+                (function(d, s, id){
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)){ return; }
+                js = d.createElement(s); js.id = id;
+                js.onload = function(){
+                  showForm("IframeDivId", "<?php the_field( "eventbrite_id" ); ?>");
                 };
-
-                window.EBWidgets.createWidget({
-                    widgetType: 'checkout',
-                    eventId: '<?php the_field( "eventbrite_id" ); ?>',
-                    iframeContainerId: 'eventbrite-widget-container-<?php the_field( "eventbrite_id" ); ?>',
-                    iframeContainerHeight: <?php
-                    $eventbriteHeight = 425;
-                    if($eventbriteHeight<get_field( "eventbrite_height" )){
-                        $eventbriteHeight = get_field( "eventbrite_height" );
-                    };
-                    echo $eventbriteHeight;
-                    ?>,
-                    onOrderComplete: registerComplete
-                });
-            </script>
+                js.src = "https://go.regform.com/_assets/scripts/expo.js";
+                fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'expo_js'));
+              </script>
         </div>
     </section>
 <?php endif; ?>

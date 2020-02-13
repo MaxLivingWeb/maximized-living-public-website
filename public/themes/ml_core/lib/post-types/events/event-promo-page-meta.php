@@ -31,7 +31,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'name' => 'title',
                 'type' => 'text',
                 'instructions' => '',
-                'required' => 1,
+                'required' => 0,
                 'conditional_logic' => array(
                     array(
                         array(
@@ -58,7 +58,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'name' => 'description',
                 'type' => 'wysiwyg',
                 'instructions' => '',
-                'required' => 1,
+                'required' => 0,
                 'conditional_logic' => array(
                     array(
                         array(
@@ -85,7 +85,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'name' => 'button_text',
                 'type' => 'text',
                 'instructions' => '',
-                'required' => 1,
+                'required' => 0,
                 'conditional_logic' => array(
                     array(
                         array(
@@ -112,7 +112,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'name' => 'button_link',
                 'type' => 'url',
                 'instructions' => '',
-                'required' => 1,
+                'required' => 0,
                 'conditional_logic' => array(
                     array(
                         array(
@@ -168,7 +168,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'name' => 'background_image',
                 'type' => 'image',
                 'instructions' => '',
-                'required' => 1,
+                'required' => 0,
                 'conditional_logic' => array(
                     array(
                         array(
