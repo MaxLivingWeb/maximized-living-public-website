@@ -344,12 +344,10 @@ if ( get_field( 'eventbrite_id' ) ):
     ?>
     <section class="eventConferenceRegistration bg-faintGrey">
         <div class="container">
-            <div class="eventConferenceRegistrationHeader">
+            <div id="eventRegister" class="eventConferenceRegistrationHeader">
                 <h2 class="registrationTitle">Event Registration</h2>
             </div>
-            <div id="eventRegister">
                 <div id="eventbrite-widget-container-<?php the_field( 'eventbrite_id' ); ?>"></div>
-            </div>
             <div id="IframeDivId"></div>
               <script>
                 (function(d, s, id){
