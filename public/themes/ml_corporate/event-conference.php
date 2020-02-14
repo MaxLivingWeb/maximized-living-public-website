@@ -345,11 +345,7 @@ if ( get_field( 'eventbrite_id' ) ):
     <section class="eventConferenceRegistration bg-faintGrey">
         <div class="container">
             <div class="eventConferenceRegistrationHeader">
-                <?php if ( get_field( 'header_icon' ) ): ?>
-                    <span class="registrationLogo bg-image"
-                          style="background-image: url('<?php echo get_field( 'header_icon' )['url']; ?>')"></span>
-                <?php endif; ?>
-                <h2 class="registrationTitle">Registration</h2>
+                <h2 class="registrationTitle">Event Registration</h2>
             </div>
             <div id="eventRegister">
                 <div id="eventbrite-widget-container-<?php the_field( 'eventbrite_id' ); ?>"></div>
