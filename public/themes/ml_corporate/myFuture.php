@@ -123,7 +123,7 @@ get_header();
     <div class="container myFuture-flexibleContainer">
         <div class="contentRow">
             <div class="contentContainer">
-                <h3 class="title">MaxLiving Align Your Health with Our Network of Chiropractors</h3>
+                <h3 class="title">Align Your Clinic with Our MaxLiving Network of Chiropractors</h3>
                 <div class="content">
                     <p>
                         With <strong>257% more weekly patient visits</strong> than the chiropractic national average, we’re transforming the future of natural, holistic healthcare. From Affiliate and Partnership programs to opening your own franchise, we offer professional services, consulting, coaching, business support, educational programs, process improvement, and product resources. MaxLiving offers a turnkey approach to building a successful and sustainable practice.
@@ -232,7 +232,7 @@ get_header();
                             Obtain your Nutrition Certification and Spinal Corrective Process Certification.
                         </li>
                         <li>
-                            Graduates can choose between several different tracks — become an associate, open a MaxLiving Health Center, become a MaxLiving Partner, or become a MaxLiving Affiliate.  
+                            Graduates can choose between several different tracks — become an associate, open a MaxLiving Health Center, become a MaxLiving Partner, or become a MaxLiving Affiliate.
                         </li>
                     </ul>
                 </div>
