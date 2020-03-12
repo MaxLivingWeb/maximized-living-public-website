@@ -89,7 +89,6 @@ define('IMAGE_EDIT_OVERWRITE', true);
  * This disables the editor while also allowing Wordpress to complete minor
  * security updates and localization updates.
  */
-define('DISALLOW_FILE_EDIT', false);
 define('WP_AUTO_UPDATE_CORE', 'false');
 
 /**
@@ -144,7 +143,7 @@ switch (WPENV) {
         define('SCRIPT_DEBUG', true);
         break;
     default:
-        define('DISALLOW_FILE_MODS', true);
+        define('DISALLOW_FILE_MODS', false);
         break;
 }
 
