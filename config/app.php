@@ -61,7 +61,7 @@ $table_prefix = env('DB_PREFIX', 'ys_');
  * This is set via the ENV file to avoid having to search for its initial
  * declaration.
  */
-define('WP_ALLOW_REPAIR', env('ALLOW_REPAIR', false));
+define('WP_ALLOW_REPAIR', env('ALLOW_REPAIR', true));
 
 /**
  * A multisite network is a collection of sites that all share the same
