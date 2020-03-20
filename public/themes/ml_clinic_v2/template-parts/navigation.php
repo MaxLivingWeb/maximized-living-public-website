@@ -73,7 +73,7 @@ get_template_part('template-parts/nav-item-permissions');
                     <button class="navDropdownToggle" title="Toggle Submenu"><span
                                 class="invisible">Toggle Submenu</span></button>
                 </li>
-                <li>
+                <!-- <li>
                     <a class="navLink" href="<?php echo get_home_url() . '/healthy-articles'; ?>" title="Articles and Recipes">Articles &amp; Recipes</a>
                     <div class="navDropdown">
                         <ul>
@@ -92,7 +92,7 @@ get_template_part('template-parts/nav-item-permissions');
                     </div>
                     <button class="navDropdownToggle" title="Toggle Submenu"><span
                                 class="invisible">Toggle Submenu</span></button>
-                </li>
+                </li> -->
                 <li>
                     <a class="navLink" href="<?php echo get_home_url() . '/patient-paperwork'; ?>" title="Patient Resources">Patient Resources</a>
                     <div class="navDropdown">
