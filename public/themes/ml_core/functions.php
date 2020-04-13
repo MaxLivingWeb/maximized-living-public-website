@@ -41,11 +41,6 @@ require_once 'lib/overrides/footer.php';
 require_once 'lib/overrides/images.php';
 
 /**
- * Custom Wordpress Login
- */
-require_once 'lib/overrides/login.php';
-
-/**
  * Restricts dashboard options to only needed items.
  */
 require_once 'lib/overrides/dashboard.php';
