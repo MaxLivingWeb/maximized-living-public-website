@@ -40,119 +40,13 @@ RewriteCond %{ENV:IGENV} =Production
 RewriteCond %{HTTP:X-Forwarded-Proto} =http
 RewriteRule ^.* https://%{HTTP:Host}%{REQUEST_URI} [L,R=permanent]
 
-# BEGIN Migration Redirects
-RewriteRule ^quality-nutrition /five-essentials/nutrition/ [L,R=301,NC]
-RewriteRule ^value-spinal-correction /power-of-chiropractic/ [L,R=301,NC]
-RewriteRule ^your-doctors-blog /doctor-blog/ [L,R=301,NC]
-RewriteRule ^essential- /five-essentials/ [L,R=301,NC]
-RewriteRule ^become-an-ml-clinic /doctors-students/ [L,R=301,NC]
-RewriteRule ^blog/ /healthy-articles/ [L,R=301,NC]
-RewriteRule ^resources-recipes /healthy-recipes/ [L,R=301,NC]
-RewriteRule ^get-started /locations/ [L,R=301,NC]
-RewriteRule ^health-articles /healthy-articles/ [L,R=301,NC]
-RewriteRule ^maximized-mind /five-essentials/mindset/ [L,R=301,NC]
-RewriteRule ^max-living-blog /healthy-articles/ [L,R=301,NC]
-RewriteRule ^oxygen-muscle /five-essentials/oxygen-and-exercise/ [L,R=301,NC]
-RewriteRule ^privacy-policy /security-privacy/ [L,R=301,NC]
-RewriteRule ^products /store/ [L,R=301,NC]
-RewriteRule ^request-an-appointment /sign-up/ [L,R=301,NC]
-
-RewriteCond !%{HTTP_HOST} maxliving.com
-RewriteRule ^sports-performance /sports-council/ [L,R=301,NC]
-
-RewriteRule ^terms-of-service /security-privacy/ [L,R=301,NC]
-RewriteRule ^student-programs /doctors-students/student-info/ [L,R=301,NC]
-RewriteRule ^stories-of-success /success-stories/ [L,R=301,NC]
-RewriteRule ^our-team- /our-team/ [L,R=301,NC]
-RewriteRule ^articles /healthy-articles/ [L,R=301,NC]
-RewriteRule ^your-testimony /success-stories/ [L,R=301,NC]
-RewriteRule ^your-stories /success-stories/ [L,R=301,NC]
-RewriteRule ^vitamins-supplements /store/vitamins-supplements/ [L,R=301,NC]
-RewriteRule ^why-maximized-supplements /store/vitamins-supplements/ [L,R=301,NC]
-RewriteRule ^the-value-of-spinal-correction /power-of-chiropractic [L,R=301,NC]
-RewriteRule ^our-miracles /success-stories/ [L,R=301,NC]
-RewriteRule ^recipes /healthy-recipes/ [L,R=301,NC]
-RewriteRule ^nerve-supply /five-essentials/core-chiropractic/ [L,R=301,NC]
-RewriteRule ^maximized-nerve-supply /five-essentials/core-chiropractic/ [L,R=301,NC]
-RewriteRule ^essential/maximized-nerve-supply /five-essentials/core-chiropractic/ [L,R=301,NC]
-RewriteRule ^essential/maximized-oxygen-lean /five-essentials/oxygen-and-exercise/ [L,R=301,NC]
-RewriteRule ^essential/minimized-toxins /five-essentials/minimize-toxins/ [L,R=301,NC]
-RewriteRule ^essential/maximized-mind /five-essentials/mindset/ [L,R=301,NC]
-RewriteRule ^essential/maximized-quality-nutrition /five-essentials/nutrition/ [L,R=301,NC]
-RewriteRule ^essential/ /five-essentials/ [L,R=301,NC]
-RewriteRule ^slider / [L,R=301,NC]
-RewriteRule ^testimonials /success-stories/ [L,R=301,NC]
-RewriteRule ^power-of-chiropractic- /power-of-chiropractic/ [L,R=301,NC]
-RewriteRule ^power-of-chiropractic/po /power-of-chiropractic/ [L,R=301,NC]
-RewriteRule ^contact-us /contact/ [L,R=301,NC]
-RewriteRule ^company/ /our-story/ [L,R=301,NC]
-RewriteRule ^company/ / [L,R=301,NC]
-RewriteRule ^books/ /store/books/ [L,R=301,NC]
-
-#RewriteCond %{QUERY_STRING} doctor
-#RewriteRule ^/$  /locations [QSD,R=301,L]
-
-RewriteRule ^tag/ /healthy-articles/ [L,R=301,NC]
-RewriteRule ^why-chiropractic/ /five-essentials/core-chiropractic/ [L,R=301,NC]
-RewriteRule ^our-clinic.* /our-team/ [L,R=301,NC]
-RewriteRule ^the-5-essentials.* /five-essentials/ [L,R=301,NC]
-RewriteRule ^the-five-essentials.* /five-essentials/ [L,R=301,NC]
-RewriteRule ^(1999)/ /healthy-articles/ [L,R=301,NC]
-RewriteRule ^(201[0-9])/ /healthy-articles/ [L,R=301,NC]
-RewriteRule ^information-for-patients /patient-paperwork/ [L,R=301,NC]
-RewriteRule ^patient_paperwork /patient-paperwork/ [L,R=301,NC]
-RewriteRule ^patient-resources /patient-paperwork/ [L,R=301,NC]
-RewriteRule ^about/ /our-story/ [L,R=301,NC]
-
-RewriteRule ^our_staff.* /our-team/ [L,R=301,NC]
-RewriteRule ^category/ /healthy-articles/ [L,R=301,NC]
-RewriteRule ^patients_video/ /success-stories/ [L,R=301,NC]
-RewriteRule ^event/ /events/ [L,R=301,NC]
-RewriteRule ^events/category/ /events/ [L,R=301,NC]
-RewriteRule ^our_miracles/ /success-stories/ [L,R=301,NC]
-RewriteRule ^interactive_spine/ /power-of-chiropractic/ [L,R=301,NC]
-RewriteRule ^maximized_products/ /store/ [L,R=301,NC]
-
-RewriteRule ^login /app/wp-login.php [L,R=301,NC]
+RewriteCond !%{HTTP_HOST} maxlivingdev.com
 
 RewriteRule ^wp-json$ / [L,R=301,NC]
 
 # END Migration Redirects
 
-Redirect 302 /admin https://maxliving.com/wp-admin
-
-# MLX Redirect
-Redirect 302 /mlx https://maxliving.com/events/mlx-vision-june-2018
-Redirect 302 /events/mlx-generations https://maxliving.com/events/mlx-fresh-october-2018
-Redirect 302 /events/mlx-vision-june-2018 https://maxliving.com/events/mlx-fresh-october-2018
-
-# Canada Store Redirect for Facebook
-Redirect 302 /canadastore https://store.maxlivingcanada.com/
-
-
-#Category Filtering Redirects - Recipes
-RewriteRule ^healthy-recipes?categoryID=1408 /healthy-recipes?category=advanced-plan [L,R=301,NC]
-RewriteRule ^healthy-recipes?categoryID=1396 /healthy-recipes?category=breakfast-recipes [L,R=301,NC]
-RewriteRule ^healthy-recipes?categoryID=1409 /healthy-recipes?category=core-plan [L,R=301,NC]
-RewriteRule ^healthy-recipes?categoryID=1407 /healthy-recipes?category=dessert-recipes [L,R=301,NC]
-RewriteRule ^healthy-recipes?categoryID=1402 /healthy-recipes?category=dinner-recipes [L,R=301,NC]
-RewriteRule ^healthy-recipes?categoryID=1405 /healthy-recipes?category=gluten-free-recipes [L,R=301,NC]
-RewriteRule ^healthy-recipes?categoryID=1406 /healthy-recipes?category=healthy-snacks [L,R=301,NC]
-RewriteRule ^healthy-recipes?categoryID=1401 /healthy-recipes?category=lunch-recipes [L,R=301,NC]
-RewriteRule ^healthy-recipes?categoryID=1404 /healthy-recipes?category=vegan-recipes [L,R=301,NC]
-RewriteRule ^healthy-recipes?categoryID=1403 /healthy-recipes?category=vegetarian-recipes [L,R=301,NC]
-RewriteRule ^healthy-recipes?categoryID=1410 /healthy-recipes?category=weight-loss [L,R=301,NC]
-
-#Category Filtering Redirects - Articles
-RewriteRule ^healthy-articles?categoryID=1308 /healthy-articles?category=chiropractic [L,R=301,NC]
-RewriteRule ^healthy-articles?categoryID=1305 /healthy-articles?category=exercise [L,R=301,NC]
-RewriteRule ^healthy-articles?categoryID=1307 /healthy-articles?category=mindset [L,R=301,NC]
-RewriteRule ^healthy-articles?categoryID=1304 /healthy-articles?category=nutrition [L,R=301,NC]
-RewriteRule ^healthy-articles?categoryID=1306 /healthy-articles?category=toxins [L,R=301,NC]
-
-#Category Filtering Redirects - Events
-RewriteRule ^events?categoryID=791 /events?category=community-education [L,R=301,NC]
-RewriteRule ^events?categoryID=790 /events?category=professional-development [L,R=301,NC]
+Redirect 302 /admin https://maxlivingdev.com/wp-admin
 
 # SITEMAP REDIRECT
 RewriteRule ^sitemap.xml /sitemap_index.xml [L,R=301,NC]
