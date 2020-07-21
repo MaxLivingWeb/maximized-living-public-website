@@ -109,8 +109,8 @@ define('UPLOADS', WP_HOME . '/uploads');
  * also disabling Wordpress logging. It also sets up debug display based on the
  * previously defined environment.
  */
-define('WP_DEBUG', false);
-define('WP_DEBUG_LOG', false);
+define('WP_DEBUG', true);
+define('WP_DEBUG_LOG', true);
 ini_set('log_errors', 1);
 ini_set('error_log', dirname(__DIR__) . '/log/wordpress.log');
 switch (WPENV) {
@@ -120,7 +120,7 @@ switch (WPENV) {
         define('WP_DEBUG_DISPLAY', true);
         break;
     default:
-        define('WP_DEBUG_DISPLAY', false);
+        define('WP_DEBUG_DISPLAY', true);
         break;
 }
 
