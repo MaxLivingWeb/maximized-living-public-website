@@ -20,6 +20,3 @@ include 'lib/pages/submitted-content-page.php';
 include 'lib/additions/remove-event-media.php';
 
 include 'lib/overrides/dashboard.php';
-
-global $affiliate_id;
-$affiliate_id = \MaxLiving\ContactForm\FrontEnd\Shortcode::get_affiliate_id();
